@@ -1,248 +1,366 @@
-<!DOCTYPE html>
-<html lang="pt-BR" data-lang="pt">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heloise Demétrio — Product Designer · UX/UI</title>
-<meta name="description" content="Heloise Demétrio Prudencio é economista pela UFSC e Product Designer na Franq, em Florianópolis, atuando em UX, UI e CX de produtos financeiros digitais.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heloise Demétrio · Home</title>
+<meta name="description" content="Heloise Demétrio Prudencio — Product Designer em produtos financeiros digitais. Economista pela UFSC, do discovery ao acompanhamento de resultados.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#f4f1ea}
+*{box-sizing:border-box}
+h1,h2,h3,h4,p,ul,ol,dl,dd,dt,figure,blockquote{margin:0;padding:0}
+a{color:#1f4b3f;text-decoration:none}a:hover{color:#2f6d5b}
+.nl:hover{color:#1f4b3f !important}
+.btn{transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:#16130f !important;color:#f4f1ea !important;border-color:#16130f !important}
+.proj{transition:border-color .22s,transform .22s,box-shadow .22s}
+.proj:hover{border-color:#1f4b3f !important;transform:translateY(-3px);box-shadow:0 12px 30px rgba(22,19,15,.07)}
+.cc{transition:border-color .2s,background .2s}
+.cc:hover{border-color:#1f4b3f !important;background:#ffffff !important}
+@media(max-width:900px){.hide-sm{display:none !important}}
+</style>
 </head>
 <body>
+<div style="font-family: 'Manrope', sans-serif; color: #16130f; background: #f4f1ea; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased">
 
-<header>
-<div class="wrap nav">
-<div class="brand"><b>Heloise Demétrio</b><span class="mono">Product Designer</span></div>
-<ul class="nav-links">
-<li class="hide-sm"><a href="#experiencia" data-pt="Experiência" data-en="Experience">Experiência</a></li>
-<li class="hide-sm"><a href="#skills" data-pt="Skills" data-en="Skills">Skills</a></li>
-<li><a href="#projetos" data-pt="Projetos" data-en="Projects">Projetos</a></li>
-<li class="hide-sm"><a href="sobre.html" data-pt="Sobre" data-en="About">Sobre</a></li>
-<li><a href="contato.html" data-pt="Contato" data-en="Contact">Contato</a></li>
-<li><div class="lang"><button id="b-pt" class="active" onclick="setLang('pt')">PT</button><button id="b-en" onclick="setLang('en')">EN</button></div></li>
-</ul>
+<header style="position: sticky; top: 0; z-index: 50; background: rgba(244,241,234,.92); border-bottom: 1px solid rgba(22,19,15,.07)">
+<nav style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 62px; flex-wrap: wrap">
+<a href="index.html" style="display: flex; align-items: baseline; gap: 10px; color: #16130f">
+<span style="font-family: 'Instrument Serif', serif; font-size: 18px">Heloise Demétrio</span>
+<span class="hide-sm" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #8a7f70">Product Designer</span>
+</a>
+<div style="display: flex; align-items: center; gap: 8px 26px; flex-wrap: wrap">
+<a class="nl hide-sm" href="#processo" style="color: #443c31; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Processo</a>
+<a class="nl hide-sm" href="#experiencia" style="color: #443c31; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Experiência</a>
+<a class="nl" href="#projetos" style="color: #443c31; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Projetos</a>
+<a class="nl hide-sm" href="#skills" style="color: #443c31; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Skills</a>
+<a class="nl hide-sm" href="sobre.html" style="color: #443c31; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Sobre</a>
+<a class="nl" href="contato.html" style="color: #443c31; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Contato</a>
+<div style="display: flex; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; overflow: hidden; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .1em">
+<span aria-current="true" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; background: #16130f; color: #f4f1ea">PT</span>
+<a href="index-en.html" lang="en" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; color: #443c31">EN</a>
 </div>
+</div>
+</nav>
 </header>
 
-<section id="hero">
-<div class="wrap hero-grid">
-<div>
-<p class="eyebrow mono" data-pt="Product Designer · UX · UI · CX" data-en="Product Designer · UX · UI · CX">Product Designer · UX · UI · CX</p>
-<h1>Heloise Demétrio,<br><i data-pt="Product Designer" data-en="Product Designer">Product Designer</i></h1>
-<p class="hero-sum" data-pt="Economista pela UFSC, hoje desenho produtos digitais na Franq. Trabalho do discovery à entrega: pesquisa, arquitetura de informação, fluxos, protótipos de alta fidelidade e design system." data-en="An economist from UFSC, today I design digital products at Franq. I work from discovery to delivery: research, information architecture, flows, high-fidelity prototypes and design systems.">Economista pela UFSC, hoje desenho produtos digitais na Franq. Trabalho do discovery à entrega: pesquisa, arquitetura de informação, fluxos, protótipos de alta fidelidade e design system.</p>
-<div class="hero-actions">
-<a href="#projetos" class="btn solid" data-pt="Ver projetos" data-en="View projects">Ver projetos</a>
-<a href="contato.html" class="btn" data-pt="Falar comigo" data-en="Get in touch">Falar comigo</a>
-<a href="cv.html" class="btn" data-pt="Baixar CV" data-en="Download CV">Baixar CV</a>
+<section id="hero" style="padding: 104px 0 88px; border-bottom: 1px solid rgba(22,19,15,.07)">
+<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; gap: 72px; align-items: flex-start">
+<div style="flex: 3 1 480px; min-width: 0">
+<p style="display: flex; align-items: center; gap: 10px; margin-bottom: 22px; color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase"><span style="width: 26px; height: 1px; background: #1f4b3f; display: inline-block"></span>Product Designer · perfil generalista · ponta a ponta</p>
+<h1 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(46px, 6.2vw, 74px); line-height: 1.02; letter-spacing: -.01em">Heloise Demétrio,<br><i style="color: #1f4b3f">Product Designer</i></h1>
+<p style="margin-top: 26px; max-width: 44ch; font-size: 18px; font-weight: 300; color: #443c31; text-wrap: pretty">Economista pela UFSC, seis anos desenhando produtos financeiros digitais. Meu trabalho começa antes da tela: descoberta, definição estratégica, construção, disponibilização com o time e acompanhamento dos resultados.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px">
+<a class="btn" href="#projetos" style="display: inline-flex; align-items: center; min-height: 44px; padding: 12px 22px; border: 1px solid #1f4b3f; border-radius: 2px; background: #1f4b3f; color: #f4f1ea; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Ver projetos</a>
+<a class="btn" href="#carta" style="display: inline-flex; align-items: center; min-height: 44px; padding: 12px 22px; border: 1px solid #16130f; border-radius: 2px; color: #16130f; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Por que design</a>
+<a class="btn" href="cv.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 12px 22px; border: 1px solid #16130f; border-radius: 2px; color: #16130f; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Baixar CV</a>
 </div>
 </div>
-<dl class="facts">
-<div class="fact"><dt data-pt="Local" data-en="Location">Local</dt><dd>Florianópolis, SC · Brasil</dd></div>
-<div class="fact"><dt data-pt="Atual" data-en="Current">Atual</dt><dd data-pt="UX Designer na Franq" data-en="UX Designer at Franq">UX Designer na Franq</dd></div>
-<div class="fact"><dt data-pt="Experiência" data-en="Experience">Experiência</dt><dd data-pt="3+ anos em UX · 6 anos em produto" data-en="3+ years in UX · 6 years in product">3+ anos em UX · 6 anos em produto</dd></div>
-<div class="fact"><dt data-pt="Formação" data-en="Education">Formação</dt><dd data-pt="Economia · UFSC" data-en="Economics · UFSC">Economia · UFSC</dd></div>
-<div class="fact"><dt data-pt="Idiomas" data-en="Languages">Idiomas</dt><dd data-pt="Português · Inglês" data-en="Portuguese · English">Português · Inglês</dd></div>
+<dl style="flex: 2 1 300px; min-width: 0; border-top: 1px solid rgba(22,19,15,.14)">
+<div style="display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 13px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><dt style="color: #8a7f70; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase">Local</dt><dd style="font-size: 14.5px">Florianópolis, SC · Brasil</dd></div>
+<div style="display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 13px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><dt style="color: #8a7f70; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase">Disponibilidade</dt><dd style="font-size: 14.5px">Aberta a novas oportunidades</dd></div>
+<div style="display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 13px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><dt style="color: #8a7f70; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase">Experiência</dt><dd style="font-size: 14.5px">3+ anos em design · 6 anos em produto</dd></div>
+<div style="display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 13px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><dt style="color: #8a7f70; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase">Setor</dt><dd style="font-size: 14.5px">Fintech · produtos financeiros regulados</dd></div>
+<div style="display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 13px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><dt style="color: #8a7f70; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase">Formação</dt><dd style="font-size: 14.5px">Economia · UFSC</dd></div>
+<div style="display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 13px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><dt style="color: #8a7f70; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase">Idiomas</dt><dd style="font-size: 14.5px">Português · Inglês</dd></div>
 </dl>
 </div>
 </section>
 
-<section id="experiencia">
-<div class="wrap">
-<div class="sec-head rv"><span class="idx">01</span><h2 data-pt="Experiência" data-en="Work experience">Experiência</h2></div>
-<p class="sec-note rv" data-pt="Cargos em ordem cronológica inversa, com as responsabilidades e as entregas de cada um." data-en="Roles in reverse-chronological order, with the responsibilities and delivered work of each.">Cargos em ordem cronológica inversa, com as responsabilidades e as entregas de cada um.</p>
-
-<div class="roles">
-<article class="role rv">
-<p class="role-when"><strong data-pt="jun/2023 — hoje" data-en="Jun 2023 — present">jun/2023 — hoje</strong><span data-pt="cargo atual" data-en="current role">cargo atual</span></p>
-<div>
-<h3>UX Designer <em>— Franq</em></h3>
-<p class="role-lead" data-pt="Conduzo projetos do discovery à entrega: pesquisa, benchmarking, fluxos e protótipos de alta fidelidade, acompanhando a implementação lado a lado com PMs e desenvolvedores." data-en="I run projects from discovery to delivery: research, benchmarking, flows and high-fidelity prototypes, following implementation alongside PMs and developers.">Conduzo projetos do discovery à entrega: pesquisa, benchmarking, fluxos e protótipos de alta fidelidade, acompanhando a implementação lado a lado com PMs e desenvolvedores.</p>
-<div class="tags"><span class="tag">UX Research</span><span class="tag">UI Design</span><span class="tag">Figma</span><span class="tag">Design System</span><span class="tag" data-pt="IA aplicada" data-en="Applied AI">IA aplicada</span></div>
-<div class="subs">
-<div class="sub"><h4 data-pt="Design System da Franq" data-en="Franq Design System">Design System da Franq</h4><p data-pt="Manutenção e evolução dos componentes e tokens, garantindo consistência entre web e mobile e reduzindo retrabalho entre design e desenvolvimento." data-en="Maintaining and evolving components and tokens, keeping web and mobile consistent and reducing rework between design and development.">Manutenção e evolução dos componentes e tokens, garantindo consistência entre web e mobile e reduzindo retrabalho entre design e desenvolvimento.</p></div>
-<div class="sub"><h4 data-pt="IA no processo de design" data-en="AI in the design process">IA no processo de design</h4><p data-pt="Uso de IA para acelerar benchmarks, explorar alternativas de fluxo e refinar microcopy antes dos testes com usuários." data-en="Using AI to accelerate benchmarks, explore flow alternatives and refine microcopy ahead of user testing.">Uso de IA para acelerar benchmarks, explorar alternativas de fluxo e refinar microcopy antes dos testes com usuários.</p></div>
-<div class="sub"><h4 data-pt="Pesquisa e validação com usuários" data-en="User research and validation">Pesquisa e validação com usuários</h4><p data-pt="Entrevistas e testes que orientaram decisões de produto em fluxos de contratação, comissões e análise de clientes." data-en="Interviews and tests that guided product decisions across purchase, commission and client-analysis flows.">Entrevistas e testes que orientaram decisões de produto em fluxos de contratação, comissões e análise de clientes.</p></div>
+<section id="carta" style="padding: 88px 0; border-bottom: 1px solid rgba(22,19,15,.07)">
+<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
+<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">01</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Por que design</h2></div>
+<div style="display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-start; margin-top: 14px">
+<div style="flex: 3 1 460px; min-width: 0; max-width: 64ch; display: flex; flex-direction: column; gap: 22px; font-size: 16.5px; font-weight: 300; color: #443c31">
+<p style="text-wrap: pretty">Passei seis anos dentro de produto financeiro antes de me chamar designer. Comecei como analista de produto, olhando métricas e comportamento de usuários, e essa origem mudou a forma como desenho: para mim, uma decisão de interface só está pronta quando dá para explicar o efeito dela no negócio.</p>
+<p style="text-wrap: pretty">Na Franq, trabalhei com dinheiro dos outros: contratação de planos, comissões, análise de clientes PJ, dados cadastrais. São fluxos onde um erro de copy ou uma hierarquia mal resolvida custa confiança, e às vezes custa conformidade. Aprendi a desenhar com regra, com time jurídico por perto e com desenvolvedor do lado.</p>
+<p style="text-wrap: pretty">É esse tipo de problema que quero continuar resolvendo, em escala maior: produto financeiro complexo, muita gente envolvida, decisão que precisa ser defendida com dado e com pesquisa. Perfil generalista, do discovery ao pós-entrega.</p>
 </div>
-</div>
-</article>
-
-<article class="role rv">
-<p class="role-when"><strong data-pt="nov/2022 — nov/2023" data-en="Nov 2022 — Nov 2023">nov/2022 — nov/2023</strong></p>
-<div>
-<h3 data-pt="Designer Educacional — Franq" data-en="Educational Designer — Franq">Designer Educacional — Franq</h3>
-<p class="role-lead" data-pt="A ponte entre os números e o design: transformei temas complexos em jornadas de aprendizagem claras, com UX writing cuidadoso. Foi nesse papel que descobri meu interesse genuíno por interface e comportamento do usuário." data-en="The bridge between numbers and design: I turned complex topics into clear learning journeys, with careful UX writing. It was in this role that I discovered my genuine interest in interface and user behavior.">A ponte entre os números e o design: transformei temas complexos em jornadas de aprendizagem claras, com UX writing cuidadoso. Foi nesse papel que descobri meu interesse genuíno por interface e comportamento do usuário.</p>
-<div class="tags"><span class="tag">UX Writing</span><span class="tag" data-pt="Design instrucional" data-en="Instructional design">Design instrucional</span><span class="tag">SendGrid</span></div>
-<div class="subs">
-<div class="sub"><h4 data-pt="Trilhas de aprendizagem" data-en="Learning tracks">Trilhas de aprendizagem</h4><p data-pt="Estruturação de conteúdos financeiros densos em módulos progressivos, com linguagem acessível para o Personal Banker." data-en="Structuring dense financial content into progressive modules, in accessible language for the Personal Banker.">Estruturação de conteúdos financeiros densos em módulos progressivos, com linguagem acessível para o Personal Banker.</p></div>
-<div class="sub"><h4 data-pt="Comunicação por e-mail" data-en="Email communication">Comunicação por e-mail</h4><p data-pt="Réguas de comunicação e materiais de apoio para sustentar o engajamento nas trilhas." data-en="Communication flows and support material to sustain engagement across the tracks.">Réguas de comunicação e materiais de apoio para sustentar o engajamento nas trilhas.</p></div>
-</div>
-</div>
-</article>
-
-<article class="role rv">
-<p class="role-when"><strong data-pt="set/2020 — nov/2022" data-en="Sep 2020 — Nov 2022">set/2020 — nov/2022</strong></p>
-<div>
-<h3 data-pt="Analista de Produto — Franq" data-en="Product Analyst — Franq">Analista de Produto — Franq</h3>
-<p class="role-lead" data-pt="Dois anos analisando métricas de produto e comportamento de usuários, gerando insights para roadmap e priorização junto ao time de produto, a visão sistêmica que, mais tarde, me trouxe até o design." data-en="Two years analyzing product metrics and user behavior, generating insights for roadmap and prioritization with the product team, the systemic view that later brought me to design.">Dois anos analisando métricas de produto e comportamento de usuários, gerando insights para roadmap e priorização junto ao time de produto, a visão sistêmica que, mais tarde, me trouxe até o design.</p>
-<div class="tags"><span class="tag" data-pt="Análise de dados" data-en="Data analysis">Análise de dados</span><span class="tag" data-pt="Métricas de produto" data-en="Product metrics">Métricas de produto</span><span class="tag" data-pt="Priorização" data-en="Prioritization">Priorização</span></div>
-</div>
-</article>
-
-<article class="role rv">
-<p class="role-when"><strong>Freelance</strong></p>
-<div>
-<h3>Natural Extremo <em>· IslandHub</em></h3>
-<p class="role-lead" data-pt="Projetos de redesign e idealização de produtos digitais para e-commerce e marketplace, aplicando o mesmo processo de descoberta, prototipação e entrega." data-en="Redesign and conception projects for e-commerce and marketplace digital products, applying the same discovery, prototyping and delivery process.">Projetos de redesign e idealização de produtos digitais para e-commerce e marketplace, aplicando o mesmo processo de descoberta, prototipação e entrega.</p>
-<div class="tags"><span class="tag">E-commerce</span><span class="tag">Marketplace</span><span class="tag" data-pt="Zero a um" data-en="Zero to one">Zero a um</span></div>
-</div>
-</article>
+<aside style="flex: 2 1 280px; min-width: 0; border-top: 1px solid rgba(22,19,15,.14); padding-top: 18px">
+<p style="color: #1f4b3f; margin-bottom: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase">Onde eu encaixo</p>
+<ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 14.5px; color: #443c31; font-weight: 300">
+<li style="display: flex; gap: 11px; align-items: baseline"><span style="flex: none; width: 9px; height: 1px; background: #1f4b3f; transform: translateY(-4px)"></span><span>Concepção de produto de ponta a ponta, em um segmento de negócio ou canal</span></li>
+<li style="display: flex; gap: 11px; align-items: baseline"><span style="flex: none; width: 9px; height: 1px; background: #1f4b3f; transform: translateY(-4px)"></span><span>Descoberta e definição estratégica junto a negócio e produto</span></li>
+<li style="display: flex; gap: 11px; align-items: baseline"><span style="flex: none; width: 9px; height: 1px; background: #1f4b3f; transform: translateY(-4px)"></span><span>Construção, prototipação e disponibilização com engenharia</span></li>
+<li style="display: flex; gap: 11px; align-items: baseline"><span style="flex: none; width: 9px; height: 1px; background: #1f4b3f; transform: translateY(-4px)"></span><span>Acompanhamento de resultado depois do go-live</span></li>
+<li style="display: flex; gap: 11px; align-items: baseline"><span style="flex: none; width: 9px; height: 1px; background: #1f4b3f; transform: translateY(-4px)"></span><span>Leitura de dados e métricas sem depender de tradutor</span></li>
+</ul>
+</aside>
 </div>
 </div>
 </section>
 
-<section id="skills">
-<div class="wrap">
-<div class="sec-head rv"><span class="idx">02</span><h2 data-pt="Habilidades" data-en="Skills">Habilidades</h2></div>
-<p class="sec-note rv" data-pt="Proficiência autoavaliada de 0 a 100, com os anos de experiência profissional em cada ferramenta ou prática." data-en="Self-assessed proficiency from 0 to 100, alongside the years of professional experience with each tool or practice.">Proficiência autoavaliada de 0 a 100, com os anos de experiência profissional em cada ferramenta ou prática.</p>
-<div class="skill-groups" id="skill-groups"></div>
+<section id="processo" style="padding: 88px 0; border-bottom: 1px solid rgba(22,19,15,.07)">
+<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
+<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">02</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Como eu trabalho</h2></div>
+<p style="color: #8a7f70; font-size: 15px; max-width: 62ch; margin-bottom: 52px; font-weight: 300">Cinco etapas. Nenhuma delas é minha sozinha, e é por isso que funciona.</p>
+<ol style="list-style: none; border-top: 1px solid rgba(22,19,15,.14)">
+<li style="display: flex; flex-wrap: wrap; gap: 18px 32px; padding: 26px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: flex-start"><span style="flex: 0 0 64px; font-family: 'Instrument Serif', serif; font-size: 32px; line-height: 1; color: #1f4b3f; opacity: .65">01</span><div style="flex: 1 1 400px; min-width: 0"><h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21.5px; line-height: 1.2">Descoberta</h3><p style="margin-top: 8px; font-size: 15px; font-weight: 300; color: #443c31; max-width: 62ch; text-wrap: pretty">Entendo o problema antes de aceitar o pedido. Desk research, dados de uso, conversa com quem atende o cliente e entrevistas quando a dúvida é de comportamento.</p><p style="margin-top: 12px; color: #8a7f70; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase">Com negócio, dados e atendimento</p></div></li>
+<li style="display: flex; flex-wrap: wrap; gap: 18px 32px; padding: 26px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: flex-start"><span style="flex: 0 0 64px; font-family: 'Instrument Serif', serif; font-size: 32px; line-height: 1; color: #1f4b3f; opacity: .65">02</span><div style="flex: 1 1 400px; min-width: 0"><h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21.5px; line-height: 1.2">Definição estratégica</h3><p style="margin-top: 8px; font-size: 15px; font-weight: 300; color: #443c31; max-width: 62ch; text-wrap: pretty">Transformo o achado em recorte: qual usuário, qual momento da jornada, qual métrica move. É aqui que a maior parte do escopo é cortada.</p><p style="margin-top: 12px; color: #8a7f70; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase">Com produto e liderança</p></div></li>
+<li style="display: flex; flex-wrap: wrap; gap: 18px 32px; padding: 26px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: flex-start"><span style="flex: 0 0 64px; font-family: 'Instrument Serif', serif; font-size: 32px; line-height: 1; color: #1f4b3f; opacity: .65">03</span><div style="flex: 1 1 400px; min-width: 0"><h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21.5px; line-height: 1.2">Construção</h3><p style="margin-top: 8px; font-size: 15px; font-weight: 300; color: #443c31; max-width: 62ch; text-wrap: pretty">Arquitetura de informação, fluxos, protótipo de alta fidelidade em cima do design system. Testo com usuário antes de passar para dev.</p><p style="margin-top: 12px; color: #8a7f70; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase">Com design system e pesquisa</p></div></li>
+<li style="display: flex; flex-wrap: wrap; gap: 18px 32px; padding: 26px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: flex-start"><span style="flex: 0 0 64px; font-family: 'Instrument Serif', serif; font-size: 32px; line-height: 1; color: #1f4b3f; opacity: .65">04</span><div style="flex: 1 1 400px; min-width: 0"><h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21.5px; line-height: 1.2">Disponibilização</h3><p style="margin-top: 8px; font-size: 15px; font-weight: 300; color: #443c31; max-width: 62ch; text-wrap: pretty">Acompanho a implementação componente por componente, reviso em ambiente de teste e resolvo os casos de borda que só aparecem no código.</p><p style="margin-top: 12px; color: #8a7f70; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase">Com engenharia e QA</p></div></li>
+<li style="display: flex; flex-wrap: wrap; gap: 18px 32px; padding: 26px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: flex-start"><span style="flex: 0 0 64px; font-family: 'Instrument Serif', serif; font-size: 32px; line-height: 1; color: #1f4b3f; opacity: .65">05</span><div style="flex: 1 1 400px; min-width: 0"><h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21.5px; line-height: 1.2">Resultado</h3><p style="margin-top: 8px; font-size: 15px; font-weight: 300; color: #443c31; max-width: 62ch; text-wrap: pretty">Olho os números depois do go-live e comparo com a hipótese. Se não moveu, volto para a etapa 01 com uma pergunta melhor.</p><p style="margin-top: 12px; color: #8a7f70; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase">Com dados e produto</p></div></li>
+</ol>
 </div>
 </section>
 
-<section id="projetos">
-<div class="wrap">
-<div class="sec-head rv"><span class="idx">03</span><h2 data-pt="Projetos" data-en="Projects">Projetos</h2></div>
-<p class="sec-note rv" data-pt="Casos de fintech, edtech, e-commerce e marketplace. Cada projeto abre em um estudo de caso com contexto, processo e resultado." data-en="Cases across fintech, edtech, e-commerce and marketplace. Each project opens into a case study with context, process and outcome.">Casos de fintech, edtech, e-commerce e marketplace. Cada projeto abre em um estudo de caso com contexto, processo e resultado.</p>
-<div class="proj-grid" id="proj-grid"></div>
+<section id="experiencia" style="padding: 88px 0; border-bottom: 1px solid rgba(22,19,15,.07)">
+<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
+<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">03</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Experiência</h2></div>
+<p style="color: #8a7f70; font-size: 15px; max-width: 62ch; margin-bottom: 52px; font-weight: 300">Cargos em ordem cronológica inversa, com as responsabilidades e as entregas de cada um.</p>
+
+<article style="display: flex; flex-wrap: wrap; gap: 14px 40px; padding: 36px 0; border-top: 1px solid rgba(22,19,15,.14)">
+<p style="flex: 0 0 190px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .06em; color: #8a7f70; line-height: 1.9"><strong style="display: block; color: #1f4b3f; font-weight: 500">jun/2023 — set/2026</strong>3 anos</p>
+<div style="flex: 1 1 480px; min-width: 0">
+<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 24px; line-height: 1.2">UX Designer <span style="color: #8a7f70">— Franq</span></h3>
+<p style="margin-top: 12px; color: #443c31; font-weight: 300; max-width: 66ch; text-wrap: pretty">Conduzi projetos do discovery à entrega: pesquisa, benchmarking, fluxos e protótipos de alta fidelidade, acompanhando a implementação lado a lado com PMs e desenvolvedores.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">UX Research</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">UI Design</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Figma</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Design System</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Produto regulado</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">IA aplicada</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 24px">
+<div style="border-left: 2px solid #1f4b3f; padding: 2px 0 2px 18px"><h4 style="font-size: 14.7px; font-weight: 600">Design System da Franq</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px; max-width: 64ch">Manutenção e evolução dos componentes e tokens, garantindo consistência entre web e mobile e reduzindo retrabalho entre design e desenvolvimento.</p></div>
+<div style="border-left: 2px solid #1f4b3f; padding: 2px 0 2px 18px"><h4 style="font-size: 14.7px; font-weight: 600">Fluxos financeiros com regra e conformidade</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px; max-width: 64ch">Contratação de planos, comissionamento e dados cadastrais de PJ: desenhei dentro de restrições regulatórias e de política interna, validando termos, avisos e estados de erro com negócio e jurídico.</p></div>
+<div style="border-left: 2px solid #1f4b3f; padding: 2px 0 2px 18px"><h4 style="font-size: 14.7px; font-weight: 600">Pesquisa e validação com usuários</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px; max-width: 64ch">Entrevistas e testes que orientaram decisões de produto em fluxos de contratação, comissões e análise de clientes.</p></div>
+<div style="border-left: 2px solid #1f4b3f; padding: 2px 0 2px 18px"><h4 style="font-size: 14.7px; font-weight: 600">IA no processo de design</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px; max-width: 64ch">Uso de IA para acelerar benchmarks, explorar alternativas de fluxo e refinar microcopy antes dos testes com usuários.</p></div>
+</div>
+</div>
+</article>
+
+<article style="display: flex; flex-wrap: wrap; gap: 14px 40px; padding: 36px 0; border-top: 1px solid rgba(22,19,15,.14)">
+<p style="flex: 0 0 190px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .06em; color: #8a7f70; line-height: 1.9"><strong style="display: block; color: #1f4b3f; font-weight: 500">nov/2022 — nov/2023</strong></p>
+<div style="flex: 1 1 480px; min-width: 0">
+<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 24px; line-height: 1.2">Designer Educacional <span style="color: #8a7f70">— Franq</span></h3>
+<p style="margin-top: 12px; color: #443c31; font-weight: 300; max-width: 66ch; text-wrap: pretty">A ponte entre os números e o design: transformei temas complexos em jornadas de aprendizagem claras, com UX writing cuidadoso. Foi nesse papel que descobri meu interesse genuíno por interface e comportamento do usuário.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">UX Writing</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Design instrucional</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Linguagem simples</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">SendGrid</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 24px">
+<div style="border-left: 2px solid #1f4b3f; padding: 2px 0 2px 18px"><h4 style="font-size: 14.7px; font-weight: 600">Trilhas de aprendizagem</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px; max-width: 64ch">Estruturação de conteúdos financeiros densos em módulos progressivos, com linguagem acessível para o Personal Banker.</p></div>
+<div style="border-left: 2px solid #1f4b3f; padding: 2px 0 2px 18px"><h4 style="font-size: 14.7px; font-weight: 600">Comunicação por e-mail</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px; max-width: 64ch">Réguas de comunicação e materiais de apoio para sustentar o engajamento nas trilhas.</p></div>
+</div>
+</div>
+</article>
+
+<article style="display: flex; flex-wrap: wrap; gap: 14px 40px; padding: 36px 0; border-top: 1px solid rgba(22,19,15,.14)">
+<p style="flex: 0 0 190px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .06em; color: #8a7f70; line-height: 1.9"><strong style="display: block; color: #1f4b3f; font-weight: 500">set/2020 — nov/2022</strong></p>
+<div style="flex: 1 1 480px; min-width: 0">
+<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 24px; line-height: 1.2">Analista de Produto <span style="color: #8a7f70">— Franq</span></h3>
+<p style="margin-top: 12px; color: #443c31; font-weight: 300; max-width: 66ch; text-wrap: pretty">Dois anos analisando métricas de produto e comportamento de usuários, gerando insights para roadmap e priorização junto ao time de produto, a visão sistêmica que, mais tarde, me trouxe até o design.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Análise de dados</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Métricas de produto</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Priorização</span>
+</div>
+</div>
+</article>
+
+<article style="display: flex; flex-wrap: wrap; gap: 14px 40px; padding: 36px 0; border-top: 1px solid rgba(22,19,15,.14)">
+<p style="flex: 0 0 190px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .06em; color: #8a7f70; line-height: 1.9"><strong style="display: block; color: #1f4b3f; font-weight: 500">Freelance</strong></p>
+<div style="flex: 1 1 480px; min-width: 0">
+<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 24px; line-height: 1.2">Natural Extremo <span style="color: #8a7f70">· IslandHub</span></h3>
+<p style="margin-top: 12px; color: #443c31; font-weight: 300; max-width: 66ch; text-wrap: pretty">Projetos de redesign e idealização de produtos digitais para e-commerce e marketplace, aplicando o mesmo processo de descoberta, prototipação e entrega.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">E-commerce</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Marketplace</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Zero a um</span>
+</div>
+</div>
+</article>
+
+<div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(22,19,15,.14)">
+<p style="color: #1f4b3f; margin-bottom: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase">Como eu trabalho em time</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 26px 48px">
+<div><h4 style="font-size: 15px; font-weight: 600">Com engenharia</h4><p style="margin-top: 6px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Entrego em componentes do design system, não em telas soltas. Especifico estados, erros e limites de dado, e reviso a implementação antes do release.</p></div>
+<div><h4 style="font-size: 15px; font-weight: 600">Com produto</h4><p style="margin-top: 6px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Participo da priorização com evidência: o que a pesquisa disse, o que o dado mostra, o que dá para cortar sem perder o valor.</p></div>
+<div><h4 style="font-size: 15px; font-weight: 600">Com negócio e jurídico</h4><p style="margin-top: 6px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Levo o fluxo para validação cedo. Termos, avisos obrigatórios e regras de elegibilidade entram no desenho, não depois dele.</p></div>
+<div><h4 style="font-size: 15px; font-weight: 600">Com atendimento</h4><p style="margin-top: 6px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Uso os tickets como fonte de pesquisa contínua: é onde o atrito aparece primeiro e mais barato.</p></div>
+</div>
+</div>
 </div>
 </section>
 
-<section id="formacao">
-<div class="wrap">
-<div class="sec-head rv"><span class="idx">04</span><h2 data-pt="Formação" data-en="Education">Formação</h2></div>
-<p class="sec-note rv" data-pt="Base em economia e comportamento, especialização em design de produto." data-en="A foundation in economics and behavior, specialized in product design.">Base em economia e comportamento, especialização em design de produto.</p>
-<div class="edu rv">
-<div class="edu-row"><span class="when" data-pt="Graduação" data-en="Bachelor's">Graduação</span><div><h4 data-pt="Ciências Econômicas" data-en="Economics">Ciências Econômicas</h4><p data-pt="Universidade Federal de Santa Catarina (UFSC)" data-en="Federal University of Santa Catarina (UFSC)">Universidade Federal de Santa Catarina (UFSC)</p></div></div>
-<div class="edu-row"><span class="when" data-pt="Especialização" data-en="Specialization">Especialização</span><div><h4>UX/UI Design</h4><p data-pt="Formação em design de interfaces, pesquisa com usuários e prototipação." data-en="Training in interface design, user research and prototyping.">Formação em design de interfaces, pesquisa com usuários e prototipação.</p></div></div>
+<section id="projetos" style="padding: 88px 0; border-bottom: 1px solid rgba(22,19,15,.07)">
+<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
+<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">04</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Projetos</h2></div>
+<p style="color: #8a7f70; font-size: 15px; max-width: 62ch; margin-bottom: 52px; font-weight: 300">Casos de fintech, edtech, e-commerce e marketplace. Cada projeto abre em um estudo de caso com contexto, processo e resultado.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 18px">
+
+<a class="proj" href="ficha-pj.html" style="color: #16130f; display: flex; flex-direction: column; gap: 12px; padding: 26px; background: #fbf9f5; border: 1px solid rgba(22,19,15,.14); border-radius: 3px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .14em; text-transform: uppercase; color: #1f4b3f">UX · UI · Fintech</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; color: #8a7f70">01</span></div>
+<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21px; line-height: 1.18">Uma Nova Experiência para a Ficha do cliente PJ</h3>
+<p style="font-size: 14px; color: #443c31; font-weight: 300; flex: 1; text-wrap: pretty">Reestruturação da visualização de dados do cliente para tornar a análise mais orientada à venda.</p>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(22,19,15,.07)"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #8a7f70">Franq</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #1f4b3f">Ver caso →</span></div>
+</a>
+
+<a class="proj" href="comissoes.html" style="color: #16130f; display: flex; flex-direction: column; gap: 12px; padding: 26px; background: #fbf9f5; border: 1px solid rgba(22,19,15,.14); border-radius: 3px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .14em; text-transform: uppercase; color: #1f4b3f">UX · UI · B2B SaaS</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; color: #8a7f70">02</span></div>
+<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21px; line-height: 1.18">Nova Experiência para Gestão de Comissões</h3>
+<p style="font-size: 14px; color: #443c31; font-weight: 300; flex: 1; text-wrap: pretty">Redesign da visualização de ganhos, melhorando leitura, organização e entendimento dos pagamentos.</p>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(22,19,15,.07)"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #8a7f70">Franq</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #1f4b3f">Ver caso →</span></div>
+</a>
+
+<a class="proj" href="planos.html" style="color: #16130f; display: flex; flex-direction: column; gap: 12px; padding: 26px; background: #fbf9f5; border: 1px solid rgba(22,19,15,.14); border-radius: 3px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .14em; text-transform: uppercase; color: #1f4b3f">UX Research · Service Design</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; color: #8a7f70">03</span></div>
+<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21px; line-height: 1.18">Experiência de Contratação de Planos</h3>
+<p style="font-size: 14px; color: #443c31; font-weight: 300; flex: 1; text-wrap: pretty">Pesquisa com usuários e concepção de uma nova página de planos para simplificar a escolha e apoiar a decisão de contratação.</p>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(22,19,15,.07)"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #8a7f70">Franq</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #1f4b3f">Ver caso →</span></div>
+</a>
+
+<a class="proj" href="lms-educacao.html" style="color: #16130f; display: flex; flex-direction: column; gap: 12px; padding: 26px; background: #fbf9f5; border: 1px solid rgba(22,19,15,.14); border-radius: 3px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .14em; text-transform: uppercase; color: #1f4b3f">UX · Mobile App · Edtech</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; color: #8a7f70">04</span></div>
+<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21px; line-height: 1.18">Sistema LMS de Educação</h3>
+<p style="font-size: 14px; color: #443c31; font-weight: 300; flex: 1; text-wrap: pretty">Design de ponta a ponta da agenda de eventos e trilhas de aprendizagem no app do Personal Banker.</p>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(22,19,15,.07)"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #8a7f70">Franq</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #1f4b3f">Ver caso →</span></div>
+</a>
+
+<a class="proj" href="natural-extremo.html" style="color: #16130f; display: flex; flex-direction: column; gap: 12px; padding: 26px; background: #fbf9f5; border: 1px solid rgba(22,19,15,.14); border-radius: 3px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .14em; text-transform: uppercase; color: #1f4b3f">UX · UI · E-commerce</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; color: #8a7f70">05</span></div>
+<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21px; line-height: 1.18">Renovação do Fluxo de Compra</h3>
+<p style="font-size: 14px; color: #443c31; font-weight: 300; flex: 1; text-wrap: pretty">Redesign completo do funil de compras, melhorando conversão e experiência de checkout.</p>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(22,19,15,.07)"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #8a7f70">Natural Extremo</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #1f4b3f">Ver caso →</span></div>
+</a>
+
+<a class="proj" href="islandhub.html" style="color: #16130f; display: flex; flex-direction: column; gap: 12px; padding: 26px; background: #fbf9f5; border: 1px solid rgba(22,19,15,.14); border-radius: 3px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .14em; text-transform: uppercase; color: #1f4b3f">UX · UI · Marketplace</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; color: #8a7f70">06</span></div>
+<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21px; line-height: 1.18">Idealização Completa de Marketplace</h3>
+<p style="font-size: 14px; color: #443c31; font-weight: 300; flex: 1; text-wrap: pretty">Concepção do zero de um marketplace: pesquisa, arquitetura de informação, protótipos.</p>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(22,19,15,.07)"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #8a7f70">IslandHub</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #1f4b3f">Ver caso →</span></div>
+</a>
+
 </div>
 </div>
 </section>
 
-<section id="contato">
-<div class="wrap">
-<div class="sec-head rv"><span class="idx">05</span><h2 data-pt="Contato" data-en="Contact">Contato</h2></div>
-<p class="sec-note rv" data-pt="E-mail é o caminho mais rápido para uma resposta. Também estou no LinkedIn e no WhatsApp." data-en="Email is the fastest way to get a reply. I'm also on LinkedIn and WhatsApp.">E-mail é o caminho mais rápido para uma resposta. Também estou no LinkedIn e no WhatsApp.</p>
-<div class="contact-grid rv">
-<button type="button" class="cc" onclick="copyEmail()">
-<span class="k">E-mail</span>
-<span class="v">heloise.prudencio@gmail.com</span>
-<span class="h" data-pt="Clique para copiar" data-en="Click to copy">Clique para copiar</span>
+<section id="skills" style="padding: 88px 0; border-bottom: 1px solid rgba(22,19,15,.07)">
+<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
+<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">05</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Habilidades</h2></div>
+<p style="color: #8a7f70; font-size: 15px; max-width: 62ch; margin-bottom: 52px; font-weight: 300">Proficiência autoavaliada de 0 a 100, com os anos de experiência profissional em cada ferramenta ou prática.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 44px 64px">
+
+<div>
+<p style="font-family: 'IBM Plex Mono', monospace; font-size: 10.2px; letter-spacing: .18em; text-transform: uppercase; color: #1f4b3f; padding-bottom: 10px; border-bottom: 1px solid rgba(22,19,15,.14); margin-bottom: 18px">Design &amp; Pesquisa</p>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">Figma</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">95 · 3 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 95%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">UX Research</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">85 · 3 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 85%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">Design System</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">90 · 3 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 90%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">Prototipação</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">90 · 3 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 90%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">Acessibilidade (WCAG)</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">75 · 3 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 75%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+</div>
+</div>
+
+<div>
+<p style="font-family: 'IBM Plex Mono', monospace; font-size: 10.2px; letter-spacing: .18em; text-transform: uppercase; color: #1f4b3f; padding-bottom: 10px; border-bottom: 1px solid rgba(22,19,15,.14); margin-bottom: 18px">Produto &amp; Estratégia</p>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">Análise de dados</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">70 · 6 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 70%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">CX Design</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">80 · 3 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 80%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">Gestão de projetos</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">80 · 4 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 80%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">Produto financeiro regulado</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">85 · 6 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 85%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">Miro</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">85 · 3 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 85%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+</div>
+</div>
+
+<div>
+<p style="font-family: 'IBM Plex Mono', monospace; font-size: 10.2px; letter-spacing: .18em; text-transform: uppercase; color: #1f4b3f; padding-bottom: 10px; border-bottom: 1px solid rgba(22,19,15,.14); margin-bottom: 18px">Conteúdo &amp; Comunicação</p>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">UX Writing</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">90 · 4 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 90%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">Design educacional</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">90 · 2 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 90%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">Facilitação de workshop</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">75 · 3 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 75%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">SendGrid</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">75 · 2 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 75%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+</div>
+</div>
+
+<div>
+<p style="font-family: 'IBM Plex Mono', monospace; font-size: 10.2px; letter-spacing: .18em; text-transform: uppercase; color: #1f4b3f; padding-bottom: 10px; border-bottom: 1px solid rgba(22,19,15,.14); margin-bottom: 18px">IA aplicada ao design</p>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">IA para benchmarks</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">85 · 2 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 85%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+<div style="display: flex; flex-direction: column; gap: 7px"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-size: 14.7px; font-weight: 500">IA para microcopy</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .08em; color: #8a7f70">85 · 2 anos</span></div><div style="height: 3px; background: #eae5da; border-radius: 2px"><div style="width: 85%; height: 3px; background: #1f4b3f; border-radius: 2px"></div></div></div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="acessibilidade" style="padding: 88px 0; border-bottom: 1px solid rgba(22,19,15,.07)">
+<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
+<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">06</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Acessibilidade e inclusão</h2></div>
+<p style="color: #8a7f70; font-size: 15px; max-width: 62ch; margin-bottom: 52px; font-weight: 300">Produto financeiro é serviço essencial: se alguém não consegue usar, o problema é do design. O que eu checo em toda entrega.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); border-top: 1px solid rgba(22,19,15,.14)">
+<div style="padding: 22px 26px 24px; border-bottom: 1px solid rgba(22,19,15,.07); border-right: 1px solid rgba(22,19,15,.07)"><h4 style="font-size: 15px; font-weight: 600">Contraste e legibilidade</h4><p style="margin-top: 7px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Texto sempre acima de 4.5:1, corpo mínimo de 16px, nunca cor como único portador de informação.</p></div>
+<div style="padding: 22px 26px 24px; border-bottom: 1px solid rgba(22,19,15,.07); border-right: 1px solid rgba(22,19,15,.07)"><h4 style="font-size: 15px; font-weight: 600">Teclado e leitor de tela</h4><p style="margin-top: 7px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Ordem de foco, rótulos e mensagens de erro descritas. Fluxo financeiro precisa ser concluível sem mouse.</p></div>
+<div style="padding: 22px 26px 24px; border-bottom: 1px solid rgba(22,19,15,.07); border-right: 1px solid rgba(22,19,15,.07)"><h4 style="font-size: 15px; font-weight: 600">Linguagem simples</h4><p style="margin-top: 7px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Herança dos anos em design educacional: reescrevo jargão financeiro até caber na leitura de quem nunca investiu.</p></div>
+<div style="padding: 22px 26px 24px; border-bottom: 1px solid rgba(22,19,15,.07); border-right: 1px solid rgba(22,19,15,.07)"><h4 style="font-size: 15px; font-weight: 600">Alvos e mobile</h4><p style="margin-top: 7px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Área de toque mínima de 44px e revisão do fluxo em tela pequena, que é onde a maior parte do público está.</p></div>
+<div style="padding: 22px 26px 24px; border-bottom: 1px solid rgba(22,19,15,.07); border-right: 1px solid rgba(22,19,15,.07)"><h4 style="font-size: 15px; font-weight: 600">Diversidade na amostra</h4><p style="margin-top: 7px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Recrutamento de pesquisa variado em idade, renda e familiaridade digital. Usuário avançado sozinho esconde o problema.</p></div>
+</div>
+</div>
+</section>
+
+<section id="depoimentos" style="padding: 88px 0; border-bottom: 1px solid rgba(22,19,15,.07)">
+<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
+<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">07</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Recomendações</h2></div>
+<p style="color: #8a7f70; font-size: 15px; max-width: 62ch; margin-bottom: 52px; font-weight: 300">De quem trabalhou comigo no dia a dia, entre produto, engenharia e negócio.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 18px">
+<figure style="display: flex; flex-direction: column; gap: 18px; padding: 28px; border: 1px dashed rgba(22,19,15,.14); border-radius: 3px"><blockquote style="font-family: 'Instrument Serif', serif; font-size: 18.5px; line-height: 1.4; color: #8a7f70; flex: 1">[Depoimento — cole aqui a recomendação recebida]</blockquote><figcaption style="display: flex; flex-direction: column; gap: 3px; padding-top: 14px; border-top: 1px solid rgba(22,19,15,.07)"><span style="font-size: 14px; font-weight: 600">Nome</span><span style="color: #8a7f70; font-family: 'IBM Plex Mono', monospace; font-size: 9.3px; letter-spacing: .16em; text-transform: uppercase">Cargo · Empresa</span></figcaption></figure>
+<figure style="display: flex; flex-direction: column; gap: 18px; padding: 28px; border: 1px dashed rgba(22,19,15,.14); border-radius: 3px"><blockquote style="font-family: 'Instrument Serif', serif; font-size: 18.5px; line-height: 1.4; color: #8a7f70; flex: 1">[Depoimento — cole aqui a recomendação recebida]</blockquote><figcaption style="display: flex; flex-direction: column; gap: 3px; padding-top: 14px; border-top: 1px solid rgba(22,19,15,.07)"><span style="font-size: 14px; font-weight: 600">Nome</span><span style="color: #8a7f70; font-family: 'IBM Plex Mono', monospace; font-size: 9.3px; letter-spacing: .16em; text-transform: uppercase">Cargo · Empresa</span></figcaption></figure>
+<figure style="display: flex; flex-direction: column; gap: 18px; padding: 28px; border: 1px dashed rgba(22,19,15,.14); border-radius: 3px"><blockquote style="font-family: 'Instrument Serif', serif; font-size: 18.5px; line-height: 1.4; color: #8a7f70; flex: 1">[Depoimento — cole aqui a recomendação recebida]</blockquote><figcaption style="display: flex; flex-direction: column; gap: 3px; padding-top: 14px; border-top: 1px solid rgba(22,19,15,.07)"><span style="font-size: 14px; font-weight: 600">Nome</span><span style="color: #8a7f70; font-family: 'IBM Plex Mono', monospace; font-size: 9.3px; letter-spacing: .16em; text-transform: uppercase">Cargo · Empresa</span></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section id="formacao" style="padding: 88px 0; border-bottom: 1px solid rgba(22,19,15,.07)">
+<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
+<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">08</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Formação</h2></div>
+<p style="color: #8a7f70; font-size: 15px; max-width: 62ch; margin-bottom: 52px; font-weight: 300">Base em economia e comportamento, especialização em design de produto.</p>
+<div style="border-top: 1px solid rgba(22,19,15,.14)">
+<div style="display: flex; flex-wrap: wrap; gap: 6px 40px; padding: 22px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><span style="flex: 0 0 190px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8a7f70; letter-spacing: .06em">Graduação</span><div style="flex: 1 1 400px; min-width: 0"><h4 style="font-size: 16px; font-weight: 600">Ciências Econômicas</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px">Universidade Federal de Santa Catarina (UFSC)</p></div></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 40px; padding: 22px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><span style="flex: 0 0 190px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8a7f70; letter-spacing: .06em">Especialização</span><div style="flex: 1 1 400px; min-width: 0"><h4 style="font-size: 16px; font-weight: 600">UX/UI Design</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px">Formação em design de interfaces, pesquisa com usuários e prototipação.</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="contato" style="padding: 88px 0">
+<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
+<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">09</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Contato</h2></div>
+<p style="color: #8a7f70; font-size: 15px; max-width: 62ch; margin-bottom: 52px; font-weight: 300">E-mail é o caminho mais rápido para uma resposta. Também estou no LinkedIn e no WhatsApp.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 14px">
+<button class="cc" type="button" data-copy-email="heloise.prudencio@gmail.com" data-copied-text="E-mail copiado" style="display: flex; flex-direction: column; gap: 6px; padding: 24px; border: 1px solid rgba(22,19,15,.14); border-radius: 3px; background: #fbf9f5; text-align: left; font-family: inherit; cursor: pointer; color: inherit">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .16em; text-transform: uppercase; color: #1f4b3f">E-mail</span>
+<span style="font-size: 14.7px; color: #16130f; word-break: break-word">heloise.prudencio@gmail.com</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.3px; letter-spacing: .1em; text-transform: uppercase; color: #8a7f70" data-hint>Clique para copiar</span>
 </button>
-<a class="cc" href="https://www.linkedin.com/in/heloise-dem%C3%A9trio-prudencio-855693175/" target="_blank" rel="noopener">
-<span class="k">LinkedIn</span>
-<span class="v">heloise-demétrio-prudencio</span>
-<span class="h" data-pt="Abrir perfil" data-en="Open profile">Abrir perfil</span>
+<a class="cc" href="https://www.linkedin.com/in/heloise-dem%C3%A9trio-prudencio-855693175/" target="_blank" rel="noopener" style="display: flex; flex-direction: column; gap: 6px; padding: 24px; border: 1px solid rgba(22,19,15,.14); border-radius: 3px; background: #fbf9f5; color: inherit">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .16em; text-transform: uppercase; color: #1f4b3f">LinkedIn</span>
+<span style="font-size: 14.7px; color: #16130f; word-break: break-word">heloise-demétrio-prudencio</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.3px; letter-spacing: .1em; text-transform: uppercase; color: #8a7f70">Abrir perfil</span>
 </a>
-<a class="cc" href="https://wa.me/5548999327699" target="_blank" rel="noopener">
-<span class="k">WhatsApp</span>
-<span class="v">+55 48 9 9932 7699</span>
-<span class="h" data-pt="Enviar mensagem" data-en="Send message">Enviar mensagem</span>
+<a class="cc" href="https://wa.me/5548999327699" target="_blank" rel="noopener" style="display: flex; flex-direction: column; gap: 6px; padding: 24px; border: 1px solid rgba(22,19,15,.14); border-radius: 3px; background: #fbf9f5; color: inherit">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .16em; text-transform: uppercase; color: #1f4b3f">WhatsApp</span>
+<span style="font-size: 14.7px; color: #16130f; word-break: break-word">+55 48 9 9932 7699</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.3px; letter-spacing: .1em; text-transform: uppercase; color: #8a7f70">Enviar mensagem</span>
 </a>
 </div>
 </div>
 </section>
 
-<div class="wrap"><footer>
-<p class="foot">© 2026 Heloise Demétrio Prudencio</p>
-<p class="foot">Florianópolis · SC · BR</p>
-</footer></div>
+<footer style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
+<div style="padding: 30px 0 40px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; border-top: 1px solid rgba(22,19,15,.07); font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #8a7f70">
+<p>© 2026 Heloise Demétrio Prudencio</p>
+<p>Florianópolis · SC · BR</p>
+</div>
+</footer>
 
-<div class="toast" id="toast"><span data-pt="E-mail copiado" data-en="Email copied">E-mail copiado</span></div>
-
-<script>
-const SKILLS=[
-{g_pt:'Design & Pesquisa',g_en:'Design & Research',items:[
-{n:'Figma',p:95,y_pt:'3 anos',y_en:'3 years'},
-{n:'UX Research',p:85,y_pt:'3 anos',y_en:'3 years'},
-{n_pt:'Design System',n_en:'Design System',p:90,y_pt:'3 anos',y_en:'3 years'},
-{n_pt:'Prototipação',n_en:'Prototyping',p:90,y_pt:'3 anos',y_en:'3 years'}]},
-{g_pt:'Produto & Estratégia',g_en:'Product & Strategy',items:[
-{n_pt:'Análise de dados',n_en:'Data analysis',p:70,y_pt:'6 anos',y_en:'6 years'},
-{n:'CX Design',p:80,y_pt:'3 anos',y_en:'3 years'},
-{n_pt:'Gestão de projetos',n_en:'Project management',p:80,y_pt:'4 anos',y_en:'4 years'},
-{n:'Miro',p:85,y_pt:'3 anos',y_en:'3 years'}]},
-{g_pt:'Conteúdo & Comunicação',g_en:'Content & Communication',items:[
-{n:'UX Writing',p:90,y_pt:'4 anos',y_en:'4 years'},
-{n_pt:'Design educacional',n_en:'Educational design',p:90,y_pt:'2 anos',y_en:'2 years'},
-{n:'SendGrid',p:75,y_pt:'2 anos',y_en:'2 years'}]},
-{g_pt:'IA aplicada ao design',g_en:'AI applied to design',items:[
-{n_pt:'IA para benchmarks',n_en:'AI for benchmarks',p:85,y_pt:'2 anos',y_en:'2 years'},
-{n_pt:'IA para microcopy',n_en:'AI for microcopy',p:85,y_pt:'2 anos',y_en:'2 years'}]}
-];
-
-const PROJECTS=[
-{num:'01',slug:'ficha-pj',cat_pt:'UX · UI · Fintech',cat_en:'UX · UI · Fintech',t_pt:'Uma Nova Experiência para a Ficha do cliente PJ',t_en:'Uma Nova Experiência para a Ficha do cliente PJ',d_pt:'Reestruturação da visualização de dados do cliente para tornar a análise mais orientada à venda.',d_en:'Reestruturação da visualização de dados do cliente para tornar a análise mais orientada à venda.',co:'Franq'},
-{num:'02',slug:'kanban-ganhos',cat_pt:'UX · UI · B2B SaaS',cat_en:'UX · UI · B2B SaaS',t_pt:'Nova Experiência para Gestão de Comissões',t_en:'Nova Experiência para Gestão de Comissões',d_pt:'Redesign da visualização de ganhos, melhorando leitura, organização e entendimento dos pagamentos.',d_en:'Redesign da visualização de ganhos, melhorando leitura, organização e entendimento dos pagamentos.',co:'Franq'},
-{num:'03',slug:'pagamentos',cat_pt:'UX Research · Service Design',cat_en:'UX Research · Service Design',t_pt:'Experiência de Contratação de Planos',t_en:'Experiência de Contratação de Planos',d_pt:'Pesquisa com usuários e concepção de uma nova página de planos para simplificar a escolha e apoiar a decisão de contratação.',d_en:'Pesquisa com usuários e concepção de uma nova página de planos para simplificar a escolha e apoiar a decisão de contratação.',co:'Franq'},
-{num:'04',slug:'franq-educacao',cat_pt:'UX · Mobile App · Edtech',cat_en:'UX · Mobile App · Edtech',t_pt:'Sistema LMS de Educação',t_en:'Education LMS System',d_pt:'Design de ponta a ponta da agenda de eventos e trilhas de aprendizagem no app do Personal Banker.',d_en:'End-to-end design of the event calendar and learning tracks in the Personal Banker app.',co:'Franq'},
-{num:'05',slug:'natural-extremo',cat_pt:'UX · UI · E-commerce',cat_en:'UX · UI · E-commerce',t_pt:'Renovação do Fluxo de Compra',t_en:'Purchase Flow Renewal',d_pt:'Redesign completo do funil de compras, melhorando conversão e experiência de checkout.',d_en:'Complete redesign of the purchase funnel, improving conversion and checkout experience.',co:'Natural Extremo'},
-{num:'06',slug:'islandhub',cat_pt:'UX · UI · Marketplace',cat_en:'UX · UI · Marketplace',t_pt:'Idealização Completa de Marketplace',t_en:'Complete Marketplace Conception',d_pt:'Concepção do zero de um marketplace: pesquisa, arquitetura de informação, protótipos.',d_en:'Zero-to-one marketplace conception: research, information architecture, prototypes.',co:'IslandHub'}
-];
-
-function lang(){return document.documentElement.dataset.lang||'pt'}
-
-function renderSkills(){
-  const L=lang();
-  document.getElementById('skill-groups').innerHTML=SKILLS.map(g=>`
-  <div class="sg rv">
-    <p class="sg-title">${L==='pt'?g.g_pt:g.g_en}</p>
-    ${g.items.map(s=>`<div class="skill">
-      <div class="skill-top"><span class="skill-name">${s.n||(L==='pt'?s.n_pt:s.n_en)}</span><span class="skill-meta">${s.p} · ${L==='pt'?s.y_pt:s.y_en}</span></div>
-      <div class="bar"><i data-p="${s.p}"></i></div>
-    </div>`).join('')}
-  </div>`).join('');
-}
-
-function renderProjects(){
-  const L=lang();
-  document.getElementById('proj-grid').innerHTML=PROJECTS.map(p=>`
-  <a class="proj rv" href="projects/${p.slug}.html">
-    <div class="proj-top"><span class="proj-cat">${L==='pt'?p.cat_pt:p.cat_en}</span><span class="proj-n">${p.num}</span></div>
-    <h3>${L==='pt'?p.t_pt:p.t_en}</h3>
-    <p>${L==='pt'?p.d_pt:p.d_en}</p>
-    <div class="proj-foot"><span class="proj-co">${p.co}</span><span class="proj-go">${L==='pt'?'Ver caso →':'View case →'}</span></div>
-  </a>`).join('');
-}
-
-function setLang(l){
-  document.documentElement.dataset.lang=l;
-  try{localStorage.setItem('hd-lang',l)}catch(e){}
-  document.getElementById('b-pt').classList.toggle('active',l==='pt');
-  document.getElementById('b-en').classList.toggle('active',l==='en');
-  document.querySelectorAll('[data-pt]').forEach(el=>{el.textContent=el.dataset[l]||el.dataset.pt});
-  renderSkills();renderProjects();observe();
-}
-window.setLang=setLang;
-
-let io;
-function observe(){
-  io=io||new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
-    e.target.querySelectorAll('.bar i').forEach(b=>{b.style.width=b.dataset.p+'%'});
-    io.unobserve(e.target);}})},{threshold:.12});
-  document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));
-}
-
-function copyEmail(){
-  const email='heloise.prudencio@gmail.com';
-  const fb=()=>{const ta=document.createElement('textarea');ta.value=email;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta)};
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(email).catch(fb)}else{fb()}
-  const t=document.getElementById('toast');t.classList.add('show');clearTimeout(window._tt);window._tt=setTimeout(()=>t.classList.remove('show'),2200);
-}
-window.copyEmail=copyEmail;
-
-let saved='pt';try{saved=localStorage.getItem('hd-lang')||'pt'}catch(e){}
-setLang(saved);
-</script>
+</div>
+<script src="assets/site.js"></script>
 </body>
 </html>

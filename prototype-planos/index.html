@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="css/contato.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/register-modal.css" />
+  <link rel="stylesheet" href="css/payment-modal.css" />
+  <link rel="stylesheet" href="css/demo.css" />
 
   <style>
     /* ─── Global reset ──────────────────────── */
@@ -73,7 +75,7 @@
     <div class="header__inner">
 
       <!-- Logo -->
-      <a href="/" class="header__logo" aria-label="Franq,Início">
+      <a href="index.html" class="header__logo" aria-label="Franq,Início">
         <img src="assets/logo-franq.svg" alt="Franq" class="header__logo-img" />
       </a>
 
@@ -752,7 +754,12 @@
               'Mensagem:\n' + mensagem
             );
 
-            window.location.href = 'mailto:contato@franq.com.br?subject=' + subject + '&body=' + body;
+            // Protótipo: simula o envio em vez de abrir o e-mail real da Franq.
+            void subject; void body;
+            ['c-nome','c-telefone','c-email','c-mensagem'].forEach(function (id) { document.getElementById(id).value = ''; });
+            if (typeof window.demoToast === 'function') {
+              window.demoToast('Mensagem enviada (simulação). No produto real, ela iria para o time de atendimento.');
+            }
           });
         </script>
       </div>
@@ -770,7 +777,7 @@
 
       <!-- Brand -->
       <div class="footer__brand">
-        <a href="/" class="footer__logo" aria-label="Franq">
+        <a href="index.html" class="footer__logo" aria-label="Franq">
           <img src="assets/logo-franq.svg" alt="Franq" />
         </a>
         <p class="footer__tagline">Tecnologia para o bancário autônomo evoluir com estrutura e independência.</p>
@@ -856,16 +863,8 @@
   <script src="js/hero.js"></script>
   <script src="js/main.js"></script>
   <script src="js/register-modal.js"></script>
-  <script>
-    // Preview-only: block interactions so visitors can scroll but not click through the flow.
-    ['click','mousedown','pointerdown','submit','keydown'].forEach(function(type){
-      document.addEventListener(type, function(e){
-        if(type==='keydown' && !['Tab'].includes(e.key)) return;
-        e.preventDefault();
-        e.stopPropagation();
-      }, true);
-    });
-  </script>
+  <script src="js/payment-modal.js"></script>
+  <script src="js/demo.js"></script>
 
 </body>
 </html>
