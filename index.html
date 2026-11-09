@@ -120,7 +120,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .proj-media{display:grid;place-items:center;aspect-ratio:4/3;border-radius:16px;border:1px solid var(--line);
   background:linear-gradient(150deg,#0e1317 0%,#080a0c 60%,#110f0c 100%);color:var(--muted);font-size:13px;letter-spacing:1.5px}
 .proj-media.has-img{display:block;overflow:hidden;background:#0b0b0f}
-.proj-media.has-img img{width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+.proj-media.has-img img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s cubic-bezier(.22,.61,.36,1)}
 .proj:hover .proj-media.has-img img{transform:scale(1.03)}
 .proj-meta{display:flex;justify-content:space-between;gap:16px;font-size:12px;color:var(--muted)}
 .proj h3{margin:4px 0 0;font-weight:400;font-size:clamp(26px,2.4vw,32px);line-height:1.2;letter-spacing:-.03em}
@@ -310,14 +310,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="proj-grid">
       <div class="proj-col">
         <article class="proj" style="order:1">
-          <a class="proj-media has-img" href="nexo.html" tabindex="-1" aria-hidden="true"><img src="img/nexo/dashboard.jpg" alt="" loading="lazy"></a>
+          <a class="proj-media has-img" href="nexo.html" tabindex="-1" aria-hidden="true"><img src="img/covers/nexo.jpg" alt="" loading="lazy"></a>
           <div class="proj-meta"><span>Produto digital · Finanças pessoais</span><span>2026</span></div>
           <h3>Nexo</h3>
           <p>Orçamento familiar: a casa distribui 100% da renda em seis áreas da vida e acompanha o plano durante o mês.</p>
           <a class="proj-link" href="nexo.html"><span aria-hidden="true">→</span>Ver projeto</a>
         </article>
         <article class="proj" style="order:3">
-          <a class="proj-media has-img" href="islandhub.html" tabindex="-1" aria-hidden="true"><img src="img/islandhub/islandhub_site-home.jpg" alt="" loading="lazy"></a>
+          <a class="proj-media has-img" href="islandhub.html" tabindex="-1" aria-hidden="true"><img src="img/covers/islandhub.jpg" alt="" loading="lazy"></a>
           <div class="proj-meta"><span>Marketplace · E-commerce</span><span>2025 a hoje</span></div>
           <h3>IslandHub</h3>
           <p>Um marketplace feito para as Ilhas Cayman: compra e venda, lojas, promoções e agendamento de serviços, desenhado de ponta a ponta.</p>
@@ -326,7 +326,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       </div>
       <div class="proj-col">
         <article class="proj" style="order:2">
-          <a class="proj-media has-img" href="franq.html" tabindex="-1" aria-hidden="true"><img src="img/franq/ficha-pj_nova-01-visao360.jpg" alt="" loading="lazy"></a>
+          <a class="proj-media has-img" href="franq.html" tabindex="-1" aria-hidden="true"><img src="img/covers/franq.jpg" alt="" loading="lazy"></a>
           <div class="proj-meta"><span>Fintech · B2B</span><span>2020 a 2026</span></div>
           <h3>Projetos Franq</h3>
           <p>Quatro produtos para Personal Bankers: ficha do cliente PJ, gestão de comissões, contratação de planos e Franq Educação.</p>
