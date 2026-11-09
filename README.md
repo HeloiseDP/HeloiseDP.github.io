@@ -1,11 +1,11 @@
-# Portfólio — Heloise Demétrio Prudencio
+# Portfólio · Heloise Demétrio Prudencio
 
-Site estático (HTML, CSS e JS puros) publicado com GitHub Pages: https://heloisedp.github.io/
+Portfólio de Product Design, publicado em https://heloisedp.github.io/
 
-## Estrutura
-- `index.html` / `index-en.html` — home (PT / EN)
-- `sobre`, `contato` — páginas institucionais (`-en` para inglês)
-- `ficha-pj`, `comissoes`, `planos`, `lms-educacao`, `natural-extremo`, `islandhub` — estudos de caso
-- `cv.html` — currículo (o botão "Baixar PDF" usa a impressão do navegador)
-- `assets/img/` — imagens otimizadas · `assets/site.js` — copiar e-mail, comparador antes/depois, abas da Ficha PJ
-- `prototype-planos/` — protótipo navegável de Planos (conteúdo fictício)
+- `index.html`: home (abertura em 3D, projetos, experiência, competências e contato)
+- `nexo.html`, `franq.html`, `islandhub.html`: os três estudos de caso
+- `sobre.html`: sobre mim
+- `img/`: imagens dos cases
+- `v3/`: a versão anterior do portfólio, guardada inteira (PT e EN)
+
+As páginas antigas da raiz (ficha-pj, comissoes, planos, lms-educacao, contato, cv e as versões em inglês) redirecionam para o novo lugar de cada conteúdo.

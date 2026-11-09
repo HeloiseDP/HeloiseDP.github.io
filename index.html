@@ -2,305 +2,796 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Heloise Demétrio · Home</title>
-<meta name="description" content="Heloise Demétrio Prudencio, Product Designer em produtos financeiros digitais. Economista pela UFSC, do discovery ao acompanhamento de resultados.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfólio de Heloise Demétrio Prudencio, Product Designer: produtos digitais financeiros, marketplace e design de ponta a ponta.">
+<title>Heloise D. Prudencio · Product Designer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Roboto:wght@400;500&display=swap">
 <style>
-body{margin:0;background:#f4f1ea}
-*{box-sizing:border-box}
-h1,h2,h3,h4,p,ul,ol,dl,dd,dt,figure,blockquote{margin:0;padding:0}
-a{color:#1f4b3f;text-decoration:none}a:hover{color:#2f6d5b}
-.nl:hover{color:#1f4b3f !important}
-.btn{transition:background .2s,color .2s,border-color .2s}
-.btn:hover{background:#16130f !important;color:#f4f1ea !important;border-color:#16130f !important}
-.proj{transition:border-color .22s,transform .22s,box-shadow .22s}
-.proj:hover{border-color:#1f4b3f !important;transform:translateY(-3px);box-shadow:0 12px 30px rgba(22,19,15,.07)}
-.cc{transition:border-color .2s,background .2s}
-.cc:hover{border-color:#1f4b3f !important;background:#ffffff !important}
-@media(max-width:900px){.hide-sm{display:none !important}}
-@media(max-width:480px){.hide-xs{display:none !important}}
+/* Layout: cabeçalho fixo sobre um palco preso na tela durante a rolagem; o vidro ocupa o centro e vira DESIGN */
+:root{
+  --bg:#000;
+  --fg:#f1f3f6;
+  --muted:#8b929c;
+  --line:#23272e;
+  --pill:#f1f3f6;
+  --pill-fg:#000;
+  --glow:#9fc4ff;
+  --accent:#8bdce7;
+  --body:#b9bec1;
+  --warm:#eba16b;
+  --quote:#48646d;
+  --serif:"Lora",Georgia,"Times New Roman",serif;
+  --font:"Roboto",ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+html,body{background:var(--bg);color:var(--fg)}
+body{font-family:var(--font);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+
+.top{
+  position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:5;background:var(--bg);
+  display:flex;align-items:center;justify-content:space-between;gap:48px;
+  min-height:60px;padding-block:12px;
+  padding-left:max(24px,env(safe-area-inset-left,0px));
+  padding-right:max(24px,env(safe-area-inset-right,0px));
+}
+.name{font-weight:500;font-size:16px;line-height:24px;letter-spacing:.15px;color:var(--fg);text-decoration:none;white-space:nowrap}
+.nav{display:flex;gap:24px}
+.nav a{font-size:14px;line-height:20px;letter-spacing:.25px;color:var(--fg);text-decoration:none}
+.top a:focus-visible{outline:2px solid var(--glow);outline-offset:4px;border-radius:4px}
+.pill{background:var(--pill);color:var(--pill-fg);font-size:14px;line-height:20px;letter-spacing:.25px;text-decoration:none;padding:8px 14px;border-radius:24px;white-space:nowrap}
+@media (max-width:899px){
+  .nav{display:none}
+  .top{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+}
+
+.wrap{position:relative;height:420vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+#gl{display:block;width:100%;height:100%}
+.fallback{position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(48px,12vw,160px);letter-spacing:.06em;font-weight:400;color:transparent;-webkit-text-stroke:1.5px var(--glow)}
+
+.hud{
+  position:absolute;bottom:max(28px,env(safe-area-inset-bottom,0px));
+  left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));
+  display:flex;align-items:flex-end;justify-content:space-between;gap:16px;pointer-events:none;
+  font-size:12px;letter-spacing:.04em;color:var(--muted);
+}
+@media (min-width:900px){.hud{left:max(40px,env(safe-area-inset-left,0px));right:max(40px,env(safe-area-inset-right,0px))}}
+.bar{width:120px;height:1px;background:var(--line);position:relative;flex:none}
+.bar i{position:absolute;inset:0 auto 0 0;width:0;background:var(--fg)}
+.hint{transition:opacity .4s}
+@media (max-width:600px){.bar{width:72px}}
+
+/* Projetos, abertura: peças de interface em vidro flutuando em camadas (dados, conteúdo e interface) */
+.pintro{position:relative;display:grid;place-items:center;min-height:clamp(560px,80vh,760px);overflow:hidden;scroll-margin-top:60px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.pintro-title{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;gap:32px;text-align:center}
+.pintro h2{margin:0;font-weight:400;font-size:clamp(56px,8.4vw,128px);line-height:.92;letter-spacing:-.045em;color:var(--body)}
+.pintro h2 em{display:block;font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.03em;color:var(--fg)}
+.pintro-title span{font-size:12px;letter-spacing:2px;color:var(--muted)}
+.chip{position:absolute;z-index:2;display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:16px;
+  background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.02) 55%);border:1px solid rgba(255,255,255,.12);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 24px 50px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.12);
+  color:var(--fg);font-size:13px;white-space:nowrap;
+  transform:translate3d(var(--mx,0px),calc(var(--py,0px) + var(--my,0px)),0) rotate(var(--r,0deg));will-change:transform}
+.chip > *{animation:bob var(--d,7s) ease-in-out infinite alternate}
+.chip.far{opacity:.55;filter:blur(.6px);z-index:1}
+@keyframes bob{from{transform:translateY(-6px)}to{transform:translateY(7px)}}
+.toggle{width:44px;height:24px;border-radius:99px;background:var(--accent);position:relative;flex:none}
+.toggle::after{content:"";position:absolute;right:3px;top:3px;width:18px;height:18px;border-radius:50%;background:var(--pill-fg)}
+.btn-mini{padding:8px 16px;border-radius:99px;background:var(--fg);color:var(--pill-fg);font-weight:500;position:relative}
+.cursor{position:absolute;right:-14px;bottom:-16px;width:18px;height:18px}
+.spark{display:block;width:120px;height:44px}
+.bars{display:flex;align-items:flex-end;gap:5px;height:40px}
+.bars i{display:block;width:9px;border-radius:3px;background:var(--accent);opacity:.85}
+.type{display:flex;align-items:baseline;gap:6px;font-size:30px;line-height:1}
+.type em{font-family:var(--serif);font-style:italic}
+.type small{font-size:11px;letter-spacing:1px;color:var(--muted)}
+.field{display:flex;flex-direction:column;gap:6px;font-size:11px;color:var(--muted)}
+.field b{display:flex;align-items:center;gap:2px;width:170px;padding:9px 10px;border-radius:9px;border:1px solid rgba(255,255,255,.18);font-weight:400;font-size:13px;color:var(--fg)}
+.field b::after{content:"";width:1px;height:15px;background:var(--accent);animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+.swatches{display:flex;gap:6px}
+.swatches i{width:20px;height:20px;border-radius:50%;border:1px solid rgba(255,255,255,.2)}
+.check{width:18px;height:18px;border-radius:5px;background:var(--accent);display:grid;place-items:center;flex:none}
+.check svg{width:12px;height:12px}
+.c1{--r:-6deg;--d:7s;left:9%;top:14%}
+.c2{--r:4deg;--d:8s;left:24%;top:30%}
+.c3{--r:5deg;--d:6.5s;right:10%;top:12%}
+.c4{--r:-3deg;--d:7.5s;right:22%;top:30%}
+.c5{--r:-5deg;--d:8.5s;left:7%;bottom:22%}
+.c6{--r:6deg;--d:7.2s;left:22%;bottom:14%}
+.c7{--r:-4deg;--d:6.8s;right:8%;bottom:20%}
+.c8{--r:3deg;--d:7.8s;right:24%;bottom:12%}
+.c2 > *{animation-delay:-2s}.c3 > *{animation-delay:-4s}.c4 > *{animation-delay:-1s}.c5 > *{animation-delay:-3s}.c6 > *{animation-delay:-5s}.c7 > *{animation-delay:-2.5s}.c8 > *{animation-delay:-1.5s}
+@media (max-width:899px){.c2,.c4,.c8{display:none}.c1{left:4%;top:8%}.c3{right:4%;top:10%}.c5{left:3%;bottom:14%}.c6{left:auto;right:6%;bottom:18%}.c7{right:4%;bottom:24%}}
+@media (max-width:600px){.chip{transform:translate3d(var(--mx,0px),calc(var(--py,0px) + var(--my,0px)),0) rotate(var(--r,0deg)) scale(.82)}.c7{display:none}}
+
+/* Projetos, lista: duas colunas desencontradas; cada card leva à página do projeto */
+.proj-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.proj-head h2{margin-bottom:0}
+.projects .c-glint{margin-top:48px}
+.proj-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:80px;align-items:start;margin-top:56px;padding-bottom:72px;border-bottom:1px solid var(--line)}
+.proj-col{display:flex;flex-direction:column;gap:72px;min-width:0}
+.proj-col + .proj-col{padding-top:200px}
+.proj{display:flex;flex-direction:column;gap:14px;min-width:0}
+.proj-media{display:grid;place-items:center;aspect-ratio:1;border-radius:16px;border:1px solid var(--line);
+  background:linear-gradient(150deg,#0e1317 0%,#080a0c 60%,#110f0c 100%);color:var(--muted);font-size:13px;letter-spacing:1.5px}
+.proj-col + .proj-col .proj-media{aspect-ratio:4/3}
+.proj-media.has-img{display:block;overflow:hidden;background:#0b0b0f}
+.proj-media.has-img img{width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+.proj:hover .proj-media.has-img img{transform:scale(1.03)}
+.proj-meta{display:flex;justify-content:space-between;gap:16px;font-size:12px;color:var(--muted)}
+.proj h3{margin:4px 0 0;font-weight:400;font-size:clamp(26px,2.4vw,32px);line-height:1.2;letter-spacing:-.03em}
+.proj p{margin:0;font-size:16px;line-height:1.7;color:var(--body);max-width:52ch}
+.proj-link{align-self:flex-start;display:inline-flex;align-items:center;gap:12px;margin-top:6px;padding:4px 18px 4px 4px;border:1px solid var(--fg);border-radius:999px;color:var(--fg);text-decoration:none;font-size:13px}
+.proj-link span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid var(--fg);transition:background .2s,color .2s}
+.proj-link:hover span{background:var(--fg);color:var(--pill-fg)}
+.proj-link:focus-visible{outline:2px solid var(--glow);outline-offset:4px}
+@media (max-width:899px){.proj-grid{grid-template-columns:minmax(0,1fr);row-gap:64px;padding-bottom:56px}.proj-col{display:contents}.proj-col + .proj-col{padding-top:0}}
+
+/* Faixas da home (competências, contato): mesmo título editorial e mesmas margens */
+.band{
+  scroll-margin-top:60px;padding-block:104px 0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+@media (min-width:900px){.band{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+.band .eyebrow{font-size:12px;letter-spacing:2px;color:var(--muted)}
+.band h2{margin:24px 0 32px;font-weight:400;font-size:clamp(48px,6vw,84px);line-height:1.05;letter-spacing:-.04em}
+.band em{font-family:var(--serif);font-style:italic;font-weight:400}
+
+/* Apresentação logo depois do DESIGN: nome à esquerda, resumo e convicção à direita */
+.hello{padding-block:96px 120px}
+.hello .glint-line{margin-bottom:56px}
+.hello-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:80px}
+.hello-id{display:flex;flex-direction:column;gap:20px;min-width:0}
+.hello-id .eyebrow{letter-spacing:1.5px}
+.hello h2{margin:0;font-size:clamp(40px,4.2vw,56px);line-height:1.05;letter-spacing:-.035em}
+.hello-id i{display:block;width:28px;height:4px;border-radius:999px;background:var(--accent);margin-top:8px}
+.hello-text{display:flex;flex-direction:column;gap:28px;min-width:0}
+.hello-text p{margin:0;font-size:16px;line-height:1.7;color:var(--body);max-width:78ch}
+.hello-text blockquote{margin:0;padding:4px 0 4px 20px;border-left:1px solid var(--quote);font-size:16px;line-height:1.7;color:var(--fg);max-width:78ch}
+.hello-text blockquote span{color:var(--accent)}
+@media (max-width:899px){.hello-grid{grid-template-columns:minmax(0,1fr);gap:40px}}
+
+/* Experiência: empresa e tempo total à esquerda; os cargos dentro dela, numa linha do tempo */
+.exp .lead{margin:0;max-width:64ch;font-size:16px;line-height:1.7;color:var(--body)}
+.exp .c-glint{margin-top:48px}
+.company{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:20px 40px;padding-block:40px}
+.company + .company{border-top:1px solid var(--line)}
+.companies{border-bottom:1px solid var(--line)}
+.when{display:flex;flex-direction:column;gap:6px;font-size:13px;line-height:24px;color:var(--muted);font-variant-numeric:tabular-nums}
+.when b{font-weight:400;color:var(--accent)}
+.company-body{display:flex;flex-direction:column;gap:28px;min-width:0}
+.company h3{margin:0;font-weight:400;font-size:clamp(28px,2.6vw,36px);line-height:1.15;letter-spacing:-.03em}
+.company > .company-body > .desc{margin-top:-8px}
+.timeline{display:flex;flex-direction:column;margin:0;padding:0;list-style:none;border-left:1px solid var(--line)}
+.step-role{position:relative;display:flex;flex-direction:column;gap:16px;padding:0 0 40px 28px;min-width:0}
+.step-role:last-child{padding-bottom:0}
+.step-role::before{content:"";position:absolute;left:-4px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--bg);border:1px solid var(--accent)}
+.step-role:first-child::before{background:var(--accent)}
+.role-top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px}
+.role-top h4{margin:0;font-weight:400;font-size:clamp(20px,1.8vw,24px);line-height:1.3;letter-spacing:-.4px}
+.role-top span{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.exp .desc{margin:0;font-size:16px;line-height:1.7;color:var(--body);max-width:72ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{font-size:12px;line-height:18px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--body)}
+.highlights{display:flex;flex-direction:column;gap:32px;margin-top:8px;padding-top:28px;border-top:1px solid var(--line)}
+.highlights h5{margin:0 0 10px;font-weight:400;font-size:18px;line-height:1.4;color:var(--fg)}
+.highlights p{margin:0;font-size:16px;line-height:1.7;color:var(--body);max-width:72ch}
+@media (max-width:899px){
+  .company{grid-template-columns:minmax(0,1fr)}
+  .step-role{padding-left:20px}
+}
+
+/* Competências: linhas numeradas, com as áreas 03 a 06 em pares */
+.skills-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.skills-head h2{margin-bottom:0}
+.signature{display:flex;flex-direction:column;gap:16px;padding-bottom:10px}
+.signature i{display:block;width:28px;height:2px;background:var(--accent)}
+.signature p{margin:0;font-size:20px;line-height:1.3;letter-spacing:-.3px}
+.skills .c-glint{margin-top:48px}
+.glint-line{height:1px;background:linear-gradient(90deg,var(--line) 0%,#5f8c95 18%,var(--line) 48%,var(--line) 100%)}
+/* Uma competência por linha: número, nome e descrição */
+.skill{display:grid;grid-template-columns:32px minmax(0,1fr) minmax(0,1fr);column-gap:24px;row-gap:16px;padding-block:36px}
+.skill > p{padding-left:56px}
+.skill + .skill{border-top:1px solid var(--line)}
+.skill .n{font-size:12px;line-height:32px;color:var(--muted);font-variant-numeric:tabular-nums}
+.skill h3{margin:0;font-weight:400;font-size:clamp(20px,1.8vw,24px);line-height:1.3;letter-spacing:-.4px;text-wrap:balance}
+.skill p{margin:0;font-size:16px;line-height:1.7;color:var(--body);max-width:68ch}
+.skill.ai .n{color:var(--warm)}
+.skills-end{border-bottom:1px solid var(--line)}
+@media (max-width:899px){
+  .skill{grid-template-columns:28px minmax(0,1fr);column-gap:16px}
+  .skill > p{grid-column:2;padding-left:0}
+}
+
+/* Contato: e-mail em destaque e dois canais lado a lado */
+.contact .lead{margin:0;max-width:78ch;font-size:16px;line-height:1.7;color:var(--body)}
+.c-glint{height:1px;margin-top:56px;background:linear-gradient(90deg,var(--line) 0%,#5f8c95 18%,var(--line) 48%,var(--line) 100%)}
+.c-label{font-size:13px;color:var(--body)}
+.email-row{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-block:32px;border-bottom:1px solid var(--line)}
+.email-row > div{display:flex;flex-direction:column;gap:12px;min-width:0}
+.email{font-size:16px;line-height:1.5;color:var(--accent);text-decoration:none;overflow-wrap:anywhere;user-select:all}
+.copy{
+  display:inline-flex;align-items:center;gap:10px;flex:none;
+  background:var(--pill);color:var(--pill-fg);border:0;border-radius:999px;
+  padding:11px 18px;font:inherit;font-size:13px;letter-spacing:.2px;cursor:pointer;
+}
+.copy svg{width:15px;height:15px}
+.copy:focus-visible,.channel a:focus-visible,.email:focus-visible{outline:2px solid var(--glow);outline-offset:4px}
+.channels{display:grid;grid-template-columns:1fr 1fr}
+.channel{display:flex;flex-direction:column;gap:16px;padding-block:28px;min-width:0}
+.channel:first-child{padding-right:36px;border-right:1px solid var(--line)}
+.channel:last-child{padding-left:36px}
+.channel .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.channel a{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--fg);text-decoration:none;white-space:nowrap}
+.channel a:hover{color:var(--accent)}
+.channel a svg{width:10px;height:10px}
+.channel .value{font-size:16px;color:var(--fg);overflow-wrap:anywhere}
+.c-foot{display:flex;justify-content:space-between;gap:16px;margin-top:72px;padding-block:24px 40px;border-top:1px solid var(--line);font-size:11px;letter-spacing:.04em;color:var(--muted)}
+@media (max-width:700px){
+  .channels{grid-template-columns:1fr}
+  .channel:first-child{padding-right:0;border-right:0;border-bottom:1px solid var(--line)}
+  .channel:last-child{padding-left:0}
+}
+
+@media (prefers-reduced-motion:reduce){.chip > *,.field b::after{animation:none}.wrap{height:auto}.stage{position:relative}.hint{display:none}}
 </style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
-<div style="font-family: 'Manrope', sans-serif; color: #16130f; background: #f4f1ea; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased">
 
-<header style="position: sticky; top: 0; z-index: 50; background: rgba(244,241,234,.92); border-bottom: 1px solid rgba(22,19,15,.07)">
-<nav style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 62px; flex-wrap: wrap">
-<a href="index.html" style="display: flex; align-items: baseline; gap: 10px; color: #16130f">
-<span style="font-family: 'Instrument Serif', serif; font-size: 18px">Heloise Demétrio</span>
-<span class="hide-sm" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #6b6152">Product Designer</span>
-</a>
-<div style="display: flex; align-items: center; gap: 8px 26px; flex-wrap: wrap">
-<a class="nl hide-sm" href="#processo" style="color: #443c31; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Processo</a>
-<a class="nl hide-sm" href="#experiencia" style="color: #443c31; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Experiência</a>
-<a class="nl" href="#projetos" style="color: #443c31; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Projetos</a>
-<a class="nl hide-sm" href="#skills" style="color: #443c31; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Competências</a>
-<a class="nl hide-sm" href="sobre.html" style="color: #443c31; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Sobre</a>
-<a class="nl hide-xs" href="contato.html" style="color: #443c31; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Contato</a>
-<div style="display: flex; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; overflow: hidden; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .1em">
-<span aria-current="true" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; background: #16130f; color: #f4f1ea">PT</span>
-<a href="index-en.html" lang="en" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; color: #443c31">EN</a>
-</div>
-</div>
-</nav>
+<header class="top">
+  <a class="name" href="index.html">Heloise D. Prudencio</a>
+  <nav class="nav" aria-label="Principal">
+    <a href="#projetos">Projetos</a>
+    <a href="#experiencia">Experiência</a>
+    <a href="#competencias">Competências</a>
+    <a href="sobre.html">Sobre mim</a>
+  </nav>
+  <a class="pill" href="#contato">Contato</a>
 </header>
 
-<section id="hero" style="padding: 104px 0 88px; border-bottom: 1px solid rgba(22,19,15,.07)">
-<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; gap: 72px; align-items: flex-start">
-<div style="flex: 3 1 480px; min-width: 0">
-<p style="display: flex; align-items: center; gap: 10px; margin-bottom: 22px; color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase"><span style="width: 26px; height: 1px; background: #1f4b3f; display: inline-block"></span>Product Designer · perfil generalista · ponta a ponta</p>
-<h1 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(46px, 6.2vw, 74px); line-height: 1.02; letter-spacing: -.01em">Heloise Demétrio,<br><i style="color: #1f4b3f">Product Designer</i></h1>
-<p style="margin-top: 26px; max-width: 44ch; font-size: 18px; font-weight: 300; color: #443c31; text-wrap: pretty">Economista pela UFSC, seis anos em produtos financeiros digitais, os últimos três como designer. Meu trabalho começa antes da tela: descoberta, definição estratégica, construção, disponibilização com o time e acompanhamento dos resultados.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px">
-<a class="btn" href="#projetos" style="display: inline-flex; align-items: center; min-height: 44px; padding: 12px 22px; border: 1px solid #1f4b3f; border-radius: 2px; background: #1f4b3f; color: #f4f1ea; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Ver projetos</a>
-<a class="btn" href="#carta" style="display: inline-flex; align-items: center; min-height: 44px; padding: 12px 22px; border: 1px solid #16130f; border-radius: 2px; color: #16130f; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Por que design</a>
-<a class="btn" href="cv.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 12px 22px; border: 1px solid #16130f; border-radius: 2px; color: #16130f; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase">Baixar CV</a>
-</div>
-</div>
-<dl style="flex: 2 1 300px; min-width: 0; border-top: 1px solid rgba(22,19,15,.14)">
-<div style="display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 13px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><dt style="color: #6b6152; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase">Local</dt><dd style="font-size: 14.5px">Florianópolis, SC · Brasil</dd></div>
-<div style="display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 13px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><dt style="color: #6b6152; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase">Disponibilidade</dt><dd style="font-size: 14.5px">Aberta a oportunidades · disponível para São Paulo, presencial ou híbrido</dd></div>
-<div style="display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 13px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><dt style="color: #6b6152; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase">Experiência</dt><dd style="font-size: 14.5px">3+ anos em design · 6 anos em produto</dd></div>
-<div style="display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 13px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><dt style="color: #6b6152; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase">Setor</dt><dd style="font-size: 14.5px">Fintech · produtos financeiros regulados</dd></div>
-<div style="display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 13px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><dt style="color: #6b6152; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase">Formação</dt><dd style="font-size: 14.5px">Economia · UFSC</dd></div>
-<div style="display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 13px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><dt style="color: #6b6152; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase">Idiomas</dt><dd style="font-size: 14.5px">Português · Inglês</dd></div>
-</dl>
-</div>
-</section>
+<main>
+  <section class="wrap" id="wrap" aria-label="Abertura">
+    <div class="stage">
+      <canvas id="gl" aria-label="Fita de vidro que se transforma na palavra DESIGN conforme a rolagem" role="img"></canvas>
+      <div class="hud">
+        <span class="hint" id="hint">Role para baixo</span>
+        <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+      </div>
+    </div>
+  </section>
 
-<section id="carta" style="padding: 88px 0; border-bottom: 1px solid rgba(22,19,15,.07)">
-<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
-<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">01</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Por que design</h2></div>
-<div style="display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-start; margin-top: 14px">
-<div style="flex: 3 1 460px; min-width: 0; max-width: 64ch; display: flex; flex-direction: column; gap: 22px; font-size: 16.5px; font-weight: 300; color: #443c31">
-<p style="text-wrap: pretty">Passei quase três anos dentro de produto financeiro antes de me chamar designer. Comecei como analista de produto, olhando métricas e comportamento de usuários, e essa origem mudou a forma como desenho: para mim, uma decisão de interface só está pronta quando dá para explicar o efeito dela no negócio.</p>
-<p style="text-wrap: pretty">Na Franq, trabalhei com dinheiro dos outros: contratação de planos, comissões, análise de clientes PJ, dados cadastrais. São fluxos onde um erro de copy ou uma hierarquia mal resolvida custa confiança, e às vezes custa conformidade. Aprendi a desenhar com regra, com time jurídico por perto e com desenvolvedor do lado.</p>
-<p style="text-wrap: pretty">É esse tipo de problema que quero continuar resolvendo, em escala maior: produto financeiro complexo, muita gente envolvida, decisão que precisa ser defendida com dado e com pesquisa. Perfil generalista, do discovery ao pós-entrega.</p>
-</div>
-<aside style="flex: 2 1 280px; min-width: 0; border-top: 1px solid rgba(22,19,15,.14); padding-top: 18px">
-<p style="color: #1f4b3f; margin-bottom: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase">Onde eu encaixo</p>
-<ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 14.5px; color: #443c31; font-weight: 300">
-<li style="display: flex; gap: 11px; align-items: baseline"><span style="flex: none; width: 9px; height: 1px; background: #1f4b3f; transform: translateY(-4px)"></span><span>Concepção de produto de ponta a ponta, em um segmento de negócio ou canal</span></li>
-<li style="display: flex; gap: 11px; align-items: baseline"><span style="flex: none; width: 9px; height: 1px; background: #1f4b3f; transform: translateY(-4px)"></span><span>Descoberta e definição estratégica junto a negócio e produto</span></li>
-<li style="display: flex; gap: 11px; align-items: baseline"><span style="flex: none; width: 9px; height: 1px; background: #1f4b3f; transform: translateY(-4px)"></span><span>Construção, prototipação e disponibilização com engenharia</span></li>
-<li style="display: flex; gap: 11px; align-items: baseline"><span style="flex: none; width: 9px; height: 1px; background: #1f4b3f; transform: translateY(-4px)"></span><span>Acompanhamento de resultado depois do go-live</span></li>
-<li style="display: flex; gap: 11px; align-items: baseline"><span style="flex: none; width: 9px; height: 1px; background: #1f4b3f; transform: translateY(-4px)"></span><span>Leitura de dados e métricas sem depender de tradutor</span></li>
-</ul>
-</aside>
-</div>
-</div>
-</section>
+  <section class="band hello" aria-labelledby="hello-titulo">
+    <div class="glint-line"></div>
+    <div class="hello-grid">
+      <div class="hello-id">
+        <span class="eyebrow">Product Designer · perfil generalista · ponta a ponta</span>
+        <h2 id="hello-titulo">Heloise Demétrio,<br><em>Product Designer</em></h2>
+        <i aria-hidden="true"></i>
+      </div>
+      <div class="hello-text">
+        <p>Sou Economista, formada na Universidade Federal de Santa Catarina, e Designer, atuo há seis anos na área de produtos, sou especialista em produtos financeiros. Meu trabalho começa antes de desenhar uma tela, passando pelo processo de descoberta, definição estratégica, construção, disponibilização para o time e acompanhamento dos resultados.</p>
+        <blockquote>Hoje enxergo o design não como estética, mas como tradução: traduzir necessidades de negócio, dados e comportamento humano em interfaces que fazem sentido para quem usa. Vejo produto por três ângulos diferentes: <span>dados, conteúdo e interface.</span></blockquote>
+      </div>
+    </div>
+  </section>
 
-<section id="processo" style="padding: 88px 0; border-bottom: 1px solid rgba(22,19,15,.07)">
-<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
-<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">02</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Como eu trabalho</h2></div>
-<p style="color: #6b6152; font-size: 15px; max-width: 62ch; margin-bottom: 52px; font-weight: 300">Cinco etapas. Nenhuma delas é minha sozinha, e é por isso que funciona.</p>
-<ol style="list-style: none; border-top: 1px solid rgba(22,19,15,.14)">
-<li style="display: flex; flex-wrap: wrap; gap: 18px 32px; padding: 26px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: flex-start"><span style="flex: 0 0 64px; font-family: 'Instrument Serif', serif; font-size: 32px; line-height: 1; color: #1f4b3f; opacity: .65">01</span><div style="flex: 1 1 400px; min-width: 0"><h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21.5px; line-height: 1.2">Descoberta</h3><p style="margin-top: 8px; font-size: 15px; font-weight: 300; color: #443c31; max-width: 62ch; text-wrap: pretty">Entendo o problema antes de aceitar o pedido. Desk research, dados de uso, conversa com quem atende o cliente e entrevistas quando a dúvida é de comportamento.</p><p style="margin-top: 12px; color: #6b6152; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase">Com negócio, dados e atendimento</p></div></li>
-<li style="display: flex; flex-wrap: wrap; gap: 18px 32px; padding: 26px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: flex-start"><span style="flex: 0 0 64px; font-family: 'Instrument Serif', serif; font-size: 32px; line-height: 1; color: #1f4b3f; opacity: .65">02</span><div style="flex: 1 1 400px; min-width: 0"><h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21.5px; line-height: 1.2">Definição estratégica</h3><p style="margin-top: 8px; font-size: 15px; font-weight: 300; color: #443c31; max-width: 62ch; text-wrap: pretty">Transformo o achado em recorte: qual usuário, qual momento da jornada, qual métrica move. É aqui que a maior parte do escopo é cortada.</p><p style="margin-top: 12px; color: #6b6152; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase">Com produto e liderança</p></div></li>
-<li style="display: flex; flex-wrap: wrap; gap: 18px 32px; padding: 26px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: flex-start"><span style="flex: 0 0 64px; font-family: 'Instrument Serif', serif; font-size: 32px; line-height: 1; color: #1f4b3f; opacity: .65">03</span><div style="flex: 1 1 400px; min-width: 0"><h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21.5px; line-height: 1.2">Construção</h3><p style="margin-top: 8px; font-size: 15px; font-weight: 300; color: #443c31; max-width: 62ch; text-wrap: pretty">Arquitetura de informação, fluxos, protótipo de alta fidelidade em cima do design system. Testo com usuário antes de passar para dev.</p><p style="margin-top: 12px; color: #6b6152; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase">Com design system e pesquisa</p></div></li>
-<li style="display: flex; flex-wrap: wrap; gap: 18px 32px; padding: 26px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: flex-start"><span style="flex: 0 0 64px; font-family: 'Instrument Serif', serif; font-size: 32px; line-height: 1; color: #1f4b3f; opacity: .65">04</span><div style="flex: 1 1 400px; min-width: 0"><h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21.5px; line-height: 1.2">Disponibilização</h3><p style="margin-top: 8px; font-size: 15px; font-weight: 300; color: #443c31; max-width: 62ch; text-wrap: pretty">Acompanho a implementação componente por componente, reviso em ambiente de teste e resolvo os casos de borda que só aparecem no código.</p><p style="margin-top: 12px; color: #6b6152; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase">Com engenharia e QA</p></div></li>
-<li style="display: flex; flex-wrap: wrap; gap: 18px 32px; padding: 26px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: flex-start"><span style="flex: 0 0 64px; font-family: 'Instrument Serif', serif; font-size: 32px; line-height: 1; color: #1f4b3f; opacity: .65">05</span><div style="flex: 1 1 400px; min-width: 0"><h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21.5px; line-height: 1.2">Resultado</h3><p style="margin-top: 8px; font-size: 15px; font-weight: 300; color: #443c31; max-width: 62ch; text-wrap: pretty">Olho os números depois do go-live e comparo com a hipótese. Se não moveu, volto para a etapa 01 com uma pergunta melhor.</p><p style="margin-top: 12px; color: #6b6152; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase">Com dados e produto</p></div></li>
-</ol>
-</div>
-</section>
+  <section class="pintro" id="projetos" aria-labelledby="pintro-titulo">
+    <div class="chip c1" data-depth="1" aria-hidden="true"><div class="bars"><i style="height:40%"></i><i style="height:70%"></i><i style="height:55%"></i><i style="height:100%"></i></div></div>
+    <div class="chip c2 far" data-depth="0.4" aria-hidden="true"><div class="swatches"><i style="background:var(--accent)"></i><i style="background:var(--warm)"></i><i style="background:var(--fg)"></i><i style="background:var(--quote)"></i></div></div>
+    <div class="chip c3" data-depth="1.2" aria-hidden="true"><div class="type">Aa <em>Aa</em><small>ROBOTO · LORA</small></div></div>
+    <div class="chip c4 far" data-depth="0.5" aria-hidden="true"><div class="toggle"></div></div>
+    <div class="chip c5" data-depth="0.9" aria-hidden="true"><svg class="spark" viewBox="0 0 120 44" fill="none"><path d="M2 36 18 30 32 33 48 20 62 24 78 12 94 16 118 4" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="118" cy="4" r="3" fill="var(--accent)"/></svg></div>
+    <div class="chip c6" data-depth="1.3" aria-hidden="true"><div class="btn-mini">Continuar<svg class="cursor" viewBox="0 0 18 18"><path d="M2 1.5v13l3.6-3.4 2.4 5.4 2.4-1-2.4-5.3H13z" fill="var(--fg)" stroke="var(--bg)" stroke-width="1.2" stroke-linejoin="round"/></svg></div></div>
+    <div class="chip c7" data-depth="0.8" aria-hidden="true"><label class="field">Nome do cliente<b>Heloise</b></label></div>
+    <div class="chip c8 far" data-depth="0.5" aria-hidden="true"><span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="m2.5 6.2 2.3 2.3 4.7-5" stroke="var(--pill-fg)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Revisado</div>
+    <div class="pintro-title">
+      <h2 id="pintro-titulo">Meus <em>projetos</em></h2>
+      <span>DADOS · CONTEÚDO · INTERFACE</span>
+    </div>
+  </section>
 
-<section id="experiencia" style="padding: 88px 0; border-bottom: 1px solid rgba(22,19,15,.07)">
-<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
-<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">03</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Experiência</h2></div>
-<p style="color: #6b6152; font-size: 15px; max-width: 62ch; margin-bottom: 52px; font-weight: 300">Cargos em ordem cronológica inversa, com as responsabilidades e as entregas de cada um.</p>
+  <section class="band projects" aria-labelledby="projetos-titulo">
+    <span class="eyebrow">PRODUTOS DIGITAIS</span>
+    <div class="proj-head">
+      <h2 id="projetos-titulo">Projetos</h2>
+      <div class="signature">
+        <i aria-hidden="true"></i>
+        <p>Desktop e mobile<br><em>interfaces.</em></p>
+      </div>
+    </div>
+    <div class="c-glint"></div>
+    <div class="proj-grid">
+      <div class="proj-col">
+        <article class="proj" style="order:1">
+          <a class="proj-media has-img" href="nexo.html" tabindex="-1" aria-hidden="true"><img src="img/nexo/dashboard.jpg" alt="" loading="lazy"></a>
+          <div class="proj-meta"><span>Produto digital · Finanças pessoais</span><span>2026</span></div>
+          <h3>Nexo</h3>
+          <p>Orçamento familiar: a casa distribui 100% da renda em seis áreas da vida e acompanha o plano durante o mês.</p>
+          <a class="proj-link" href="nexo.html"><span aria-hidden="true">→</span>Ver projeto</a>
+        </article>
+        <article class="proj" style="order:3">
+          <a class="proj-media has-img" href="islandhub.html" tabindex="-1" aria-hidden="true"><img src="img/islandhub/islandhub_site-home.jpg" alt="" loading="lazy"></a>
+          <div class="proj-meta"><span>Marketplace · E-commerce</span><span>2025 a hoje</span></div>
+          <h3>IslandHub</h3>
+          <p>Um marketplace feito para as Ilhas Cayman: compra e venda, lojas, promoções e agendamento de serviços, desenhado de ponta a ponta.</p>
+          <a class="proj-link" href="islandhub.html"><span aria-hidden="true">→</span>Ver projeto</a>
+        </article>
+      </div>
+      <div class="proj-col">
+        <article class="proj" style="order:2">
+          <a class="proj-media has-img" href="franq.html" tabindex="-1" aria-hidden="true"><img src="img/franq/ficha-pj_nova-01-visao360.jpg" alt="" loading="lazy"></a>
+          <div class="proj-meta"><span>Fintech · B2B</span><span>2020 a 2026</span></div>
+          <h3>Projetos Franq</h3>
+          <p>Quatro produtos para Personal Bankers: ficha do cliente PJ, gestão de comissões, contratação de planos e Franq Educação.</p>
+          <a class="proj-link" href="franq.html"><span aria-hidden="true">→</span>Ver projeto</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<article style="display: flex; flex-wrap: wrap; gap: 14px 40px; padding: 36px 0; border-top: 1px solid rgba(22,19,15,.14)">
-<p style="flex: 0 0 190px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .06em; color: #6b6152; line-height: 1.9"><strong style="display: block; color: #1f4b3f; font-weight: 500">jun/2023 a set/2026</strong>3 anos</p>
-<div style="flex: 1 1 480px; min-width: 0">
-<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 24px; line-height: 1.2">UX Designer,<span style="color: #6b6152"> Franq</span></h3>
-<p style="margin-top: 12px; color: #443c31; font-weight: 300; max-width: 66ch; text-wrap: pretty">Conduzi projetos do discovery à entrega: pesquisa, benchmarking, fluxos e protótipos de alta fidelidade, acompanhando a implementação lado a lado com PMs e desenvolvedores.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">UX Research</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">UI Design</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Figma</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Design System</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Produto regulado</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">IA aplicada</span>
-</div>
-<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 24px">
-<div style="border-left: 2px solid #1f4b3f; padding: 2px 0 2px 18px"><h4 style="font-size: 14.7px; font-weight: 600">Design System da Franq</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px; max-width: 64ch">Manutenção e evolução dos componentes e tokens, garantindo consistência entre web e mobile e reduzindo retrabalho entre design e desenvolvimento.</p></div>
-<div style="border-left: 2px solid #1f4b3f; padding: 2px 0 2px 18px"><h4 style="font-size: 14.7px; font-weight: 600">Fluxos financeiros com regra e conformidade</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px; max-width: 64ch">Contratação de planos, comissionamento e dados cadastrais de PJ: desenhei dentro de restrições regulatórias e de política interna, validando termos, avisos e estados de erro com negócio e jurídico.</p></div>
-<div style="border-left: 2px solid #1f4b3f; padding: 2px 0 2px 18px"><h4 style="font-size: 14.7px; font-weight: 600">Pesquisa e validação com usuários</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px; max-width: 64ch">Entrevistas e testes que orientaram decisões de produto em fluxos de contratação, comissões e análise de clientes.</p></div>
-<div style="border-left: 2px solid #1f4b3f; padding: 2px 0 2px 18px"><h4 style="font-size: 14.7px; font-weight: 600">IA no processo de design</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px; max-width: 64ch">Uso de IA para acelerar benchmarks, explorar alternativas de fluxo e refinar microcopy antes dos testes com usuários.</p></div>
-</div>
-</div>
-</article>
+  <section class="band exp" id="experiencia" aria-labelledby="experiencia-titulo">
+    <span class="eyebrow">TRAJETÓRIA PROFISSIONAL</span>
+    <h2 id="experiencia-titulo">Experiência</h2>
+    <p class="lead">Cargos em ordem cronológica inversa, com as responsabilidades e as entregas de cada um.</p>
+    <div class="c-glint"></div>
 
-<article style="display: flex; flex-wrap: wrap; gap: 14px 40px; padding: 36px 0; border-top: 1px solid rgba(22,19,15,.14)">
-<p style="flex: 0 0 190px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .06em; color: #6b6152; line-height: 1.9"><strong style="display: block; color: #1f4b3f; font-weight: 500">nov/2022 a nov/2023</strong></p>
-<div style="flex: 1 1 480px; min-width: 0">
-<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 24px; line-height: 1.2">Designer Educacional,<span style="color: #6b6152"> Franq</span></h3>
-<p style="margin-top: 12px; color: #443c31; font-weight: 300; max-width: 66ch; text-wrap: pretty">A ponte entre os números e o design: transformei temas complexos em jornadas de aprendizagem claras, com UX writing cuidadoso. Foi nesse papel que descobri meu interesse genuíno por interface e comportamento do usuário.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">UX Writing</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Design instrucional</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Linguagem simples</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">SendGrid</span>
-</div>
-<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 24px">
-<div style="border-left: 2px solid #1f4b3f; padding: 2px 0 2px 18px"><h4 style="font-size: 14.7px; font-weight: 600">Trilhas de aprendizagem</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px; max-width: 64ch">Estruturação de conteúdos financeiros densos em módulos progressivos, com linguagem acessível para o Personal Banker.</p></div>
-<div style="border-left: 2px solid #1f4b3f; padding: 2px 0 2px 18px"><h4 style="font-size: 14.7px; font-weight: 600">Comunicação por e-mail</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px; max-width: 64ch">Réguas de comunicação e materiais de apoio para sustentar o engajamento nas trilhas.</p></div>
-</div>
-</div>
-</article>
+    <div class="companies">
+      <article class="company">
+        <div class="when"><span>abr/2025 a hoje</span><b id="ih-dur">1 ano e 6 meses</b></div>
+        <div class="company-body">
+          <h3>IslandHub</h3>
+          <ol class="timeline">
+            <li class="step-role">
+              <div class="role-top"><h4>Product Designer</h4><span>abr/2025 a hoje</span></div>
+              <p class="desc">Atuo na concepção e evolução de um marketplace, conduzindo o design de produto de ponta a ponta: entendimento de problemas, definição de jornadas, arquitetura de informação, fluxos, prototipação e evolução da interface, em parceria com produto e desenvolvimento.</p>
+              <ul class="tags"><li>Product Design</li><li>UX/UI Design</li><li>Figma</li><li>Marketplace</li><li>Design System</li><li>Jornadas B2B e B2C</li><li>Produtos transacionais</li></ul>
+              <div class="highlights">
+                <div><h5>Experiência de compra e venda em marketplace</h5><p>Desenho de jornadas que conectam compradores e vendedores, contemplando descoberta de produtos, ofertas, negociação, checkout, pagamentos e acompanhamento de pedidos. Estruturei experiências para tornar transações complexas mais claras, intuitivas e seguras.</p></div>
+                <div><h5>Gestão de pedidos e regras de negócio</h5><p>Estruturação de fluxos e estados de pedidos, considerando diferentes cenários de compra, múltiplos vendedores, pagamentos, cancelamentos, reembolsos e entregas. Tradução de regras operacionais em experiências consistentes para cada perfil de usuário.</p></div>
+                <div><h5>Agendamento e contratação de serviços</h5><p>Concepção de jornadas para contratação e gestão de serviços, incluindo agendamentos, orçamentos personalizados, aprovação de valores, reagendamentos e pagamentos. Desenvolvimento de soluções adaptadas às particularidades de diferentes categorias de serviços.</p></div>
+                <div><h5>Experiência do vendedor e gestão operacional</h5><p>Desenvolvimento de experiências para vendedores e prestadores de serviços, contemplando gestão de anúncios, pedidos, agendamentos, desempenho de vendas e acompanhamento financeiro, equilibrando necessidades operacionais e objetivos de negócio.</p></div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </article>
 
-<article style="display: flex; flex-wrap: wrap; gap: 14px 40px; padding: 36px 0; border-top: 1px solid rgba(22,19,15,.14)">
-<p style="flex: 0 0 190px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .06em; color: #6b6152; line-height: 1.9"><strong style="display: block; color: #1f4b3f; font-weight: 500">set/2020 a nov/2022</strong></p>
-<div style="flex: 1 1 480px; min-width: 0">
-<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 24px; line-height: 1.2">Analista de Produto,<span style="color: #6b6152"> Franq</span></h3>
-<p style="margin-top: 12px; color: #443c31; font-weight: 300; max-width: 66ch; text-wrap: pretty">Dois anos analisando métricas de produto e comportamento de usuários, gerando insights para roadmap e priorização junto ao time de produto, a visão sistêmica que, mais tarde, me trouxe até o design.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Análise de dados</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Métricas de produto</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Priorização</span>
-</div>
-</div>
-</article>
+      <article class="company">
+        <div class="when"><span>set/2020 a set/2026</span><b>6 anos</b></div>
+        <div class="company-body">
+          <h3>Franq</h3>
+          <ol class="timeline">
+            <li class="step-role">
+              <div class="role-top"><h4>UX Designer</h4><span>jun/2023 a set/2026</span></div>
+              <p class="desc">Conduzi projetos do discovery à entrega: pesquisa, benchmarking, fluxos e protótipos de alta fidelidade, acompanhando a implementação lado a lado com PMs e desenvolvedores.</p>
+              <ul class="tags"><li>UX Research</li><li>UI Design</li><li>Figma</li><li>Design System</li><li>Produto regulado</li><li>IA aplicada</li></ul>
+              <div class="highlights">
+                <div><h5>Design System da Franq</h5><p>Manutenção e evolução dos componentes e tokens, garantindo consistência entre web e mobile e reduzindo retrabalho entre design e desenvolvimento.</p></div>
+                <div><h5>Fluxos financeiros com regra e conformidade</h5><p>Contratação de planos, comissionamento e dados cadastrais de PJ: desenhei dentro de restrições regulatórias e de política interna, validando termos, avisos e estados de erro com negócio e jurídico.</p></div>
+                <div><h5>Pesquisa e validação com usuários</h5><p>Entrevistas e testes que orientaram decisões de produto em fluxos de contratação, comissões e análise de clientes.</p></div>
+                <div><h5>IA no processo de design</h5><p>Uso de IA para acelerar benchmarks, explorar alternativas de fluxo e refinar microcopy antes dos testes com usuários.</p></div>
+              </div>
+            </li>
+            <li class="step-role">
+              <div class="role-top"><h4>Designer Educacional</h4><span>nov/2022 a nov/2023</span></div>
+              <p class="desc">A ponte entre os números e o design: transformei temas complexos em jornadas de aprendizagem claras, com UX writing cuidadoso. Foi nesse papel que descobri meu interesse genuíno por interface e comportamento do usuário.</p>
+              <ul class="tags"><li>UX Writing</li><li>Design instrucional</li><li>Linguagem simples</li><li>SendGrid</li></ul>
+              <div class="highlights">
+                <div><h5>Trilhas de aprendizagem</h5><p>Estruturação de conteúdos financeiros densos em módulos progressivos, com linguagem acessível para o Personal Banker.</p></div>
+                <div><h5>Comunicação por e-mail</h5><p>Réguas de comunicação e materiais de apoio para sustentar o engajamento nas trilhas.</p></div>
+              </div>
+            </li>
+            <li class="step-role">
+              <div class="role-top"><h4>Analista de Produto</h4><span>set/2020 a nov/2022</span></div>
+              <p class="desc">Dois anos analisando métricas de produto e comportamento de usuários, gerando insights para roadmap e priorização junto ao time de produto, a visão sistêmica que, mais tarde, me trouxe até o design.</p>
+              <ul class="tags"><li>Análise de dados</li><li>Métricas de produto</li><li>Priorização</li></ul>
+            </li>
+          </ol>
+        </div>
+      </article>
 
-<article style="display: flex; flex-wrap: wrap; gap: 14px 40px; padding: 36px 0; border-top: 1px solid rgba(22,19,15,.14)">
-<p style="flex: 0 0 190px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .06em; color: #6b6152; line-height: 1.9"><strong style="display: block; color: #1f4b3f; font-weight: 500">Freelance</strong></p>
-<div style="flex: 1 1 480px; min-width: 0">
-<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 24px; line-height: 1.2">Natural Extremo <span style="color: #6b6152">· IslandHub</span></h3>
-<p style="margin-top: 12px; color: #443c31; font-weight: 300; max-width: 66ch; text-wrap: pretty">Projetos de redesign e idealização de produtos digitais para e-commerce e marketplace, aplicando o mesmo processo de descoberta, prototipação e entrega.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">E-commerce</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Marketplace</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .1em; text-transform: uppercase; color: #443c31; border: 1px solid rgba(22,19,15,.14); border-radius: 2px; padding: 4px 9px; background: #eae5da">Zero a um</span>
-</div>
-</div>
-</article>
+    </div>
+  </section>
 
-<div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(22,19,15,.14)">
-<p style="color: #1f4b3f; margin-bottom: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase">Como eu trabalho em time</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 26px 48px">
-<div><h4 style="font-size: 15px; font-weight: 600">Com engenharia</h4><p style="margin-top: 6px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Entrego em componentes do design system, não em telas soltas. Especifico estados, erros e limites de dado, e reviso a implementação antes do release.</p></div>
-<div><h4 style="font-size: 15px; font-weight: 600">Com produto</h4><p style="margin-top: 6px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Participo da priorização com evidência: o que a pesquisa disse, o que o dado mostra, o que dá para cortar sem perder o valor.</p></div>
-<div><h4 style="font-size: 15px; font-weight: 600">Com negócio e jurídico</h4><p style="margin-top: 6px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Levo o fluxo para validação cedo. Termos, avisos obrigatórios e regras de elegibilidade entram no desenho, não depois dele.</p></div>
-<div><h4 style="font-size: 15px; font-weight: 600">Com atendimento</h4><p style="margin-top: 6px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Uso os tickets como fonte de pesquisa contínua: é onde o atrito aparece primeiro e mais barato.</p></div>
-</div>
-</div>
-</div>
-</section>
+  <section class="band skills" id="competencias" aria-labelledby="competencias-titulo">
+    <span class="eyebrow">REPERTÓRIO PROFISSIONAL</span>
+    <div class="skills-head">
+      <h2 id="competencias-titulo">Competências</h2>
+      <div class="signature">
+        <i aria-hidden="true"></i>
+        <p>Dados, conteúdo<br>e <em>interface.</em></p>
+      </div>
+    </div>
+    <div class="c-glint"></div>
 
-<section id="projetos" style="padding: 88px 0; border-bottom: 1px solid rgba(22,19,15,.07)">
-<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
-<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">04</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Projetos</h2></div>
-<p style="color: #6b6152; font-size: 15px; max-width: 62ch; margin-bottom: 52px; font-weight: 300">Casos de fintech, edtech e marketplace. Cada projeto abre em um estudo de caso com contexto, processo e resultado.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 18px">
+    <div class="skills-end">
+      <div class="skill"><span class="n">01</span><h3>Visão de negócio</h3><p>Conecto objetivos de negócio às necessidades dos usuários, considerando métricas, conversão, retenção e eficiência operacional para criar soluções que geram valor para o negócio e para as pessoas.</p></div>
+      <div class="skill"><span class="n">02</span><h3>Pesquisa e testes com usuários</h3><p>Investigo comportamentos, necessidades e dificuldades por meio de pesquisas qualitativas e quantitativas, entrevistas, análise de dados e testes de usabilidade. Transformo aprendizados em oportunidades de melhoria e decisões de produto.</p></div>
+      <div class="skill"><span class="n">03</span><h3>Arquitetura da informação</h3><p>Organizo conteúdos, funcionalidades e fluxos para tornar produtos digitais mais intuitivos e eficientes. Estruturo hierarquias, jornadas e navegação, reduzindo a complexidade e facilitando a compreensão das experiências.</p></div>
+      <div class="skill"><span class="n">04</span><h3>Prototipação</h3><p>Transformo conceitos em experiências tangíveis, desde wireframes e fluxos iniciais até protótipos funcionais e navegáveis. Utilizo a prototipação para explorar soluções, validar hipóteses e antecipar problemas antes do desenvolvimento.</p></div>
+      <div class="skill"><span class="n">05</span><h3>Design System</h3><p>Crio, mantenho e evoluo sistemas de design, garantindo consistência visual e funcional entre plataformas. Trabalho com componentes reutilizáveis, documentação, padrões de interface e tokens para dar escala e eficiência ao desenvolvimento de produtos.</p></div>
+      <div class="skill"><span class="n">06</span><h3>Design de conteúdo</h3><p>Utilizo linguagem clara, objetiva e acessível para orientar usuários ao longo das experiências digitais. Estruturo rótulos, mensagens, instruções e estados de interface considerando contexto, intenção e compreensão, tornando interações mais naturais.</p></div>
+      <div class="skill"><span class="n">07</span><h3>Product Discovery e estratégia</h3><p>Conduzo etapas de descoberta para identificar problemas, oportunidades e necessidades dos usuários. Conecto pesquisa, dados e objetivos de negócio para definir prioridades, levantar hipóteses e orientar decisões sobre a evolução do produto.</p></div>
+      <div class="glint-line"></div>
+      <div class="skill ai"><span class="n">08</span><h3>Inteligência artificial<br>aplicada ao <em>design</em></h3><p>Integro ferramentas de IA ao processo de design para ampliar possibilidades, acelerar etapas de criação e experimentação e otimizar entregas. Utilizo IA como aliada na pesquisa, ideação, prototipação e validação, mantendo o pensamento crítico e a tomada de decisão centrados na experiência do usuário.</p></div>
+    </div>
+  </section>
 
-<a class="proj" href="ficha-pj.html" style="color: #16130f; display: flex; flex-direction: column; gap: 12px; padding: 26px; background: #fbf9f5; border: 1px solid rgba(22,19,15,.14); border-radius: 3px">
-<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .14em; text-transform: uppercase; color: #1f4b3f">UX · UI · Fintech</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; color: #6b6152">01</span></div>
-<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21px; line-height: 1.18">Uma Nova Experiência para a Ficha do cliente PJ</h3>
-<p style="font-size: 14px; color: #443c31; font-weight: 300; flex: 1; text-wrap: pretty">Reestruturação da visualização de dados do cliente para tornar a análise mais orientada à venda.</p>
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(22,19,15,.07)"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #6b6152">Franq</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #1f4b3f">Ver caso →</span></div>
-</a>
+  <section class="band contact" id="contato" aria-labelledby="contato-titulo">
+    <span class="eyebrow">CONTATO</span>
+    <h2 id="contato-titulo">Vamos <em>conversar</em></h2>
+    <p class="lead">E-mail é o caminho mais rápido para uma resposta. Estou aberta a oportunidades em produto, projetos freelance e conversas sobre design em produtos complexos.</p>
+    <div class="c-glint"></div>
 
-<a class="proj" href="comissoes.html" style="color: #16130f; display: flex; flex-direction: column; gap: 12px; padding: 26px; background: #fbf9f5; border: 1px solid rgba(22,19,15,.14); border-radius: 3px">
-<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .14em; text-transform: uppercase; color: #1f4b3f">UX · UI · B2B SaaS</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; color: #6b6152">02</span></div>
-<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21px; line-height: 1.18">Nova Experiência para Gestão de Comissões</h3>
-<p style="font-size: 14px; color: #443c31; font-weight: 300; flex: 1; text-wrap: pretty">Redesign da visualização de ganhos, melhorando leitura, organização e entendimento dos pagamentos.</p>
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(22,19,15,.07)"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #6b6152">Franq</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #1f4b3f">Ver caso →</span></div>
-</a>
+    <div class="email-row">
+      <div>
+        <span class="c-label">E-mail</span>
+        <a class="email" id="email" href="mailto:heloise.prudencio@gmail.com">heloise.prudencio@gmail.com</a>
+      </div>
+      <button class="copy" id="copy" type="button">
+        <span id="copy-label">Clique para copiar</span>
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5"/><path d="M10.5 3.5v-.5A1.5 1.5 0 0 0 9 1.5H4A1.5 1.5 0 0 0 2.5 3v5A1.5 1.5 0 0 0 4 9.5h.5"/></svg>
+      </button>
+    </div>
 
-<a class="proj" href="planos.html" style="color: #16130f; display: flex; flex-direction: column; gap: 12px; padding: 26px; background: #fbf9f5; border: 1px solid rgba(22,19,15,.14); border-radius: 3px">
-<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .14em; text-transform: uppercase; color: #1f4b3f">UX Research · Service Design</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; color: #6b6152">03</span></div>
-<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21px; line-height: 1.18">Experiência de Contratação de Planos</h3>
-<p style="font-size: 14px; color: #443c31; font-weight: 300; flex: 1; text-wrap: pretty">Pesquisa com usuários e concepção de uma nova página de planos para simplificar a escolha e apoiar a decisão de contratação.</p>
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(22,19,15,.07)"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #6b6152">Franq</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #1f4b3f">Ver caso →</span></div>
-</a>
+    <div class="channels">
+      <div class="channel">
+        <div class="row">
+          <span class="c-label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/heloise-dem%C3%A9trio-prudencio-855693175/" target="_blank" rel="noopener">Abrir perfil <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 8 8 2M3.5 2H8v4.5"/></svg></a>
+        </div>
+        <span class="value">heloise-demétrio-prudencio</span>
+      </div>
+      <div class="channel">
+        <div class="row">
+          <span class="c-label">WhatsApp</span>
+          <a href="https://wa.me/5548999327699" target="_blank" rel="noopener">Enviar mensagem <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 8 8 2M3.5 2H8v4.5"/></svg></a>
+        </div>
+        <span class="value">+55 48 9 9932 7699</span>
+      </div>
+    </div>
 
-<a class="proj" href="lms-educacao.html" style="color: #16130f; display: flex; flex-direction: column; gap: 12px; padding: 26px; background: #fbf9f5; border: 1px solid rgba(22,19,15,.14); border-radius: 3px">
-<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .14em; text-transform: uppercase; color: #1f4b3f">UX · Mobile App · Edtech</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; color: #6b6152">04</span></div>
-<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21px; line-height: 1.18">Sistema LMS de Educação</h3>
-<p style="font-size: 14px; color: #443c31; font-weight: 300; flex: 1; text-wrap: pretty">Design de ponta a ponta da agenda de eventos e trilhas de aprendizagem no app do Personal Banker.</p>
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(22,19,15,.07)"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #6b6152">Franq</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #1f4b3f">Ver caso →</span></div>
-</a>
-<a class="proj" href="islandhub.html" style="color: #16130f; display: flex; flex-direction: column; gap: 12px; padding: 26px; background: #fbf9f5; border: 1px solid rgba(22,19,15,.14); border-radius: 3px">
-<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .14em; text-transform: uppercase; color: #1f4b3f">UX · UI · Marketplace</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; color: #6b6152">05</span></div>
-<h3 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21px; line-height: 1.18">Idealização Completa de Marketplace</h3>
-<p style="font-size: 14px; color: #443c31; font-weight: 300; flex: 1; text-wrap: pretty">Concepção do zero de um marketplace: pesquisa, arquitetura de informação, protótipos.</p>
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(22,19,15,.07)"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #6b6152">IslandHub</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #1f4b3f">Ver caso →</span></div>
-</a>
+    <div class="c-foot"><span>DADOS · CONTEÚDO · INTERFACE</span><span>CONTATO</span></div>
+  </section>
+</main>
 
-</div>
-</div>
-</section>
+<script>
+// Peças flutuantes: profundidade com o ponteiro e com a rolagem (as mais próximas andam mais)
+(() => {
+  const sec = document.getElementById("projetos");
+  const items = [...sec.querySelectorAll(".chip")].map((el) => ({ el, d: +el.dataset.depth || 1 }));
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    items.forEach(({ el }) => [...el.children].forEach((c) => (c.style.animation = "none")));
+    return;
+  }
+  let raf = 0, px = 0, py = 0;
+  const update = () => {
+    raf = 0;
+    const r = sec.getBoundingClientRect();
+    const mid = Math.max(-innerHeight, Math.min(innerHeight, r.top + r.height / 2 - innerHeight / 2));
+    items.forEach(({ el, d }) => {
+      el.style.setProperty("--py", (mid * 0.1 * d).toFixed(1) + "px");
+      el.style.setProperty("--mx", (px * 18 * d).toFixed(1) + "px");
+      el.style.setProperty("--my", (py * 14 * d).toFixed(1) + "px");
+    });
+  };
+  const ask = () => raf || (raf = requestAnimationFrame(update));
+  addEventListener("scroll", ask, { passive: true });
+  sec.addEventListener("pointermove", (e) => {
+    px = e.clientX / innerWidth - 0.5;
+    py = e.clientY / innerHeight - 0.5;
+    ask();
+  });
+  update();
+})();
 
-<section id="skills" style="padding: 88px 0; border-bottom: 1px solid rgba(22,19,15,.07)">
-<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
-<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">05</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Competências</h2></div>
-<p style="color: #6b6152; font-size: 15px; max-width: 62ch; margin-bottom: 44px; font-weight: 300">Cada competência com o lugar do portfólio onde ela aparece na prática.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px"><div style="display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid rgba(22,19,15,.14); border-radius: 4px; background: #fbf9f5"><h3 style="font-size: 17px; font-weight: 600">Visão de negócio</h3><p style="font-size: 14.5px; line-height: 1.65; font-weight: 300; color: #443c31; text-wrap: pretty">Economista e dois anos como analista de produto. Nos cases, o desenho parte do problema de negócio: análise orientada à venda, chamados sobre pagamento, conversão na contratação.</p><p style="margin-top: auto; padding-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .08em; color: #6b6152">Ver em: <a href="ficha-pj.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">Ficha PJ</a> · <a href="comissoes.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">Comissões</a> · <a href="planos.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">Planos</a></p></div><div style="display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid rgba(22,19,15,.14); border-radius: 4px; background: #fbf9f5"><h3 style="font-size: 17px; font-weight: 600">Pesquisa e testes com usuários</h3><p style="font-size: 14.5px; line-height: 1.65; font-weight: 300; color: #443c31; text-wrap: pretty">Levantamento com PBs e CSs, análise de queixas e de uso, protótipo funcional testado com usuários antes do código, personas e mapa de empatia.</p><p style="margin-top: auto; padding-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .08em; color: #6b6152">Ver em: <a href="ficha-pj.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">Ficha PJ</a> · <a href="comissoes.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">Comissões</a> · <a href="planos.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">Planos</a> · <a href="islandhub.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">IslandHub</a></p></div><div style="display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid rgba(22,19,15,.14); border-radius: 4px; background: #fbf9f5"><h3 style="font-size: 17px; font-weight: 600">Arquitetura da informação</h3><p style="font-size: 14.5px; line-height: 1.65; font-weight: 300; color: #443c31; text-wrap: pretty">Ficha reorganizada em cinco abas, uma por pergunta do PB; capacitação unificada em web e mobile; marketplace estruturado em cinco áreas.</p><p style="margin-top: auto; padding-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .08em; color: #6b6152">Ver em: <a href="ficha-pj.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">Ficha PJ</a> · <a href="lms-educacao.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">LMS Educação</a> · <a href="islandhub.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">IslandHub</a></p></div><div style="display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid rgba(22,19,15,.14); border-radius: 4px; background: #fbf9f5"><h3 style="font-size: 17px; font-weight: 600">Prototipação</h3><p style="font-size: 14.5px; line-height: 1.65; font-weight: 300; color: #443c31; text-wrap: pretty">Do wireframe que valida hierarquia ao protótipo funcional navegável, construído com apoio de IA e colocado nas mãos de usuários.</p><p style="margin-top: auto; padding-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .08em; color: #6b6152">Ver em: <a href="planos.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">Planos</a> · <a href="ficha-pj.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">Ficha PJ</a> · <a href="islandhub.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">IslandHub</a></p></div><div style="display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid rgba(22,19,15,.14); border-radius: 4px; background: #fbf9f5"><h3 style="font-size: 17px; font-weight: 600">Design system</h3><p style="font-size: 14.5px; line-height: 1.65; font-weight: 300; color: #443c31; text-wrap: pretty">Manutenção e evolução do design system da Franq em web e mobile, badges de status semânticos com documentação de componentes, tokens em camadas na IslandHub.</p><p style="margin-top: auto; padding-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .08em; color: #6b6152">Ver em: <a href="comissoes.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">Comissões</a> · <a href="lms-educacao.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">LMS Educação</a> · <a href="islandhub.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">IslandHub</a></p></div><div style="display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid rgba(22,19,15,.14); border-radius: 4px; background: #fbf9f5"><h3 style="font-size: 17px; font-weight: 600">Design de conteúdo</h3><p style="font-size: 14.5px; line-height: 1.65; font-weight: 300; color: #443c31; text-wrap: pretty">Quatro anos de UX writing, dois como designer educacional. Rótulos que respondem à pergunta do usuário, status sempre com texto, jargão financeiro em linguagem simples.</p><p style="margin-top: auto; padding-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .08em; color: #6b6152">Ver em: <a href="ficha-pj.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">Ficha PJ</a> · <a href="comissoes.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">Comissões</a> · <a href="lms-educacao.html" style="color: #1f4b3f; border-bottom: 1px solid rgba(31,75,63,.35)">LMS Educação</a></p></div></div>
-<p style="margin-top: 32px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .08em; color: #443c31">Ferramentas: Figma · Miro · IA para benchmarks, protótipos e microcopy · WCAG · SendGrid</p>
-</div>
-</section>
+// Tempo na IslandHub contado de abr/2025 até o mês atual
+(() => {
+  const el = document.getElementById("ih-dur");
+  const now = new Date();
+  const m = (now.getFullYear() - 2025) * 12 + now.getMonth() - 3;
+  const y = Math.floor(m / 12), r = m % 12;
+  const parts = [];
+  if (y) parts.push(y + (y > 1 ? " anos" : " ano"));
+  if (r) parts.push(r + (r > 1 ? " meses" : " mês"));
+  if (parts.length) el.textContent = parts.join(" e ");
+})();
 
-<section id="acessibilidade" style="padding: 88px 0; border-bottom: 1px solid rgba(22,19,15,.07)">
-<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
-<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">06</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Acessibilidade e inclusão</h2></div>
-<p style="color: #6b6152; font-size: 15px; max-width: 62ch; margin-bottom: 52px; font-weight: 300">Produto financeiro é serviço essencial: se alguém não consegue usar, o problema é do design. O que eu checo em toda entrega.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); border-top: 1px solid rgba(22,19,15,.14)">
-<div style="padding: 22px 26px 24px; border-bottom: 1px solid rgba(22,19,15,.07); border-right: 1px solid rgba(22,19,15,.07)"><h4 style="font-size: 15px; font-weight: 600">Contraste e legibilidade</h4><p style="margin-top: 7px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Texto sempre acima de 4.5:1, corpo mínimo de 16px, nunca cor como único portador de informação.</p></div>
-<div style="padding: 22px 26px 24px; border-bottom: 1px solid rgba(22,19,15,.07); border-right: 1px solid rgba(22,19,15,.07)"><h4 style="font-size: 15px; font-weight: 600">Teclado e leitor de tela</h4><p style="margin-top: 7px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Ordem de foco, rótulos e mensagens de erro descritas. Fluxo financeiro precisa ser concluível sem mouse.</p></div>
-<div style="padding: 22px 26px 24px; border-bottom: 1px solid rgba(22,19,15,.07); border-right: 1px solid rgba(22,19,15,.07)"><h4 style="font-size: 15px; font-weight: 600">Linguagem simples</h4><p style="margin-top: 7px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Herança dos anos em design educacional: reescrevo jargão financeiro até caber na leitura de quem nunca investiu.</p></div>
-<div style="padding: 22px 26px 24px; border-bottom: 1px solid rgba(22,19,15,.07); border-right: 1px solid rgba(22,19,15,.07)"><h4 style="font-size: 15px; font-weight: 600">Alvos e mobile</h4><p style="margin-top: 7px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Área de toque mínima de 44px e revisão do fluxo em tela pequena, que é onde a maior parte do público está.</p></div>
-<div style="padding: 22px 26px 24px; border-bottom: 1px solid rgba(22,19,15,.07); border-right: 1px solid rgba(22,19,15,.07)"><h4 style="font-size: 15px; font-weight: 600">Diversidade na amostra</h4><p style="margin-top: 7px; font-size: 14px; font-weight: 300; color: #443c31; text-wrap: pretty">Recrutamento de pesquisa variado em idade, renda e familiaridade digital. Usuário avançado sozinho esconde o problema.</p></div>
-</div>
-</div>
-</section>
+// Copia o e-mail; se o navegador recusar, seleciona o texto para a pessoa copiar
+(() => {
+  const btn = document.getElementById("copy");
+  const label = document.getElementById("copy-label");
+  const email = document.getElementById("email");
+  let timer;
+  const done = (text) => {
+    label.textContent = text;
+    clearTimeout(timer);
+    timer = setTimeout(() => (label.textContent = "Clique para copiar"), 2200);
+  };
+  const selectEmail = () => {
+    const r = document.createRange();
+    r.selectNodeContents(email);
+    const s = getSelection();
+    s.removeAllRanges();
+    s.addRange(r);
+    done("Selecionado, use Ctrl+C");
+  };
+  btn.addEventListener("click", () => {
+    if (!navigator.clipboard) return selectEmail();
+    navigator.clipboard.writeText(email.textContent.trim()).then(() => done("Copiado"), selectEmail);
+  });
+})();
+</script>
 
-<section id="formacao" style="padding: 88px 0; border-bottom: 1px solid rgba(22,19,15,.07)">
-<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
-<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">07</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Formação</h2></div>
-<p style="color: #6b6152; font-size: 15px; max-width: 62ch; margin-bottom: 52px; font-weight: 300">Base em economia e comportamento, especialização em design de produto.</p>
-<div style="border-top: 1px solid rgba(22,19,15,.14)">
-<div style="display: flex; flex-wrap: wrap; gap: 6px 40px; padding: 22px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><span style="flex: 0 0 190px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #6b6152; letter-spacing: .06em">Graduação</span><div style="flex: 1 1 400px; min-width: 0"><h4 style="font-size: 16px; font-weight: 600">Ciências Econômicas</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px">Universidade Federal de Santa Catarina (UFSC)</p></div></div>
-<div style="display: flex; flex-wrap: wrap; gap: 6px 40px; padding: 22px 0; border-bottom: 1px solid rgba(22,19,15,.07); align-items: baseline"><span style="flex: 0 0 190px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #6b6152; letter-spacing: .06em">Especialização</span><div style="flex: 1 1 400px; min-width: 0"><h4 style="font-size: 16px; font-weight: 600">UX/UI Design</h4><p style="font-size: 14px; color: #443c31; font-weight: 300; margin-top: 3px">Formação em design de interfaces, pesquisa com usuários e prototipação.</p></div></div>
-</div>
-</div>
-</section>
+<script type="module">
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js";
 
-<section id="contato" style="padding: 88px 0">
-<div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
-<div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 12px"><span style="color: #1f4b3f; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .18em">08</span><h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 43px); line-height: 1.1">Contato</h2></div>
-<p style="color: #6b6152; font-size: 15px; max-width: 62ch; margin-bottom: 52px; font-weight: 300">E-mail é o caminho mais rápido para uma resposta. Também estou no LinkedIn e no WhatsApp.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 14px">
-<button class="cc" type="button" data-copy-email="heloise.prudencio@gmail.com" data-copied-text="E-mail copiado" style="display: flex; flex-direction: column; gap: 6px; padding: 24px; border: 1px solid rgba(22,19,15,.14); border-radius: 3px; background: #fbf9f5; text-align: left; font-family: inherit; cursor: pointer; color: inherit">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .16em; text-transform: uppercase; color: #1f4b3f">E-mail</span>
-<span style="font-size: 14.7px; color: #16130f; word-break: break-word">heloise.prudencio@gmail.com</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.3px; letter-spacing: .1em; text-transform: uppercase; color: #6b6152" data-hint>Clique para copiar</span>
-</button>
-<a class="cc" href="https://www.linkedin.com/in/heloise-dem%C3%A9trio-prudencio-855693175/" target="_blank" rel="noopener" style="display: flex; flex-direction: column; gap: 6px; padding: 24px; border: 1px solid rgba(22,19,15,.14); border-radius: 3px; background: #fbf9f5; color: inherit">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .16em; text-transform: uppercase; color: #1f4b3f">LinkedIn</span>
-<span style="font-size: 14.7px; color: #16130f; word-break: break-word">heloise-demétrio-prudencio</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.3px; letter-spacing: .1em; text-transform: uppercase; color: #6b6152">Abrir perfil</span>
-</a>
-<a class="cc" href="https://wa.me/5548999327699" target="_blank" rel="noopener" style="display: flex; flex-direction: column; gap: 6px; padding: 24px; border: 1px solid rgba(22,19,15,.14); border-radius: 3px; background: #fbf9f5; color: inherit">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.6px; letter-spacing: .16em; text-transform: uppercase; color: #1f4b3f">WhatsApp</span>
-<span style="font-size: 14.7px; color: #16130f; word-break: break-word">+55 48 9 9932 7699</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.3px; letter-spacing: .1em; text-transform: uppercase; color: #6b6152">Enviar mensagem</span>
-</a>
-</div>
-</div>
-</section>
+const canvas = document.getElementById("gl");
+const wrap = document.getElementById("wrap");
+const barEl = document.getElementById("bar");
+const hintEl = document.getElementById("hint");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-<footer style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px)">
-<div style="padding: 30px 0 40px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; border-top: 1px solid rgba(22,19,15,.07); font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; color: #6b6152">
-<p>© 2026 Heloise Demétrio Prudencio</p>
-<p>Florianópolis · SC · BR</p>
-</div>
-</footer>
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+} catch (e) {
+  const f = document.createElement("div");
+  f.className = "fallback";
+  f.textContent = "DESIGN";
+  canvas.replaceWith(f);
+  throw e;
+}
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-</div>
-<script src="assets/site.js"></script>
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000);
+const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
+
+// Ambiente de estúdio: painéis de luz que geram os reflexos alongados do vidro
+function studio() {
+  const env = new THREE.Scene();
+  env.background = new THREE.Color(0x020306);
+  const panel = (w, h, color, k, pos, look) => {
+    const m = new THREE.Mesh(
+      new THREE.PlaneGeometry(w, h),
+      new THREE.MeshBasicMaterial({ color: new THREE.Color(color).multiplyScalar(k), side: THREE.DoubleSide })
+    );
+    m.position.set(...pos);
+    m.lookAt(...look);
+    env.add(m);
+  };
+  panel(10, 2.2, 0xffffff, 6, [0, 7, 2], [0, 0, 0]);
+  panel(1.2, 9, 0xdfe9ff, 5, [-7, 1, 3], [0, 0, 0]);
+  panel(1.2, 9, 0xdfe9ff, 4, [7, 0, 2], [0, 0, 0]);
+  panel(8, 3, 0x2f6bff, 3, [0, -6, -3], [0, 0, 0]);
+  panel(4, 4, 0x8fc2ff, 2.5, [3, 3, -7], [0, 0, 0]);
+  const pm = new THREE.PMREMGenerator(renderer);
+  const tex = pm.fromScene(env, 0.03).texture;
+  pm.dispose();
+  return tex;
+}
+scene.environment = studio();
+
+const glass = new THREE.MeshPhysicalMaterial({
+  color: 0xe6f0ff,
+  metalness: 0,
+  roughness: 0.06,
+  transmission: 1,
+  thickness: 0.35,
+  ior: 1.5,
+  attenuationColor: new THREE.Color(0x7fa6ff),
+  attenuationDistance: 0.9,
+  clearcoat: 1,
+  clearcoatRoughness: 0.04,
+  iridescence: 0.35,
+  iridescenceIOR: 1.3,
+  envMapIntensity: 2,
+});
+
+// Letras desenhadas como traços contínuos (cada traço vira um tubo de vidro)
+const arc = (cx, cy, rx, ry, a0, a1, n) => {
+  const out = [];
+  for (let i = 0; i <= n; i++) {
+    const a = ((a0 + (a1 - a0) * (i / n)) * Math.PI) / 180;
+    out.push([cx + rx * Math.cos(a), cy + ry * Math.sin(a)]);
+  }
+  return out;
+};
+const LETTERS = [
+  { w: 0.78, s: [[[0, 0], [0, 1], [0.28, 1], ...arc(0.28, 0.5, 0.5, 0.5, 90, -90, 28).slice(1), [0, 0]]] },
+  { w: 0.6, s: [[[0.6, 1], [0, 1], [0, 0], [0.6, 0]], [[0, 0.5], [0.5, 0.5]]] },
+  { w: 0.66, s: [[...arc(0.33, 0.75, 0.31, 0.25, 15, 270, 26), ...arc(0.33, 0.25, 0.33, 0.25, 90, -165, 28).slice(1)]] },
+  { w: 0, s: [[[0, 0], [0, 1]]] },
+  { w: 0.8, s: [[...arc(0.4, 0.5, 0.4, 0.5, 40, 355, 40), [0.47, 0.457]]] },
+  { w: 0.66, s: [[[0, 0], [0, 1], [0.66, 0], [0.66, 1]]] },
+];
+const GAP = 0.34;
+
+// Arredonda as quinas para o vidro dobrar em vez de quebrar
+function roundCorners(pts, r) {
+  const out = [pts[0]];
+  for (let i = 1; i < pts.length - 1; i++) {
+    const [ax, ay] = pts[i - 1], [bx, by] = pts[i], [cx, cy] = pts[i + 1];
+    const l1 = Math.hypot(bx - ax, by - ay), l2 = Math.hypot(cx - bx, cy - by);
+    const rr = Math.min(r, l1 / 2, l2 / 2);
+    const p0 = [bx - ((bx - ax) / l1) * rr, by - ((by - ay) / l1) * rr];
+    const p2 = [bx + ((cx - bx) / l2) * rr, by + ((cy - by) / l2) * rr];
+    for (let k = 0; k <= 6; k++) {
+      const t = k / 6, u = 1 - t;
+      out.push([u * u * p0[0] + 2 * u * t * bx + t * t * p2[0], u * u * p0[1] + 2 * u * t * by + t * t * p2[1]]);
+    }
+  }
+  out.push(pts[pts.length - 1]);
+  return out;
+}
+function resample(pts, n) {
+  const d = [0];
+  for (let i = 1; i < pts.length; i++) d.push(d[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+  const L = d[d.length - 1], out = [];
+  let j = 1;
+  for (let k = 0; k < n; k++) {
+    const target = (L * k) / (n - 1);
+    while (j < d.length - 1 && d[j] < target) j++;
+    const t = (target - d[j - 1]) / (d[j] - d[j - 1] || 1);
+    out.push([pts[j - 1][0] + (pts[j][0] - pts[j - 1][0]) * t, pts[j - 1][1] + (pts[j][1] - pts[j - 1][1]) * t]);
+  }
+  return { pts: out, len: L };
+}
+
+const totalW = LETTERS.reduce((a, l) => a + l.w, 0) + GAP * (LETTERS.length - 1);
+const strands = [];
+let x0 = -totalW / 2;
+LETTERS.forEach((l) => {
+  l.s.forEach((raw) => {
+    const rounded = roundCorners(raw, 0.09);
+    const first = resample(rounded, 400);
+    const n = Math.max(24, Math.round(first.len * 70));
+    const { pts, len } = resample(rounded, n);
+    strands.push({ end: pts.map(([x, y]) => new THREE.Vector3(x0 + x, y - 0.5, 0)), len, cx: x0 + l.w / 2 });
+  });
+  x0 += l.w + GAP;
+});
+
+// Estado inicial: os mesmos traços enrolados num nó (torus knot 2,3)
+const knot = (t) => {
+  const R = 1.0, r = 0.44;
+  return new THREE.Vector3(
+    (R + r * Math.cos(3 * t)) * Math.cos(2 * t),
+    (R + r * Math.cos(3 * t)) * Math.sin(2 * t),
+    r * Math.sin(3 * t) * 1.5
+  ).multiplyScalar(1.12);
+};
+const knotOrder = [0, 3, 5, 1, 6, 2, 4];
+const totalLen = strands.reduce((a, s) => a + s.len, 0);
+let acc = 0;
+const slack = 0.035;
+knotOrder.forEach((idx) => {
+  const s = strands[idx];
+  const a = (acc / totalLen) * Math.PI * 2 + slack;
+  acc += s.len;
+  const b = (acc / totalLen) * Math.PI * 2 - slack;
+  s.start = s.end.map((_, k) => knot(a + ((b - a) * k) / (s.end.length - 1)));
+});
+
+// Ordem da esquerda para a direita: cada letra se forma um pouco depois da anterior
+strands.forEach((s, i) => (s.i = i));
+const STAGGER = 0.07;
+const span = 1 - STAGGER * (strands.length - 1);
+
+const group = new THREE.Group();
+scene.add(group);
+const capGeo = new THREE.SphereGeometry(1, 20, 14);
+strands.forEach((s) => {
+  s.mesh = new THREE.Mesh(new THREE.BufferGeometry(), glass);
+  s.capA = new THREE.Mesh(capGeo, glass);
+  s.capB = new THREE.Mesh(capGeo, glass);
+  group.add(s.mesh, s.capA, s.capB);
+});
+
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const smoother = (t) => t * t * t * (t * (t * 6 - 15) + 10);
+
+function build(q) {
+  const radius = THREE.MathUtils.lerp(0.075, 0.064, smoother(q));
+  strands.forEach((s) => {
+    const t = smoother(clamp((q - s.i * STAGGER) / span));
+    const bulge = Math.sin(Math.PI * t);
+    const n = s.end.length;
+    const pts = s.end.map((e, k) => {
+      const u = k / (n - 1);
+      const p = s.start[k].clone().lerp(e, t);
+      // Desdobra: a fita se abre em ondas antes de assentar na letra
+      p.x += bulge * 0.45 * Math.sin(u * 9.4 + s.i * 1.3);
+      p.y += bulge * 0.55 * Math.cos(u * 6.3 + s.i * 1.7);
+      p.z += bulge * 1.3 * Math.sin(u * 3.1 + s.i * 0.9);
+      return p;
+    });
+    const curve = new THREE.CatmullRomCurve3(pts, false, "centripetal");
+    s.mesh.geometry.dispose();
+    s.mesh.geometry = new THREE.TubeGeometry(curve, n * 2, radius, 14, false);
+    s.capA.position.copy(pts[0]);
+    s.capB.position.copy(pts[n - 1]);
+    s.capA.scale.setScalar(radius);
+    s.capB.scale.setScalar(radius);
+  });
+}
+
+function resize() {
+  const w = canvas.clientWidth, h = canvas.clientHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  const half = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+  const fitW = (totalW / 2 + 0.5) / (half * camera.aspect);
+  const fitH = 2.7 / half;
+  camera.position.set(0, 0, Math.max(fitW, fitH));
+  camera.lookAt(0, 0, 0);
+}
+// O visualizador pode redimensionar o quadro sem disparar resize na janela
+new ResizeObserver(resize).observe(canvas);
+resize();
+
+// Rolagem com inércia; o ponteiro inclina levemente a peça
+let target = reduce ? 1 : 0, cur = target, built = -1, spin = 0.6;
+const tilt = { x: 0, y: 0, tx: 0, ty: 0 };
+function readScroll() {
+  if (reduce) return;
+  const r = wrap.getBoundingClientRect();
+  target = clamp(-r.top / (r.height - innerHeight));
+}
+addEventListener("scroll", readScroll, { passive: true });
+addEventListener("pointermove", (e) => {
+  tilt.tx = (e.clientY / innerHeight - 0.5) * 0.25;
+  tilt.ty = (e.clientX / innerWidth - 0.5) * 0.35;
+});
+readScroll();
+
+let visible = true;
+new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(wrap);
+
+let last = performance.now();
+function frame(now) {
+  requestAnimationFrame(frame);
+  const dt = Math.min(0.5, (now - last) / 1000);
+  last = now;
+  if (!visible) return;
+
+  // Lido a cada quadro: no visualizador a rolagem pode vir de outro elemento que não a janela
+  readScroll();
+  cur += (target - cur) * (reduce ? 1 : 1 - Math.exp(-dt * 6));
+  // 6% iniciais seguram o nó girando; os 8% finais seguram DESIGN
+  const q = clamp((cur - 0.06) / 0.86);
+  const e = smoother(q);
+  if (Math.abs(q - built) > 0.0004) {
+    build(q);
+    built = q;
+  }
+  if (q < 0.001 && !reduce) spin += Math.min(dt, 0.05) * 0.32;
+  const wrapped = Math.atan2(Math.sin(spin), Math.cos(spin));
+  tilt.x += (tilt.tx - tilt.x) * 0.05;
+  tilt.y += (tilt.ty - tilt.y) * 0.05;
+  group.rotation.set(THREE.MathUtils.lerp(0.55, 0.12, e) + tilt.x, THREE.MathUtils.lerp(wrapped, 0, e) + tilt.y, 0);
+  group.position.y = (1 - e) * Math.sin(now / 1400) * 0.06;
+
+  barEl.style.width = (cur * 100).toFixed(1) + "%";
+  hintEl.style.opacity = cur > 0.02 ? 0 : 1;
+
+  renderer.render(scene, camera);
+}
+requestAnimationFrame(frame);
+</script>
+
 </body>
 </html>

@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nexo · Heloise D. Prudencio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Roboto:wght@400;500;600&display=swap">
+<style>
+/* Layout: página de case em faixas (abertura, capa, visão geral, processo, solução, aprendizados), coluna de 1280px com margens de 80px */
+:root{
+  --bg:#000;
+  --fg:#f2f2ee;
+  --nav:#f3f3f3;
+  --body:#b9bec1;
+  --muted:#858e93;
+  --line:#242a2d;
+  --accent:#8bdce7;
+  --warm:#eba16b;
+  --quote:#48646d;
+  --btn-fg:#1e1e1e;
+  --white:#fff;
+  --stage:#0b0b0f;
+  --nexo-lime:#d8ff54;
+  --nexo-violet:#c575f8;
+  --sans:"Roboto",ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --serif:"Lora",Georgia,"Times New Roman",serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+img{max-width:100%;height:auto;display:block}
+p,h1,h2,h3,h4,figure{margin:0}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px}
+em{font-family:var(--serif);font-style:italic;font-weight:400}
+
+/* Cabeçalho (igual ao da home) */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:48px;min-height:60px;padding-block:12px;
+  padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.name{font-weight:500;font-size:16px;line-height:24px;letter-spacing:.15px;color:var(--nav);text-decoration:none;white-space:nowrap}
+.menu{display:flex;gap:24px}
+.menu a{font-size:14px;line-height:20px;letter-spacing:.25px;color:var(--nav);text-decoration:none}
+.menu a[aria-current]{color:var(--accent)}
+.contato{background:var(--white);color:var(--btn-fg);font-size:14px;line-height:20px;letter-spacing:.25px;text-decoration:none;padding:8px 14px;border-radius:24px;white-space:nowrap}
+@media (max-width:899px){.menu{display:none}.top{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
+
+.page{max-width:1440px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:900px){.page{padding-left:max(80px,env(safe-area-inset-left,0px));padding-right:max(80px,env(safe-area-inset-right,0px))}}
+.eyebrow{font-size:12px;letter-spacing:2px;color:var(--muted)}
+.glint{height:1px;background:linear-gradient(90deg,var(--line) 0%,#5f8c95 18%,var(--line) 48%,var(--line) 100%)}
+.back{display:inline-flex;align-items:center;gap:8px;margin-top:32px;font-size:14px;line-height:20px;letter-spacing:.25px;color:var(--body);text-decoration:none}
+.back:hover{color:var(--fg)}
+
+/* Abertura */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px 80px;align-items:end;padding-block:56px 64px}
+.hero-title{display:flex;flex-direction:column;gap:24px;min-width:0}
+.hero h1{font-weight:400;font-size:clamp(72px,11vw,168px);line-height:.86;letter-spacing:-.055em}
+.hero .tagline{font-size:clamp(26px,2.6vw,36px);line-height:1.2;letter-spacing:-.03em;color:var(--body)}
+.hero .tagline em{color:var(--fg)}
+.hero-side{display:flex;flex-direction:column;gap:32px;min-width:0}
+.lead{font-size:18px;line-height:1.7;color:var(--body);max-width:60ch}
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px;margin:0}
+.meta div{display:flex;flex-direction:column;gap:6px;padding-block:16px;border-top:1px solid var(--line)}
+.meta dt{font-size:12px;letter-spacing:1px;color:var(--muted)}
+.meta dd{margin:0;font-size:15px;line-height:1.5;color:var(--fg)}
+
+/* Capa: o produto em cena, com a paleta do próprio Nexo */
+.cover{position:relative;border-radius:20px;border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;max-width:100%;
+  background:radial-gradient(60% 70% at 78% 30%,rgba(197,117,248,.22),transparent 70%),radial-gradient(45% 55% at 12% 90%,rgba(216,255,84,.12),transparent 70%),var(--stage)}
+/* Mockups: MacBook e iPhone desenhados em CSS, medidos pela largura do próprio aparelho */
+.macbook{container-type:inline-size;width:100%}
+.mb-lid{position:relative;width:86cqw;margin:0 auto;padding:1.9cqw 1.9cqw 2.4cqw;border-radius:3.4cqw 3.4cqw .8cqw .8cqw;background:#0a0a0c;
+  box-shadow:inset 0 0 0 .22cqw #3d3e43,0 0 0 .3cqw #1f2023}
+.mb-cam{position:absolute;top:0;left:50%;width:9cqw;height:1.5cqw;margin-left:-4.5cqw;border-radius:0 0 .9cqw .9cqw;background:#0a0a0c;z-index:2}
+.mb-screen{aspect-ratio:16/10;overflow:hidden;border-radius:.5cqw;background:#181818}
+.mb-screen img{width:100%;height:100%;object-fit:cover;object-position:top left}
+.mb-base{position:relative;height:2.5cqw;border-radius:.4cqw .4cqw 2.6cqw 2.6cqw / .4cqw .4cqw 2.2cqw 2.2cqw;
+  background:linear-gradient(180deg,#77787d 0%,#4b4c51 22%,#2b2c30 70%,#17181a 100%);box-shadow:0 3cqw 5cqw rgba(0,0,0,.55)}
+.mb-base::before{content:"";position:absolute;top:0;left:50%;width:15cqw;height:.9cqw;margin-left:-7.5cqw;border-radius:0 0 1cqw 1cqw;background:linear-gradient(#2a2b2f,#3d3e43)}
+.iphone{container-type:inline-size;position:relative;width:100%}
+.iphone .body{position:relative;padding:3.6cqw;border-radius:17cqw;
+  background:linear-gradient(150deg,#55565b 0%,#2b2c30 30%,#1a1b1e 60%,#45464b 100%);
+  box-shadow:inset 0 0 0 .5cqw #77787d,inset 0 0 0 1.6cqw #0b0b0c,0 9cqw 18cqw rgba(0,0,0,.6)}
+.iphone .screen{position:relative;aspect-ratio:390/844;overflow:hidden;border-radius:13.4cqw;background:#181818}
+.iphone .screen img{width:100%;height:100%;object-fit:cover;display:block}
+.iphone .island{position:absolute;top:6.4cqw;left:50%;width:27cqw;height:8cqw;margin-left:-13.5cqw;border-radius:99px;background:#000;z-index:3}
+.iphone .sb{position:absolute;top:3.6cqw;left:3.6cqw;right:3.6cqw;height:12.8cqw;display:flex;align-items:center;justify-content:space-between;padding:0 7.5cqw 0 10.5cqw;
+  color:#fff;font:600 4.2cqw/1 -apple-system,"SF Pro Text","Helvetica Neue",Roboto,sans-serif;letter-spacing:-.02em;z-index:2}
+.iphone .sb-ic{display:flex;align-items:center;gap:1.4cqw}
+.iphone .sb-ic svg{height:3.1cqw;width:auto;fill:currentColor}
+.iphone .k{position:absolute;width:1cqw;border-radius:1cqw;background:linear-gradient(90deg,#2a2b2f,#5b5c61)}
+.iphone .k1{left:-.7cqw;top:19%;height:6%}.iphone .k2{left:-.7cqw;top:28%;height:11%}.iphone .k3{left:-.7cqw;top:41%;height:11%}
+.iphone .k4{right:-.7cqw;top:31%;height:16%;background:linear-gradient(270deg,#2a2b2f,#5b5c61)}
+.cover .mb-cover{position:absolute;left:5%;top:11%;width:65%}
+.cover .p1{position:absolute;right:19%;top:17%;width:16%}
+.cover .p2{position:absolute;right:4.5%;top:27%;width:16%}
+.cover figcaption{position:absolute;left:6%;bottom:5%;font-size:12px;letter-spacing:1px;color:var(--muted)}
+
+/* Faixas do case */
+.band{padding-block:104px 0}
+.band-head{display:flex;flex-direction:column;gap:24px;margin-bottom:48px}
+.band h2{font-weight:400;font-size:clamp(44px,5.4vw,76px);line-height:1.05;letter-spacing:-.04em}
+.band .intro{font-size:18px;line-height:1.7;color:var(--body);max-width:64ch}
+
+.overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 40px}
+.ov{display:flex;flex-direction:column;gap:14px;padding-block:28px;border-top:1px solid var(--line);min-width:0}
+.ov h3{font-weight:400;font-size:13px;letter-spacing:1px;color:var(--accent)}
+.ov p{font-size:20px;line-height:1.5;letter-spacing:-.2px;color:var(--fg)}
+
+.phases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 32px;counter-reset:ph}
+.phase{display:flex;flex-direction:column;gap:12px;padding-block:28px;border-top:1px solid var(--line);min-width:0}
+.phase .n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.phase h3{font-weight:400;font-size:24px;letter-spacing:-.4px}
+.phase p{font-size:15px;line-height:1.65;color:var(--body)}
+
+
+/* Solução: tela grande + texto, alternando lados */
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:40px 80px;align-items:center;padding-block:56px;border-top:1px solid var(--line)}
+.feature.flip{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+.feature.flip .f-text{order:2}
+.f-text{display:flex;flex-direction:column;gap:16px;min-width:0}
+.f-text .n{font-size:12px;letter-spacing:1px;color:var(--muted)}
+.f-text h3{font-weight:400;font-size:clamp(26px,2.4vw,32px);line-height:1.2;letter-spacing:-.03em}
+.f-text p{font-size:16px;line-height:1.7;color:var(--body);max-width:52ch}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding:32px;border-radius:16px;border:1px solid var(--line);
+  background:radial-gradient(70% 60% at 50% 0%,rgba(197,117,248,.16),transparent 70%),var(--stage)}
+.split{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.split li{display:flex;align-items:center;gap:8px;font-size:13px;padding:5px 10px;border:1px solid var(--line);border-radius:999px;color:var(--body)}
+.split i{width:8px;height:8px;border-radius:50%}
+
+/* Fecho */
+.next{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:104px;padding-block:48px;border-top:1px solid var(--line);text-decoration:none}
+.next span{font-size:12px;letter-spacing:2px;color:var(--muted)}
+.next strong{display:block;margin-top:12px;font-weight:400;font-size:clamp(36px,4.4vw,60px);letter-spacing:-.04em}
+.next b{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;border:1px solid var(--fg);font-weight:400;font-size:20px;transition:background .2s,color .2s}
+.next:hover b{background:var(--fg);color:var(--bg)}
+.foot{display:flex;justify-content:space-between;gap:16px;padding-block:24px 40px;border-top:1px solid var(--line);font-size:11px;letter-spacing:.04em;color:var(--muted)}
+
+@media (max-width:1099px){
+  .hero,.feature,.feature.flip{grid-template-columns:minmax(0,1fr)}
+  .feature.flip .f-text{order:0}
+  .phases{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .overview,.phases{grid-template-columns:minmax(0,1fr)}
+  .cover{aspect-ratio:4/5}
+  .cover .mb-cover{left:3%;top:5%;width:94%}
+  .cover .p1{right:auto;left:14%;top:33%;width:30%}
+  .cover .p2{right:14%;top:39%;width:30%}
+  .duo{padding:16px;gap:12px}
+  .cover figcaption{display:none}
+  .meta{grid-template-columns:minmax(0,1fr)}
+}
+
+/* Marca de rascunho: conteúdo escrito para a Heloise validar */
+.draft{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;padding:3px 10px;border-radius:999px;border:1px solid rgba(235,161,107,.45);color:var(--warm);font-size:11px;letter-spacing:1px}
+.draft::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--warm)}
+
+/* Fases do processo */
+.phase-band{padding-top:120px}
+.phase-head{display:flex;flex-direction:column;gap:16px;padding-bottom:8px}
+.phase-head .num{font-family:var(--serif);font-style:italic;font-size:28px;color:var(--accent)}
+.phase-head h2{font-weight:400;font-size:clamp(48px,6vw,84px);line-height:1.02;letter-spacing:-.045em}
+.sub{display:flex;flex-direction:column;gap:20px;padding-top:72px}
+.sub > h3{font-weight:400;font-size:clamp(28px,3vw,40px);line-height:1.15;letter-spacing:-.03em}
+.sub > .intro{font-size:18px;line-height:1.7;color:var(--body);max-width:72ch}
+.panel{margin-top:16px;border-radius:16px;border:1px solid var(--line);background:#0b0d0f;padding:32px}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.methods{font-size:13px;color:var(--accent);letter-spacing:.2px}
+
+/* Matriz CSD */
+.csd{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.csd h4{margin:0 0 16px;font-weight:400;font-size:18px;text-align:center}
+.notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.note{display:flex;align-items:center;justify-content:center;min-height:118px;padding:12px;border-radius:3px;text-align:center;font-size:13px;line-height:1.35;color:#1e1e1e;box-shadow:0 10px 18px rgba(0,0,0,.4)}
+.note.c{background:#8fdcaa}.note.s{background:#f2b48a}.note.d{background:#eee38c}
+
+/* Desk research */
+.insights{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;margin:16px 0 0;padding:0;list-style:none;counter-reset:ins}
+.insights li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:16px;padding-block:24px;border-top:1px solid var(--line);counter-increment:ins}
+.insights li::before{content:counter(ins,decimal-leading-zero);font-size:12px;line-height:28px;color:var(--muted)}
+.insights p{font-size:17px;line-height:1.6}
+.insights small{display:block;margin-top:8px;font-size:12px;color:var(--muted)}
+
+/* Personas */
+.persona{display:grid;grid-template-columns:200px minmax(0,1fr);gap:40px}
+.persona + .persona{margin-top:24px}
+.avatar{width:200px;aspect-ratio:4/5;height:auto;border-radius:16px;object-fit:cover;object-position:50% 30%}
+.p-body{display:flex;flex-direction:column;gap:20px;min-width:0}
+.p-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 40px}
+.p-top h4{margin:0;font-weight:400;font-size:28px;letter-spacing:-.02em}
+.p-top .role{font-size:15px;color:var(--body)}
+.p-facts{display:grid;grid-template-columns:auto auto;gap:4px 16px;font-size:14px;color:var(--body)}
+.p-facts b{font-weight:400;color:var(--fg)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:11px;letter-spacing:1px;padding:5px 10px;border-radius:999px;background:rgba(139,220,231,.12);color:var(--accent)}
+.p-label{font-size:12px;letter-spacing:1px;color:var(--muted);margin-bottom:8px}
+.p-body p{font-size:15px;line-height:1.7;color:var(--body);max-width:75ch}
+.p-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 40px}
+.p-grid ul{margin:0;padding-left:18px;font-size:15px;line-height:1.75;color:var(--fg)}
+.slider{display:grid;grid-template-columns:110px minmax(0,1fr) 110px;align-items:center;gap:12px;font-size:13px;color:var(--body)}
+.slider + .slider{margin-top:10px}
+.slider span:last-child{text-align:right}
+.track{position:relative;height:2px;background:var(--line)}
+.track i{position:absolute;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--accent)}
+
+/* Jornada */
+.journey{display:grid;grid-template-columns:150px repeat(7,minmax(150px,1fr));min-width:1200px;font-size:13px;line-height:1.5}
+.journey > div{padding:16px 14px;border-left:1px solid var(--line)}
+.journey .rh{border-left:0;color:var(--muted);font-size:12px;letter-spacing:1px;padding-left:0}
+.journey .stage{background:rgba(139,220,231,.08);color:var(--fg)}
+.journey .stage b{display:inline-grid;place-items:center;width:20px;height:20px;margin-right:8px;border-radius:5px;background:var(--accent);color:#101014;font-weight:500;font-size:11px}
+.journey .feel{color:var(--body)}
+.journey .curve{grid-column:2 / -1;padding:0;border-left:0;background:rgba(255,255,255,.02)}
+.journey .curve svg{display:block;width:100%;height:150px}
+.journey ul{margin:0;padding-left:16px;color:var(--fg)}
+.journey .opp{background:rgba(235,161,107,.07);color:var(--fg)}
+
+/* Histórias de usuário */
+.stories{margin:16px 0 0;padding:0;list-style:none}
+.stories li{padding:18px 24px;font-size:16px;line-height:1.6;color:var(--fg);border-radius:8px}
+.stories li:nth-child(odd){background:#0d1113}
+.stories li b{font-weight:400;color:var(--accent)}
+
+/* Mapa de funcionalidades */
+.fmap{width:100%;min-width:760px;border-collapse:collapse;font-size:15px;line-height:1.55}
+.fmap th{text-align:left;font-weight:400;font-size:12px;letter-spacing:1px;color:var(--muted);padding:14px 18px;border-bottom:1px solid var(--line)}
+.fmap td{padding:16px 18px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--body)}
+.fmap td:first-child{color:var(--fg)}
+.fmap tr.g1 td:first-child{background:rgba(139,220,231,.07)}
+.fmap tr.g2 td:first-child{background:rgba(235,161,107,.07)}
+.fmap tr.g3 td:first-child{background:rgba(197,117,248,.08)}
+.fmap .grp td{padding-top:24px;font-size:12px;letter-spacing:1px;color:var(--muted);background:none !important;border-bottom:0}
+
+/* Arquitetura da informação */
+.ia{min-width:1120px;display:flex;flex-direction:column;align-items:center}
+.node{display:inline-block;padding:9px 14px;border-radius:8px;font-size:13px;line-height:1.3;white-space:nowrap}
+.node.root{background:var(--accent);color:#101014;font-weight:500;font-size:15px;padding:11px 22px}
+.node.main{background:#18252b;color:var(--fg);border:1px solid #2c4048}
+.node.sec{background:transparent;color:var(--body);border:1px solid var(--line)}
+.node.act{background:rgba(235,161,107,.14);color:#f3c9a6}
+.ia-stem{width:1px;height:28px;background:#2c4048}
+.ia-cols{position:relative;display:flex;justify-content:space-between;gap:12px;width:100%;padding-top:28px;border-top:1px solid #2c4048}
+.ia-col{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.ia-col::before{content:"";position:absolute;top:-28px;left:22px;width:1px;height:28px;background:#2c4048}
+.ia-col ul{display:flex;flex-direction:column;gap:8px;margin:2px 0 0 22px;padding:0 0 0 14px;list-style:none;border-left:1px solid var(--line)}
+.legend{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:32px;font-size:12px;color:var(--muted);align-items:center}
+
+/* Wireframes */
+.wfs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 32px}
+.wf-item{display:flex;flex-direction:column;gap:10px;min-width:0}
+.wf-item h4{margin:0;font-weight:500;font-size:15px}
+.wf-item p{font-size:14px;line-height:1.6;color:var(--body);min-height:4.8em}
+.wf{display:flex;flex-direction:column;gap:10px;aspect-ratio:390/760;max-width:300px;width:100%;padding:22px 18px;border-radius:30px;background:#e9e9e5;overflow:hidden}
+.wf .l{height:6px;border-radius:3px;background:#b9b9b4}
+.wf .l.s{width:45%}.wf .l.m{width:70%}
+.wf .h{height:14px;border-radius:4px;background:#8d8d88;width:80%}
+.wf .h + .h{width:60%}
+.wf .box{border-radius:12px;background:#fff;border:1px solid #d3d3ce}
+.wf .blk{border-radius:12px;background:#cfcfca}
+.wf .btn{height:34px;border-radius:99px;background:#1e1e1e;margin-top:auto}
+.wf .row{display:flex;align-items:center;gap:8px}
+.wf .dot{width:22px;height:22px;border-radius:50%;background:#b9b9b4;flex:none}
+.wf .pm{width:22px;height:22px;border-radius:50%;border:1.5px solid #8d8d88;flex:none}
+.wf .bar{display:flex;height:10px;border-radius:99px;overflow:hidden}
+.wf .bar i{display:block;background:#8d8d88}.wf .bar i:nth-child(even){background:#b9b9b4}
+.wf .ring{width:90px;height:90px;border-radius:50%;border:14px solid #8d8d88;border-right-color:#cfcfca;border-bottom-color:#cfcfca;flex:none}
+.wf .tabs{display:flex;justify-content:space-around;align-items:center;height:44px;border-radius:99px;background:#1e1e1e;margin-top:auto}
+.wf .tabs i{width:14px;height:14px;border-radius:4px;background:#e9e9e5;opacity:.7}
+.wf .tabs i.big{width:30px;height:30px;border-radius:50%;opacity:1}
+
+/* Protótipo comentado */
+.annot{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.annot figure{display:flex;flex-direction:column;gap:24px;min-width:0}
+.annot .iphone{max-width:280px;align-self:center}
+.annot h4{margin:0;font-weight:400;font-size:20px}
+.annot ol{margin:0;padding:0;list-style:none;counter-reset:an;display:flex;flex-direction:column;gap:12px}
+.annot li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;font-size:14px;line-height:1.6;color:var(--body);counter-increment:an}
+.annot li::before{content:counter(an);display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#101014;font-size:12px;font-weight:500}
+.desk-gallery{margin-top:72px}
+
+/* Aprendizados */
+.lessons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;margin:16px 0 0;padding:0;list-style:none;counter-reset:le}
+.lessons li{display:flex;flex-direction:column;gap:8px;padding-block:24px;border-top:1px solid var(--line);counter-increment:le}
+.lessons li::before{content:counter(le,decimal-leading-zero);font-size:12px;color:var(--muted)}
+.lessons b{font-weight:400;font-size:20px;letter-spacing:-.2px}
+.lessons span{font-size:15px;line-height:1.65;color:var(--body)}
+
+@media (max-width:1099px){
+  .csd,.wfs,.annot{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .persona{grid-template-columns:minmax(0,1fr)}
+  .avatar{width:160px}
+}
+@media (max-width:760px){
+  .csd,.wfs,.annot,.insights,.p-grid,.lessons{grid-template-columns:minmax(0,1fr)}
+  .panel{padding:20px}
+  .wf{max-width:260px;justify-self:center}
+}
+</style>
+<script>
+// Abre a página no topo (o navegador e o visualizador tentam restaurar a rolagem anterior)
+(() => {
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  const top = () => { if (!location.hash) window.scrollTo(0, 0); };
+  top();
+  addEventListener("DOMContentLoaded", top);
+  addEventListener("load", () => { top(); setTimeout(top, 60); setTimeout(top, 250); });
+  addEventListener("pageshow", top);
+})();
+</script>
+</head>
+<body>
+
+<header class="top">
+  <a class="name" href="index.html">Heloise D. Prudencio</a>
+  <nav class="menu" aria-label="Principal">
+    <a href="index.html#projetos" aria-current="page">Projetos</a>
+    <a href="index.html#experiencia">Experiência</a>
+    <a href="index.html#competencias">Competências</a>
+    <a href="sobre.html">Sobre mim</a>
+  </nav>
+  <a class="contato" href="index.html#contato">Contato</a>
+</header>
+
+<main class="page">
+  <a class="back" href="index.html#projetos"><span aria-hidden="true">←</span> Voltar para projetos</a>
+
+  <section class="hero" aria-labelledby="titulo">
+    <div class="hero-title">
+      <span class="eyebrow">PROJETO 01 · PRODUTO DIGITAL</span>
+      <h1 id="titulo">Nexo</h1>
+      <p class="tagline">Orçamento familiar.<br>Planeje primeiro, <em>gaste depois.</em></p>
+    </div>
+    <div class="hero-side">
+      <p class="lead">O Nexo organiza a renda da casa, distribui o que pode ser gasto em cada área da vida e mostra, durante o mês, se o plano está sendo seguido.</p>
+      <dl class="meta">
+        <div><dt>SETOR</dt><dd>Finanças pessoais</dd></div>
+        <div><dt>PLATAFORMAS</dt><dd>Web e mobile</dd></div>
+        <div><dt>ANO</dt><dd>2026</dd></div>
+        <div><dt>PAPEL</dt><dd>Product Designer</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <figure class="cover">
+    <div class="macbook mb-cover"><div class="mb-lid"><span class="mb-cam"></span><div class="mb-screen"><img src="img/nexo/dashboard.jpg" alt="Dashboard do Nexo no desktop com saldo em contas, receitas e despesas do mês, contas a pagar e gastos por categoria" width="1800" height="1836"></div></div><div class="mb-base"></div></div>
+    <div class="iphone p1"><div class="body"><div class="screen"><img src="img/nexo/p-inicio.jpg" alt="Tela inicial do Nexo no celular" width="900" height="1947"></div><span class="island"></span><div class="sb"><span>9:41</span><span class="sb-ic"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.6c2.4 0 4.6.9 6.2 2.5l1.3-1.4A10.6 10.6 0 0 0 8 .6 10.6 10.6 0 0 0 .5 3.7l1.3 1.4A8.7 8.7 0 0 1 8 2.6Zm0 3.9c1.4 0 2.6.5 3.6 1.4l1.3-1.4A7 7 0 0 0 8 4.6a7 7 0 0 0-4.9 1.9l1.3 1.4c1-.9 2.2-1.4 3.6-1.4Zm0 3.8L10 8.4a2.9 2.9 0 0 0-4 0Z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="16" height="8" rx="2"/><rect x="24.5" y="4" width="1.8" height="4" rx=".9" opacity=".45"/></svg></span></div></div><i class="k k1"></i><i class="k k2"></i><i class="k k3"></i><i class="k k4"></i></div>
+    <div class="iphone p2"><div class="body"><div class="screen"><img src="img/nexo/p-orcamento.jpg" alt="Orçamento do mês no celular, com as seis áreas da vida e quanto já foi usado de cada uma" width="900" height="1947"></div><span class="island"></span><div class="sb"><span>9:41</span><span class="sb-ic"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.6c2.4 0 4.6.9 6.2 2.5l1.3-1.4A10.6 10.6 0 0 0 8 .6 10.6 10.6 0 0 0 .5 3.7l1.3 1.4A8.7 8.7 0 0 1 8 2.6Zm0 3.9c1.4 0 2.6.5 3.6 1.4l1.3-1.4A7 7 0 0 0 8 4.6a7 7 0 0 0-4.9 1.9l1.3 1.4c1-.9 2.2-1.4 3.6-1.4Zm0 3.8L10 8.4a2.9 2.9 0 0 0-4 0Z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="16" height="8" rx="2"/><rect x="24.5" y="4" width="1.8" height="4" rx=".9" opacity=".45"/></svg></span></div></div><i class="k k1"></i><i class="k k2"></i><i class="k k3"></i><i class="k k4"></i></div>
+    <figcaption>DASHBOARD · INÍCIO · ORÇAMENTO</figcaption>
+  </figure>
+
+  <section class="band" aria-labelledby="visao">
+    <div class="band-head">
+      <span class="eyebrow">VISÃO GERAL</span>
+      <h2 id="visao">O projeto em <em>três linhas</em></h2>
+    </div>
+    <div class="overview">
+      <div class="ov">
+        <h3>PROBLEMA</h3>
+        <p>Casais e famílias sabem quanto ganham, mas não sabem para onde o dinheiro vai. O controle fica espalhado entre bancos, cartões e planilhas, e a conversa sobre dinheiro vira cobrança no fim do mês.</p>
+      </div>
+      <div class="ov">
+        <h3>SOLUÇÃO</h3>
+        <p>Um orçamento em que 100% da renda da casa ganha um destino antes do gasto, dividido em seis áreas da vida e acompanhado ao longo do mês.</p>
+      </div>
+      <div class="ov">
+        <h3>MEU PAPEL</h3>
+        <p>Conduzi o produto de ponta a ponta: pesquisa, estratégia, arquitetura da informação, fluxos, interface, design system e protótipo navegável em desktop e mobile.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="processo">
+    <div class="band-head">
+      <span class="eyebrow">PROCESSO DE DESIGN</span>
+      <h2 id="processo">Quatro fases, do problema à <em>interface</em></h2>
+    </div>
+    <div class="phases">
+      <div class="phase"><span class="n">01</span><h3>Descobrir</h3><p>Entender como as famílias lidam com o dinheiro do mês.</p><span class="methods">Matriz CSD · Desk research</span></div>
+      <div class="phase"><span class="n">02</span><h3>Definir</h3><p>Transformar o que aprendi em pessoas, jornadas e requisitos.</p><span class="methods">Personas · Jornada · Histórias de usuário · Mapa de funcionalidades</span></div>
+      <div class="phase"><span class="n">03</span><h3>Desenhar</h3><p>Estruturar o produto e testar a organização das telas.</p><span class="methods">Arquitetura da informação · Wireframes</span></div>
+      <div class="phase"><span class="n">04</span><h3>Entregar</h3><p>Levar a solução para alta fidelidade em desktop e mobile.</p><span class="methods">Protótipo final</span></div>
+    </div>
+  </section>
+
+  <!-- 01 DESCOBRIR -->
+  <section class="phase-band" aria-labelledby="f1">
+    <div class="phase-head"><span class="num">01</span><h2 id="f1">Fase <em>Descobrir</em></h2></div>
+
+    <div class="sub">
+      <h3>Matriz CSD</h3>
+      <p class="intro">A matriz organizou o que já se sabia, o que se supunha e o que ainda precisava ser respondido sobre o dinheiro das famílias. As dúvidas viraram as perguntas da pesquisa.</p>
+      <div class="panel csd">
+        <div>
+          <h4>Certezas</h4>
+          <div class="notes">
+            <div class="note c">Toda casa tem gastos fixos que vencem todo mês</div>
+            <div class="note c">A renda da casa costuma vir de mais de uma pessoa</div>
+            <div class="note c">O dinheiro fica espalhado em vários bancos e cartões</div>
+            <div class="note c">A fatura do cartão concentra boa parte dos gastos</div>
+            <div class="note c">Planilhas exigem uma disciplina que poucos mantêm</div>
+            <div class="note c">Falar de dinheiro em casal gera atrito</div>
+          </div>
+        </div>
+        <div>
+          <h4>Suposições</h4>
+          <div class="notes">
+            <div class="note s">As pessoas controlam o que já gastaram, não o que vão gastar</div>
+            <div class="note s">Dividir a renda em porcentagens é mais fácil que orçar item a item</div>
+            <div class="note s">Registrar um gasto precisa levar segundos</div>
+            <div class="note s">Ver o mesmo plano reduz discussões no casal</div>
+            <div class="note s">O WhatsApp é o jeito mais natural de anotar na hora</div>
+            <div class="note s">Importar o extrato diminui o esforço de começar</div>
+          </div>
+        </div>
+        <div>
+          <h4>Dúvidas</h4>
+          <div class="notes">
+            <div class="note d">Quantas áreas de gasto uma família consegue acompanhar?</div>
+            <div class="note d">A divisão sugerida serve para rendas diferentes?</div>
+            <div class="note d">Os dois do casal precisam ver tudo, ou só o total?</div>
+            <div class="note d">Qual o melhor momento do mês para revisar o plano?</div>
+            <div class="note d">As pessoas confiam em conectar o banco a um app?</div>
+            <div class="note d">O que faz alguém abandonar um app de finanças?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>Desk research</h3>
+      <span class="draft">FONTES A INSERIR</span>
+      <p class="intro">A pesquisa em fontes públicas aprofundou os pontos da matriz e trouxe o contexto do mercado brasileiro. Principais aprendizados:</p>
+      <ol class="insights">
+        <li><p>O cartão de crédito é a principal forma de dívida das famílias brasileiras.<small>Fonte a inserir</small></p></li>
+        <li><p>Apps de finanças pessoais perdem boa parte dos usuários nas primeiras semanas, quase sempre pelo esforço de registrar tudo à mão.<small>Fonte a inserir</small></p></li>
+        <li><p>Métodos de divisão por porcentagem, como o 50/30/20, são populares porque reduzem o número de decisões.<small>Fonte a inserir</small></p></li>
+        <li><p>Casais costumam manter contas separadas e despesas compartilhadas, o que dificulta ter uma visão única do mês.<small>Fonte a inserir</small></p></li>
+        <li><p>O Open Finance permite reunir dados de vários bancos num só lugar, com o consentimento da pessoa.<small>Fonte a inserir</small></p></li>
+        <li><p>O WhatsApp é o aplicativo de mensagens mais usado no Brasil, presente na rotina de quase toda a população conectada.<small>Fonte a inserir</small></p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 02 DEFINIR -->
+  <section class="phase-band" aria-labelledby="f2">
+    <div class="phase-head"><span class="num">02</span><h2 id="f2">Fase <em>Definir</em></h2></div>
+
+    <div class="sub">
+      <h3>Personas</h3>
+      <p class="intro">As personas reúnem os comportamentos e as dores que apareceram na descoberta. Elas guiaram as decisões de produto ao longo do projeto.</p>
+      <article class="panel persona">
+        <img class="avatar" src="img/nexo/persona-juliana.jpg" alt="Foto ilustrativa da persona Juliana" width="600" height="600" loading="lazy">
+        <div class="p-body">
+          <div class="p-top">
+            <div><h4>Juliana Martins</h4><span class="role">Analista de RH</span></div>
+            <div class="p-facts"><span>Idade</span><b>34 anos</b><span>Local</span><b>Florianópolis, SC</b><span>Casa</span><b>Casada, um filho</b></div>
+          </div>
+          <div class="chips"><span>ORGANIZADA</span><span>ANSIOSA</span><span>COLABORATIVA</span></div>
+          <div><div class="p-label">BIOGRAFIA</div><p>Divide as despesas da casa com o marido, Diego. Criou uma planilha para controlar os gastos, mas só atualiza quando lembra. No fim do mês nunca sabe ao certo para onde o dinheiro foi, e a conversa sobre gastos costuma terminar em discussão. Quer montar uma reserva de emergência e planejar a primeira viagem em família.</p></div>
+          <div class="p-grid">
+            <div><div class="p-label">DORES</div><ul><li>Gastos espalhados em dois bancos e três cartões</li><li>Planilha que dá trabalho manter</li><li>Fatura do cartão que sempre surpreende</li><li>Conversas sobre dinheiro que viram cobrança</li></ul></div>
+            <div><div class="p-label">OBJETIVOS</div><ul><li>Saber quanto pode gastar em cada área</li><li>Montar uma reserva de emergência</li><li>Planejar a viagem da família</li><li>Dividir as decisões com o parceiro</li></ul></div>
+            <div><div class="p-label">PERSONALIDADE</div>
+              <div class="slider"><span>Introvertida</span><div class="track"><i style="left:58%"></i></div><span>Extrovertida</span></div>
+              <div class="slider"><span>Analítica</span><div class="track"><i style="left:28%"></i></div><span>Criativa</span></div>
+              <div class="slider"><span>Planejadora</span><div class="track"><i style="left:22%"></i></div><span>Impulsiva</span></div>
+            </div>
+            <div><div class="p-label">VALORES</div><ul><li>Segurança</li><li>Parceria</li><li>Tranquilidade</li></ul></div>
+          </div>
+        </div>
+      </article>
+      <article class="panel persona">
+        <img class="avatar" src="img/nexo/persona-diego.jpg" alt="Foto ilustrativa da persona Diego" width="600" height="600" loading="lazy">
+        <div class="p-body">
+          <div class="p-top">
+            <div><h4>Diego Souza</h4><span class="role">Vendedor autônomo</span></div>
+            <div class="p-facts"><span>Idade</span><b>36 anos</b><span>Local</span><b>Florianópolis, SC</b><span>Renda</span><b>Variável</b></div>
+          </div>
+          <div class="chips"><span>PRÁTICO</span><span>OTIMISTA</span><span>IMEDIATISTA</span></div>
+          <div><div class="p-label">BIOGRAFIA</div><p>A renda muda de um mês para o outro, e por isso ele prefere não pensar muito no orçamento. Paga as contas que chegam e perde a noção dos gastos pequenos do dia a dia. Não tem paciência para apps cheios de telas, mas usa o WhatsApp o dia inteiro.</p></div>
+          <div class="p-grid">
+            <div><div class="p-label">DORES</div><ul><li>Renda que muda todo mês</li><li>Gastos pequenos que somem da memória</li><li>Apps complicados de usar</li></ul></div>
+            <div><div class="p-label">OBJETIVOS</div><ul><li>Saber quanto sobra antes de gastar</li><li>Registrar gastos sem abrir planilha</li><li>Parar de discutir sobre dinheiro</li></ul></div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub">
+      <h3>Jornada do usuário</h3>
+      <p class="intro">A jornada mostra um mês típico da família antes do Nexo, com os pontos de atrito, as emoções e as oportunidades que orientaram o desenho.</p>
+      <div class="panel scroll">
+        <div class="journey">
+          <div class="rh">ETAPAS</div>
+          <div class="stage"><b>1</b>Salário cai</div>
+          <div class="stage"><b>2</b>Contas fixas</div>
+          <div class="stage"><b>3</b>Dia a dia</div>
+          <div class="stage"><b>4</b>Fatura fecha</div>
+          <div class="stage"><b>5</b>Fim do mês</div>
+          <div class="stage"><b>6</b>Conversa do casal</div>
+          <div class="stage"><b>7</b>Mês seguinte</div>
+
+          <div class="rh">SENTIMENTO</div>
+          <div class="feel">Alívio e vontade de gastar</div>
+          <div class="feel">Peso das contas</div>
+          <div class="feel">Perde a noção dos gastos</div>
+          <div class="feel">Susto com o valor</div>
+          <div class="feel">Aperto e ansiedade</div>
+          <div class="feel">Culpa e discussão</div>
+          <div class="feel">Promessa de recomeçar</div>
+
+          <div class="rh">EMOÇÃO</div>
+          <div class="curve">
+            <svg viewBox="0 0 1050 150" role="img" aria-label="Curva de emoção: começa alta no salário, cai até o fim do mês e a conversa do casal, e sobe um pouco no mês seguinte">
+              <line x1="0" y1="30" x2="1050" y2="30" stroke="#242a2d"/>
+              <line x1="0" y1="75" x2="1050" y2="75" stroke="#242a2d"/>
+              <line x1="0" y1="120" x2="1050" y2="120" stroke="#242a2d"/>
+              <polyline points="75,39 225,69 375,81 525,111 675,121 825,123 975,75" fill="none" stroke="#8bdce7" stroke-width="2"/>
+              <g fill="#8bdce7"><circle cx="75" cy="39" r="5"/><circle cx="225" cy="69" r="5"/><circle cx="375" cy="81" r="5"/><circle cx="525" cy="111" r="5"/><circle cx="675" cy="121" r="5"/><circle cx="825" cy="123" r="5"/><circle cx="975" cy="75" r="5"/></g>
+            </svg>
+          </div>
+
+          <div class="rh">PENSAMENTOS</div>
+          <div><ul><li>Agora dá para respirar.</li><li>Esse mês vai ser diferente.</li></ul></div>
+          <div><ul><li>Quanto sobrou depois das contas?</li><li>Esqueci de pagar alguma?</li></ul></div>
+          <div><ul><li>É só um lanche.</li><li>Depois eu anoto.</li></ul></div>
+          <div><ul><li>Como a fatura ficou tão alta?</li><li>O que foi esse gasto?</li></ul></div>
+          <div><ul><li>Vai faltar até o dia 30.</li><li>Vou ter que usar o limite.</li></ul></div>
+          <div><ul><li>Quem gastou mais?</li><li>A gente precisa conversar.</li></ul></div>
+          <div><ul><li>Agora vou fazer a planilha direito.</li></ul></div>
+
+          <div class="rh">OPORTUNIDADES</div>
+          <div class="opp">Dar um destino para toda a renda no dia em que ela entra.</div>
+          <div class="opp">Lembrar as contas antes do vencimento e mostrar o que sobra.</div>
+          <div class="opp">Registrar um gasto em segundos, até pelo WhatsApp.</div>
+          <div class="opp">Mostrar a fatura crescendo ao longo do mês.</div>
+          <div class="opp">Avisar quando uma área chega perto do limite.</div>
+          <div class="opp">Dar ao casal a mesma visão do plano, sem culpados.</div>
+          <div class="opp">Levar o aprendizado de um mês para o próximo plano.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>Histórias de usuário</h3>
+      <p class="intro">A partir da jornada e dos objetivos das personas, as dores viraram histórias de usuário, ordenadas pelo valor que trazem para o objetivo central: a família seguir um plano.</p>
+      <ol class="stories">
+        <li><b>Como responsável pelas finanças da casa,</b> quero informar a renda e dividir 100% dela em áreas da vida, para saber quanto posso gastar em cada uma.</li>
+        <li><b>Como responsável pelas finanças da casa,</b> quero ver o planejado e o gasto de cada área durante o mês, para corrigir o rumo antes que falte dinheiro.</li>
+        <li><b>Como casal,</b> queremos acompanhar o mesmo orçamento, para decidir juntos sem discussão.</li>
+        <li><b>Como usuário,</b> quero registrar um gasto em poucos segundos, para não deixar de anotar.</li>
+        <li><b>Como usuário,</b> quero mandar um gasto pelo WhatsApp, para registrar na hora sem abrir o app.</li>
+        <li><b>Como usuário,</b> quero importar o extrato do banco, para não digitar tudo à mão.</li>
+        <li><b>Como usuário,</b> quero ver as contas a pagar e a receber dos próximos dias, para não esquecer nenhum vencimento.</li>
+        <li><b>Como usuário,</b> quero ver o saldo de todas as contas e cartões num lugar só, para ter a visão real do dinheiro da casa.</li>
+        <li><b>Como usuário,</b> quero registrar compras parceladas, para saber o impacto delas nos próximos meses.</li>
+        <li><b>Como casal,</b> queremos acompanhar nossas metas, para ver o progresso do que estamos guardando.</li>
+      </ol>
+    </div>
+
+    <div class="sub">
+      <h3>Mapa de funcionalidades</h3>
+      <p class="intro">Cada história virou requisitos de função e de conteúdo, definindo o que o produto precisava entregar.</p>
+      <div class="panel scroll">
+        <table class="fmap">
+          <thead><tr><th>HISTÓRIA</th><th>REQUISITO FUNCIONAL</th><th>REQUISITO DE CONTEÚDO</th></tr></thead>
+          <tbody>
+            <tr class="grp"><td colspan="3">PLANEJAR</td></tr>
+            <tr class="g1"><td>Dividir a renda em áreas da vida</td><td>Onboarding da renda; distribuição que só salva com 100%</td><td>Explicação de cada área; divisão sugerida</td></tr>
+            <tr class="g1"><td>Acompanhar o mesmo orçamento em casal</td><td>Membros da casa no onboarding</td><td>Quem participa e o papel de cada um</td></tr>
+            <tr class="g1"><td>Acompanhar metas</td><td>Lista de metas com progresso</td><td>Valor da meta, prazo e quanto falta</td></tr>
+            <tr class="grp"><td colspan="3">REGISTRAR</td></tr>
+            <tr class="g2"><td>Registrar um gasto rápido</td><td>Botão Lançar fixo na navegação; formulário curto</td><td>Áreas e categorias; valor e data</td></tr>
+            <tr class="g2"><td>Registrar pelo WhatsApp</td><td>Integração com o WhatsApp</td><td>Mensagens de confirmação do lançamento</td></tr>
+            <tr class="g2"><td>Importar o extrato</td><td>Envio do arquivo do banco; revisão antes de salvar</td><td>Formatos aceitos e instruções</td></tr>
+            <tr class="g2"><td>Registrar compras parceladas</td><td>Lançamento parcelado</td><td>Valor da parcela e meses restantes</td></tr>
+            <tr class="grp"><td colspan="3">ACOMPANHAR</td></tr>
+            <tr class="g3"><td>Ver o planejado e o gasto</td><td>Orçamento por área com barra de progresso</td><td>Alerta quando a área passa do planejado</td></tr>
+            <tr class="g3"><td>Ver contas a vencer</td><td>Agenda e cards de vencimento</td><td>Datas e valores a pagar e a receber</td></tr>
+            <tr class="g3"><td>Ver contas e cartões juntos</td><td>Saldos e faturas consolidados</td><td>Saldo por conta e vencimento das faturas</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 DESENHAR -->
+  <section class="phase-band" aria-labelledby="f3">
+    <div class="phase-head"><span class="num">03</span><h2 id="f3">Fase <em>Desenhar</em></h2></div>
+
+    <div class="sub">
+      <h3>Arquitetura da informação</h3>
+      <p class="intro">O mapa do site organizou fluxos, funcionalidades e conteúdo numa estrutura clara: acesso e onboarding levam ao app, e o app se divide em planejar, registrar e acompanhar.</p>
+      <div class="panel scroll">
+        <div class="ia">
+          <span class="node root">Nexo</span>
+          <span class="ia-stem"></span>
+          <div class="ia-cols">
+            <div class="ia-col"><span class="node main">Acesso</span><ul><li><span class="node sec">Criar conta</span></li><li><span class="node sec">Entrar</span></li><li><span class="node sec">Verificação</span></li></ul></div>
+            <div class="ia-col"><span class="node main">Onboarding</span><ul><li><span class="node sec">Renda</span></li><li><span class="node sec">Quem participa</span></li><li><span class="node sec">Bancos</span></li><li><span class="node sec">Saldos</span></li></ul></div>
+            <div class="ia-col"><span class="node main">Início</span><ul><li><span class="node sec">A pagar e a receber</span></li><li><span class="node sec">Saldo das contas</span></li><li><span class="node act">Lançar</span></li></ul></div>
+            <div class="ia-col"><span class="node main">Orçamento</span><ul><li><span class="node sec">Seis áreas da vida</span></li><li><span class="node sec">Distribuição</span></li><li><span class="node act">Ajustar percentuais</span></li></ul></div>
+            <div class="ia-col"><span class="node main">Lançamentos</span><ul><li><span class="node sec">Lista do mês</span></li><li><span class="node act">Novo lançamento</span></li><li><span class="node act">Parcelado</span></li><li><span class="node act">Importar extrato</span></li></ul></div>
+            <div class="ia-col"><span class="node main">Mais</span><ul><li><span class="node sec">Contas e cartões</span></li><li><span class="node sec">Agenda</span></li><li><span class="node sec">Nexo no WhatsApp</span></li><li><span class="node sec">Metas</span></li><li><span class="node sec">Configurações</span></li></ul></div>
+          </div>
+          <div class="legend"><span>Legenda</span><span class="node main">Seção</span><span class="node sec">Tela ou conteúdo</span><span class="node act">Ação</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>Wireframes</h3>
+      <p class="intro">Os wireframes de baixa fidelidade definiram a estrutura de cada tela, a hierarquia do conteúdo e as interações principais, antes de qualquer decisão visual.</p>
+      <div class="panel wfs">
+        <div class="wf-item"><h4>Wireframe 1 · Renda da casa</h4><p>Um único campo para começar, com o valor em destaque e a ação logo abaixo.</p>
+          <div class="wf" aria-hidden="true"><div class="row"><span class="dot"></span><span class="l s"></span></div><div class="bar"><i style="width:25%"></i><i style="width:75%;background:#d8d8d3"></i></div><div class="h" style="margin-top:18px"></div><div class="h"></div><div class="l m"></div><div class="box" style="height:56px;margin-top:10px"></div><div class="btn" style="margin-top:14px;width:55%"></div></div></div>
+        <div class="wf-item"><h4>Wireframe 2 · Quem participa</h4><p>A casa adiciona quem divide o orçamento, para todos verem o mesmo plano.</p>
+          <div class="wf" aria-hidden="true"><div class="row"><span class="dot"></span><span class="l s"></span></div><div class="bar"><i style="width:50%"></i><i style="width:50%;background:#d8d8d3"></i></div><div class="h" style="margin-top:18px"></div><div class="l m"></div><div class="box row" style="padding:12px"><span class="dot"></span><span class="l m"></span></div><div class="box row" style="padding:12px"><span class="dot"></span><span class="l m"></span></div><div class="box" style="height:44px;border-style:dashed"></div><div class="btn"></div></div></div>
+        <div class="wf-item"><h4>Wireframe 3 · Distribuição</h4><p>Seis áreas com mais e menos, a barra da divisão e o total sempre visível.</p>
+          <div class="wf" aria-hidden="true"><div class="h"></div><div class="l m"></div><div class="bar"><i style="width:40%"></i><i style="width:20%"></i><i style="width:5%"></i><i style="width:5%"></i><i style="width:5%"></i><i style="width:25%"></i></div><div class="box" style="padding:10px;display:flex;flex-direction:column;gap:12px"><div class="row"><span class="l" style="flex:1"></span><span class="pm"></span><span class="l s" style="width:20px"></span><span class="pm"></span></div><div class="row"><span class="l" style="flex:1"></span><span class="pm"></span><span class="l s" style="width:20px"></span><span class="pm"></span></div><div class="row"><span class="l" style="flex:1"></span><span class="pm"></span><span class="l s" style="width:20px"></span><span class="pm"></span></div><div class="row"><span class="l" style="flex:1"></span><span class="pm"></span><span class="l s" style="width:20px"></span><span class="pm"></span></div></div><div class="btn"></div></div></div>
+        <div class="wf-item"><h4>Wireframe 4 · Início</h4><p>O disponível do mês no topo e atalhos para as ações mais usadas.</p>
+          <div class="wf" aria-hidden="true"><div class="blk" style="height:110px;padding:14px;display:flex;flex-direction:column;gap:8px"><span class="l s"></span><span class="h" style="width:60%"></span></div><div class="row" style="justify-content:space-between"><span class="dot" style="width:34px;height:34px"></span><span class="dot" style="width:34px;height:34px"></span><span class="dot" style="width:34px;height:34px"></span><span class="dot" style="width:34px;height:34px"></span></div><span class="l s"></span><div class="row" style="gap:10px"><div class="box" style="height:80px;flex:1"></div><div class="box" style="height:80px;flex:1"></div></div><div class="box" style="height:60px"></div><div class="tabs"><i></i><i></i><i class="big"></i><i></i><i></i></div></div></div>
+        <div class="wf-item"><h4>Wireframe 5 · Orçamento</h4><p>O gráfico de uso do mês e uma linha por área, com o alerta na própria linha.</p>
+          <div class="wf" aria-hidden="true"><div class="box row" style="padding:14px;gap:14px"><span class="ring"></span><div style="flex:1;display:flex;flex-direction:column;gap:8px"><span class="l"></span><span class="h" style="width:90%"></span><span class="l s"></span></div></div><div class="box" style="padding:12px;display:flex;flex-direction:column;gap:8px"><div class="row"><span class="dot"></span><span class="l" style="flex:1"></span></div><span class="l" style="background:#8d8d88"></span></div><div class="box" style="padding:12px;display:flex;flex-direction:column;gap:8px"><div class="row"><span class="dot"></span><span class="l" style="flex:1"></span></div><span class="l m"></span></div><div class="tabs"><i></i><i></i><i class="big"></i><i></i><i></i></div></div></div>
+        <div class="wf-item"><h4>Wireframe 6 · Novo lançamento</h4><p>Valor primeiro, depois área e data, para registrar em poucos toques.</p>
+          <div class="wf" aria-hidden="true"><div class="row" style="justify-content:space-between"><span class="l s"></span><span class="dot"></span></div><div class="h" style="width:50%;height:26px;margin:14px auto 6px"></div><div class="row" style="gap:6px;justify-content:center"><span class="box" style="width:60px;height:26px"></span><span class="box" style="width:60px;height:26px"></span><span class="box" style="width:60px;height:26px"></span></div><span class="l s"></span><div class="box" style="height:40px"></div><span class="l s"></span><div class="box" style="height:40px"></div><div class="btn"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 ENTREGAR -->
+  <section class="phase-band" aria-labelledby="f4">
+    <div class="phase-head"><span class="num">04</span><h2 id="f4">Fase <em>Entregar</em></h2></div>
+
+    <div class="sub">
+      <h3>Protótipo final</h3>
+      <p class="intro">Os wireframes viraram telas de alta fidelidade com a identidade do Nexo. Abaixo, as decisões de interface por trás de cada tela no celular.</p>
+      <div class="panel annot">
+        <figure>
+          <div class="iphone "><div class="body"><div class="screen"><img src="img/nexo/p-inicio.jpg" alt="Tela Início do Nexo no celular" width="900" height="1947" loading="lazy"></div><span class="island"></span><div class="sb"><span>9:41</span><span class="sb-ic"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.6c2.4 0 4.6.9 6.2 2.5l1.3-1.4A10.6 10.6 0 0 0 8 .6 10.6 10.6 0 0 0 .5 3.7l1.3 1.4A8.7 8.7 0 0 1 8 2.6Zm0 3.9c1.4 0 2.6.5 3.6 1.4l1.3-1.4A7 7 0 0 0 8 4.6a7 7 0 0 0-4.9 1.9l1.3 1.4c1-.9 2.2-1.4 3.6-1.4Zm0 3.8L10 8.4a2.9 2.9 0 0 0-4 0Z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="16" height="8" rx="2"/><rect x="24.5" y="4" width="1.8" height="4" rx=".9" opacity=".45"/></svg></span></div></div><i class="k k1"></i><i class="k k2"></i><i class="k k3"></i><i class="k k4"></i></div>
+          <h4>Início</h4>
+          <ol><li>O disponível do mês em destaque responde à pergunta mais comum: quanto ainda posso gastar.</li><li>Atalhos para lançar, WhatsApp, importar e agenda, as ações mais frequentes.</li><li>Contas a pagar com vencimento e o botão de pagar na própria linha.</li></ol>
+        </figure>
+        <figure>
+          <div class="iphone "><div class="body"><div class="screen"><img src="img/nexo/p-distribuicao.jpg" alt="Tela de distribuição da renda no celular" width="900" height="1947" loading="lazy"></div><span class="island"></span><div class="sb"><span>9:41</span><span class="sb-ic"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.6c2.4 0 4.6.9 6.2 2.5l1.3-1.4A10.6 10.6 0 0 0 8 .6 10.6 10.6 0 0 0 .5 3.7l1.3 1.4A8.7 8.7 0 0 1 8 2.6Zm0 3.9c1.4 0 2.6.5 3.6 1.4l1.3-1.4A7 7 0 0 0 8 4.6a7 7 0 0 0-4.9 1.9l1.3 1.4c1-.9 2.2-1.4 3.6-1.4Zm0 3.8L10 8.4a2.9 2.9 0 0 0-4 0Z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="16" height="8" rx="2"/><rect x="24.5" y="4" width="1.8" height="4" rx=".9" opacity=".45"/></svg></span></div></div><i class="k k1"></i><i class="k k2"></i><i class="k k3"></i><i class="k k4"></i></div>
+          <h4>Distribuição</h4>
+          <ol><li>A barra mostra a divisão inteira de uma vez, com a cor de cada área.</li><li>Botões de mais e menos com 44 px, confortáveis para o polegar.</li><li>O total fica sempre visível, e o plano só é salvo quando fecha em 100%.</li></ol>
+        </figure>
+        <figure>
+          <div class="iphone "><div class="body"><div class="screen"><img src="img/nexo/p-orcamento.jpg" alt="Tela de orçamento do mês no celular" width="900" height="1947" loading="lazy"></div><span class="island"></span><div class="sb"><span>9:41</span><span class="sb-ic"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.6c2.4 0 4.6.9 6.2 2.5l1.3-1.4A10.6 10.6 0 0 0 8 .6 10.6 10.6 0 0 0 .5 3.7l1.3 1.4A8.7 8.7 0 0 1 8 2.6Zm0 3.9c1.4 0 2.6.5 3.6 1.4l1.3-1.4A7 7 0 0 0 8 4.6a7 7 0 0 0-4.9 1.9l1.3 1.4c1-.9 2.2-1.4 3.6-1.4Zm0 3.8L10 8.4a2.9 2.9 0 0 0-4 0Z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="16" height="8" rx="2"/><rect x="24.5" y="4" width="1.8" height="4" rx=".9" opacity=".45"/></svg></span></div></div><i class="k k1"></i><i class="k k2"></i><i class="k k3"></i><i class="k k4"></i></div>
+          <h4>Orçamento</h4>
+          <ol><li>O gráfico mostra quanto do mês já foi usado.</li><li>Cada área compara o gasto com o planejado.</li><li>Quando uma área passa do limite, o alerta aparece com ícone e texto, sem depender só da cor.</li></ol>
+        </figure>
+      </div>
+    </div>
+
+    <div class="desk-gallery">
+      <div class="sub" style="padding-top:0">
+        <h3>No desktop</h3>
+        <p class="intro">No computador, as mesmas funções ganham espaço para análise: visão geral, orçamento detalhado e lançamentos em tabela.</p>
+      </div>
+    <article class="feature">
+      <div class="f-text">
+        <span class="n">01 · ONBOARDING</span>
+        <h3>Começa pela renda da casa</h3>
+        <p>O cadastro tem quatro passos: renda mensal, quem participa do orçamento, bancos e saldos. O primeiro passo pede só a renda mensal.</p>
+      </div>
+      <div class="macbook "><div class="mb-lid"><span class="mb-cam"></span><div class="mb-screen"><img src="img/nexo/onboarding-renda.jpg" alt="Passo 1 de 4 do onboarding: campo para a renda mensal da casa" width="1800" height="1125" loading="lazy"></div></div><div class="mb-base"></div></div>
+    </article>
+    <article class="feature flip">
+      <div class="f-text">
+        <span class="n">02 · ORÇAMENTO</span>
+        <h3>O mês acompanhado área por área</h3>
+        <p>Cada área mostra o planejado, o gasto e o que ainda está disponível. Quando uma passa do limite, o valor e o alerta aparecem na própria linha.</p>
+      </div>
+      <div class="macbook "><div class="mb-lid"><span class="mb-cam"></span><div class="mb-screen"><img src="img/nexo/orcamento.jpg" alt="Orçamento no desktop com o planejado e o gasto de cada área" width="1800" height="1941" loading="lazy"></div></div><div class="mb-base"></div></div>
+    </article>
+    <article class="feature">
+      <div class="f-text">
+        <span class="n">03 · DASHBOARD</span>
+        <h3>A visão geral das finanças do casal</h3>
+        <p>Saldo das contas, receitas e despesas do mês, contas a pagar e a receber, faturas dos cartões e últimos lançamentos numa mesma tela.</p>
+      </div>
+      <div class="macbook "><div class="mb-lid"><span class="mb-cam"></span><div class="mb-screen"><img src="img/nexo/dashboard.jpg" alt="Dashboard do Nexo no desktop" width="1800" height="1836" loading="lazy"></div></div><div class="mb-base"></div></div>
+    </article>
+    <article class="feature flip">
+      <div class="f-text">
+        <span class="n">04 · LANÇAMENTOS</span>
+        <h3>Cada gasto no lugar certo</h3>
+        <p>Os lançamentos ficam numa lista com categoria e valor, e podem entrar à mão, por importação de extrato ou pelo WhatsApp.</p>
+      </div>
+      <div class="macbook "><div class="mb-lid"><span class="mb-cam"></span><div class="mb-screen"><img src="img/nexo/lancamentos.jpg" alt="Lista de lançamentos do mês com data, descrição, categoria e valor" width="1800" height="1243" loading="lazy"></div></div><div class="mb-base"></div></div>
+    </article>
+    <article class="feature">
+      <div class="f-text">
+        <span class="n">05 · WHATSAPP</span>
+        <h3>Nexo no WhatsApp</h3>
+        <p>Um canal para registrar gastos e consultar o orçamento sem abrir o app: a pessoa manda a mensagem e o Nexo confirma o lançamento.</p>
+      </div>
+      <div class="macbook "><div class="mb-lid"><span class="mb-cam"></span><div class="mb-screen"><img src="img/nexo/whatsapp.jpg" alt="Tela do Nexo no WhatsApp" width="1800" height="1125" loading="lazy"></div></div><div class="mb-base"></div></div>
+    </article>
+    </div>
+  </section>
+
+  <section class="phase-band" aria-labelledby="aprendizados">
+    <div class="phase-head"><span class="num">05</span><h2 id="aprendizados">O que o Nexo <em>me ensinou</em></h2></div>
+    <div class="sub">
+      <ol class="lessons">
+        <li><b>O plano vira acordo</b><span>Planejar antes de gastar muda a conversa do casal: o orçamento deixa de ser cobrança e passa a ser uma decisão tomada junto.</span></li>
+        <li><b>Menos decisões, mais começo</b><span>Uma divisão sugerida em porcentagens deixa a família começar em minutos, e ajustar depois.</span></li>
+        <li><b>Registrar precisa ser mais fácil que esquecer</b><span>Por isso o botão de lançar fica no centro da navegação e o WhatsApp entra como canal.</span></li>
+        <li><b>Status nunca depende só da cor</b><span>Todo alerta tem ícone e texto, para ser entendido por qualquer pessoa.</span></li>
+        <li><b>Cada tela com seu papel</b><span>O desktop serve para analisar o mês; o celular, para registrar e consultar na hora.</span></li>
+        <li><b>Próximos passos</b><span>Testar o protótipo com famílias reais e medir se o plano continua sendo seguido depois do primeiro mês.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <a class="next" href="franq.html">
+    <div><span>PRÓXIMO PROJETO</span><strong>Projetos Franq</strong></div>
+    <b aria-hidden="true">→</b>
+  </a>
+  <div class="foot"><span>DADOS · CONTEÚDO · INTERFACE</span><span>NEXO</span></div>
+</main>
+</body>
+</html>
