@@ -450,6 +450,8 @@ em{font-family:var(--serif);font-style:italic;font-weight:400}
 .src{display:block;margin-top:6px;font-size:12px;color:var(--muted)}
 .src a{color:var(--accent);text-decoration:none}
 .src a:hover{text-decoration:underline}
+.stats.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1099px){.stats.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .banner-img{border-radius:14px;overflow:hidden;border:1px solid var(--line)}
 @media (max-width:1099px){.levels,.areas.three,.trio{grid-template-columns:repeat(2,minmax(0,1fr))}.empathy{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:760px){
@@ -518,6 +520,20 @@ em{font-family:var(--serif);font-style:italic;font-weight:400}
     <div class="iphone p2"><div class="body"><div class="screen"><img src="img/islandhub/islandhub_booking-mobile-lista.jpg" alt="Meus agendamentos no app"></div><span class="island"></span></div><i class="k k1"></i><i class="k k2"></i><i class="k k3"></i><i class="k k4"></i></div>
     <figcaption>HOME · SERVIÇO · MEUS AGENDAMENTOS</figcaption>
   </figure>
+
+  <section class="band results-band" aria-labelledby="numeros">
+    <div class="band-head">
+      <span class="eyebrow">NOS 3 PRIMEIROS MESES NO AR</span>
+      <h2 id="numeros">O marketplace <em>em números</em></h2>
+    </div>
+    <div class="stats four">
+      <div class="stat"><b>~6.900</b><span>visitantes únicos, cerca de 6% da população das Ilhas Cayman</span></div>
+      <div class="stat"><b>560</b><span>contas criadas</span></div>
+      <div class="stat"><b>436</b><span>anúncios publicados por 84 vendedores</span></div>
+      <div class="stat"><b>67%</b><span>dos vendedores que usaram a importação com IA chegaram à publicação</span></div>
+    </div>
+    <p class="src" style="margin-top:16px">De 20/08 a 16/11/2026, dados do PostHog, sem contas de teste. Visitantes únicos são contados por navegador e dispositivo.</p>
+  </section>
 
   <section class="band" aria-labelledby="visao">
     <div class="band-head">
@@ -801,7 +817,7 @@ em{font-family:var(--serif);font-style:italic;font-weight:400}
   <section class="phase-band" aria-labelledby="resultado">
     <div class="phase-head"><span class="num">06</span><h2 id="resultado">Um produto pensado <em>do zero</em></h2></div>
     <div class="sub">
-      <p class="lead-wide">O IslandHub saiu do escopo para um produto completo e no ar, organizado em quatro grandes áreas (acesso e marketplace, perfil, anúncio e promoção, lojas e serviços), com especificações por funcionalidade, protótipos navegáveis e um design system documentado.</p>
+      <p class="lead-wide">O IslandHub saiu do escopo para um produto completo e no ar, que em 3 meses recebeu cerca de 6.900 visitantes, 560 cadastros e 436 anúncios de 84 vendedores. Ele está organizado em quatro grandes áreas (acesso e marketplace, perfil, anúncio e promoção, lojas e serviços), com especificações por funcionalidade, protótipos navegáveis e um design system documentado.</p>
       <div class="stats"><div class="stat"><b>~1.600</b><span>Telas desenhadas</span></div><div class="stat"><b>13</b><span>Fluxos de agendamento documentados</span></div><div class="stat"><b>357</b><span>Ilustrações na biblioteca</span></div></div>
       <ol class="lessons">
         <li><b>A persona define o MVP</b><span>Começar pela Jessa colocou o fluxo de venda rápida na frente de todo o resto.</span></li>
