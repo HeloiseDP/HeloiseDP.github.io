@@ -452,6 +452,17 @@ em{font-family:var(--serif);font-style:italic;font-weight:400}
 .src a:hover{text-decoration:underline}
 .stats.four{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media (max-width:1099px){.stats.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ind-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:8px}
+.ind{display:flex;flex-direction:column;gap:8px;padding:24px;border-radius:14px;border:1px solid var(--line);background:#0b0d0f}
+.ind b{font-weight:400;font-size:clamp(30px,3vw,42px);line-height:1.05;letter-spacing:-.03em;color:var(--fg);margin-top:6px}
+.ind h4{margin:0;font-weight:400;font-size:17px;color:var(--fg)}
+.ind p{margin:0;font-size:14px;line-height:1.6;color:var(--body)}
+.ind-tag{align-self:flex-start;font-size:10.5px;letter-spacing:1.2px;padding:4px 9px;border-radius:999px}
+.ind-tag.ok{background:rgba(74,217,196,.14);color:#6fe3d1}
+.ind-tag.warn{background:rgba(235,161,107,.16);color:#f3b585}
+.ind-tag.soon{background:rgba(242,242,238,.1);color:var(--body)}
+@media (max-width:1099px){.ind-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.ind-grid{grid-template-columns:minmax(0,1fr)}}
 .banner-img{border-radius:14px;overflow:hidden;border:1px solid var(--line)}
 @media (max-width:1099px){.levels,.areas.three,.trio{grid-template-columns:repeat(2,minmax(0,1fr))}.empathy{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:760px){
@@ -801,16 +812,17 @@ em{font-family:var(--serif);font-style:italic;font-weight:400}
       </div>
     </div>
     <div class="sub">
-      <h3>Indicadores que o projeto deve mover</h3>
-      <p class="intro">Os indicadores vêm da proposta de anúncio com IA e traduzem o objetivo de anunciar rápido, sem perder qualidade, em sinais mensuráveis.</p>
-      <ol class="lessons">
-        <li><b>Tempo até publicar</b><span>Da primeira foto ao anúncio no ar, com meta de menos de 90 s no caminho feliz.</span></li>
-        <li><b>Aceitação sem edição</b><span>% de campos preenchidos pela IA que o vendedor não altera, por campo e categoria.</span></li>
-        <li><b>Cobertura de atributos</b><span>% de anúncios com todos os campos filtráveis, que é o que faz a busca funcionar.</span></li>
-        <li><b>Abandono por etapa</b><span>Onde o funil de anúncio vaza, comparado ao fluxo manual.</span></li>
-        <li><b>Anúncios por vendedor</b><span>Se anunciar ficou fácil, o segundo e o terceiro anúncio vêm mais rápido.</span></li>
-        <li><b>Disputas por descrição</b><span>Contra-métrica: se a IA escreve demais, isso sobe.</span></li>
-      </ol>
+      <h3>Os indicadores, com <em>dados reais</em></h3>
+      <p class="intro">Os indicadores vieram da proposta de anúncio com IA. Com o produto no ar, a maioria já tem dado; os que ainda não têm viraram próximos passos de medição.</p>
+      <div class="ind-grid">
+        <div class="ind"><span class="ind-tag ok">MEDIDO</span><b>5,2</b><h4>Anúncios por vendedor</h4><p>436 anúncios de 84 vendedores. Quando anunciar é fácil, o vendedor volta para anunciar de novo.</p></div>
+        <div class="ind"><span class="ind-tag ok">MEDIDO</span><b>92%</b><h4>Anúncios que chegam ao ar</h4><p>436 dos 472 anúncios criados foram publicados. O funil de anúncio quase não vaza.</p></div>
+        <div class="ind"><span class="ind-tag ok">MEDIDO</span><b>67%</b><h4>Importação com IA até publicar</h4><p>12 dos 18 vendedores que começaram a importação de uma loja existente chegaram à publicação.</p></div>
+        <div class="ind"><span class="ind-tag ok">MEDIDO</span><b>88 de 89</b><h4>Aceitação do rascunho da IA</h4><p>Depois de revisar o rascunho gerado pela IA, quase todos escolheram publicar na hora, sem deixar para revisar depois.</p></div>
+        <div class="ind"><span class="ind-tag warn">MELHORIA</span><b>100% · 27,5%</b><h4>Cobertura de atributos</h4><p>Todos os anúncios têm foto, com média de 2,8. Mas só 27,5% têm subcategoria, o campo que mais ajuda a busca: virou o próximo ajuste do fluxo.</p></div>
+        <div class="ind"><span class="ind-tag soon">PRÓXIMO PASSO</span><b>A medir</b><h4>Tempo até publicar e disputas</h4><p>O produto ainda não registra o início do fluxo de anúncio nem as disputas por descrição. São os próximos eventos a instrumentar.</p></div>
+      </div>
+      <p class="src" style="margin-top:16px">De 20/08 a 16/11/2026, dados do PostHog, sem contas de teste.</p>
     </div>
   </section>
 
