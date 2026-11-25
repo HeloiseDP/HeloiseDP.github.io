@@ -514,7 +514,7 @@ em{font-family:var(--serif);font-style:italic;font-weight:400}
         <div><dt>CLIENTE</dt><dd>IslandHub · Ilhas Cayman</dd></div>
         <div><dt>PERÍODO</dt><dd>abr/2025 a hoje</dd></div>
         <div><dt>PLATAFORMAS</dt><dd>Web e app</dd></div>
-        <div><dt>PAPEL</dt><dd>Product Designer, UX/UI</dd></div>
+        <div><dt>PAPEL</dt><dd>Única Product Designer, UX/UI</dd></div>
         <div><dt>ESCALA</dt><dd>Cerca de 1.600 telas</dd></div>
       </dl>
     </div>
@@ -552,9 +552,9 @@ em{font-family:var(--serif);font-style:italic;font-weight:400}
       <h2 id="visao">O projeto em <em>três linhas</em></h2>
     </div>
     <div class="overview">
-      <div class="ov"><h3>PROBLEMA</h3><p>Vendas espalhadas em grupos de Facebook e no boca a boca: anúncios sem organização, pouca confiança, golpes e gente que não aparece. Quem chega precisa comprar rápido; quem vai embora precisa vender rápido.</p></div>
+      <div class="ov"><h3>PROBLEMA</h3><p>Vendas espalhadas em grupos de Facebook e no boca a boca: anúncios sem organização, pouca confiança, golpes e gente que não aparece. Quem chega precisa comprar rápido; quem vai embora precisa vender rápido. E muitos negócios locais ainda não estavam habituados a vender online.</p></div>
       <div class="ov"><h3>SOLUÇÃO</h3><p>Um marketplace único com busca e filtros por ilha, anúncio assistido por IA, chat com oferta, reputação, lojas para negócios locais, promoções e agendamento de serviços, leve para funcionar com internet limitada.</p></div>
-      <div class="ov"><h3>MEU PAPEL</h3><p>Product Designer de ponta a ponta: escopo, personas e mapa da empatia, benchmarking, arquitetura e fluxos, especificação de cada funcionalidade, interface web e mobile, design system e protótipos para teste.</p></div>
+      <div class="ov"><h3>MEU PAPEL</h3><p>Única Product Designer do projeto, de ponta a ponta, com produto e desenvolvimento: escopo, personas e mapa da empatia, benchmarking, arquitetura e fluxos, especificação de cada funcionalidade, interface web e mobile, design system e protótipos para teste.</p></div>
     </div>
   </section>
 
@@ -634,10 +634,17 @@ em{font-family:var(--serif);font-style:italic;font-weight:400}
 
     <div class="sub">
       <h3>Benchmarking</h3>
-      <p class="intro">O arquivo de referências reúne centenas de telas de marketplaces. Na criação de anúncio, a comparação entre Enjoei e OLX definiu a direção:</p>
+      <p class="intro">O arquivo de referências reúne centenas de telas de marketplaces e de plataformas de serviços. Na criação de anúncio, a comparação entre Enjoei e OLX definiu a direção:</p>
       <div class="models">
         <div><b>A forma do Enjoei</b><span>Foto primeiro e uma pergunta por tela, para anunciar sem esforço.</span></div>
         <div><b>O rigor da OLX</b><span>Atributos com valores fechados e condição granular, que viram filtro de busca.</span></div>
+      </div>
+      <div style="margin-top:32px">
+        <p class="intro">Para comprar e contratar serviços, duas outras referências guiaram a direção:</p>
+        <div class="models">
+          <div><b>A jornada do Mercado Livre</b><span>Do carrinho ao acompanhamento do pedido, com status claros e a reputação de quem vende à vista.</span></div>
+          <div><b>O agendamento da Fresha</b><span>Escolher o serviço e o horário em poucos passos, como num salão, base do agendamento com preço fixo.</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -703,7 +710,7 @@ em{font-family:var(--serif);font-style:italic;font-weight:400}
 
     <div class="sub">
       <h3>IA no anúncio, com limites claros</h3>
-      <p class="intro">A IA não é um caminho paralelo, é uma camada: lê as fotos e devolve um rascunho que o vendedor só confirma. Três níveis de confiança decidem o comportamento de cada campo.</p>
+      <p class="intro">A IA não é um caminho paralelo, é uma camada: lê as fotos, responde sozinha às perguntas do anúncio e devolve um rascunho que o vendedor só confirma. Ela também cria anúncios em massa e monta um anúncio inteiro a partir de um link: o vendedor cola o endereço do produto em outro site, e a IA copia os campos e as fotos. Assim, quem tem pouca familiaridade com ferramentas digitais anuncia com pouco trabalho manual. Três níveis de confiança decidem o comportamento de cada campo.</p>
       <div class="levels">
         <div class="lv-auto"><b>Auto</b><small>CONFIANÇA ≥ 0,85 · CAMPO REVERSÍVEL</small><span>Preenche e marca com o selo de IA: cor, categoria, tipo de item, material. Um toque desfaz.</span></div>
         <div class="lv-sug"><b>Sugere</b><small>0,50 A 0,85 · OU CAMPO DE ALTO IMPACTO</small><span>Pré-seleciona, mas exige confirmação, com as alternativas mais prováveis ao lado: marca, modelo, tamanho.</span></div>
@@ -720,7 +727,8 @@ em{font-family:var(--serif);font-style:italic;font-weight:400}
 
     <div class="sub">
       <h3>Compra e pedidos</h3>
-      <p class="intro">Da visualização rápida à denúncia de anúncio, do carrinho com estados de estoque ao pagamento recusado. Para quem vende, cada pedido tem um status claro.</p>
+      <p class="intro">Da visualização rápida à denúncia de anúncio, do carrinho com estados de estoque ao pagamento recusado. O checkout considera cupons, entrega ou retirada, pagamento e cancelamento. Para quem vende, cada pedido tem um status claro.</p>
+      <p class="note-box"><b>Um carrinho, vários vendedores.</b> Quando a compra reúne produtos de lojas diferentes, o pedido se divide por vendedor, e cada parte tem status, cancelamento, reembolso e modalidade de entrega próprios. O desafio foi deixar uma operação complexa fácil de entender para quem compra, viável para quem vende e clara para a implementação.</p>
       <div class="tabbar" role="group" aria-label="Telas" data-tabs="[{&quot;img&quot;: &quot;img/islandhub/islandhub_anuncio.jpg&quot;, &quot;label&quot;: &quot;Anúncio&quot;, &quot;cap&quot;: &quot;Página do anúncio no ar, com mensagem ao vendedor e a loja de quem vende&quot;}, {&quot;img&quot;: &quot;img/islandhub/islandhub_checkout.jpg&quot;, &quot;label&quot;: &quot;Checkout&quot;, &quot;cap&quot;: &quot;Checkout, revisão do pedido separada por loja, com cupom&quot;}, {&quot;img&quot;: &quot;img/islandhub/islandhub_pedido-vendedor.jpg&quot;, &quot;label&quot;: &quot;Pedido do vendedor&quot;, &quot;cap&quot;: &quot;Vendas, pedido aguardando a confirmação de quem vende&quot;}]"><button type="button" aria-pressed="true" data-tab="0">Anúncio</button><button type="button" aria-pressed="false" data-tab="1">Checkout</button><button type="button" aria-pressed="false" data-tab="2">Pedido do vendedor</button></div>
       <div class="mac-frame"><div class="macbook "><div class="mb-lid"><span class="mb-cam"></span><div class="mb-screen"><img src="img/islandhub/islandhub_anuncio.jpg" alt="Anúncio" loading="lazy" data-tab-img></div></div><div class="mb-base"></div></div></div>
       <p class="tab-cap" data-tab-cap>Página do anúncio no ar, com mensagem ao vendedor e a loja de quem vende</p>
@@ -739,8 +747,13 @@ em{font-family:var(--serif);font-style:italic;font-weight:400}
     </div>
 
     <div class="sub">
+      <h3>Área do vendedor</h3>
+      <p class="intro">Pequenos negócios ganharam uma área para administrar a operação dentro do marketplace: anúncios, pedidos, agenda de serviços, desempenho e informações financeiras num só lugar, em vez de processos espalhados entre mensagens, planilhas e anotações.</p>
+    </div>
+
+    <div class="sub">
       <h3>Serviços e agendamento</h3>
-      <p class="intro">O marketplace também vende serviços. Desenhei dois modelos de agendamento:</p>
+      <p class="intro">O marketplace também vende serviços, muitos com preço definido só depois de uma avaliação. Por isso, a jornada cobre orçamento, aprovação de valores, confirmação, reagendamento, cancelamento e comunicação de problemas. Desenhei dois modelos de agendamento:</p>
       <div class="models">
         <div><b>Preço fixo</b><span>Como num salão: o cliente escolhe o serviço e o horário, e a cobrança é automática depois do atendimento.</span></div>
         <div><b>Por orçamento</b><span>Como numa oficina: o prestador confirma o horário e envia o orçamento para aprovação. Se o valor final mudar, o cliente aprova antes da cobrança.</span></div>
@@ -812,6 +825,15 @@ em{font-family:var(--serif);font-style:italic;font-weight:400}
       </div>
     </div>
     <div class="sub">
+      <h3>Conectada, mas comprando pouco online</h3>
+      <p class="intro">A ilha está online, mas a compra ainda não. Quase todo mundo pesquisa negócios locais na internet, e pouca gente compra deles por lá. O IslandHub nasce nesse intervalo: aproximar um comportamento digital que já existe de uma experiência de compra e contratação local.</p>
+      <div class="stats">
+        <div class="stat"><b>81,1%</b><span>da população usava a internet no fim de 2025, cerca de 61,8 mil pessoas.<span class="src">DataReportal · Digital 2026: The Cayman Islands</span></span></div>
+        <div class="stat"><b>95%</b><span>usam buscadores para encontrar negócios locais.<span class="src">Tower Consumer Survey 2026, 502 residentes</span></span></div>
+        <div class="stat"><b>16%</b><span>compram produtos ou serviços de negócios locais pela internet.<span class="src">Tower Consumer Survey 2026, 502 residentes</span></span></div>
+      </div>
+    </div>
+    <div class="sub">
       <h3>Os indicadores, com <em>dados reais</em></h3>
       <p class="intro">Os indicadores vieram da proposta de anúncio com IA. Com o produto no ar, a maioria já tem dado; os que ainda não têm viraram próximos passos de medição.</p>
       <div class="ind-grid">
@@ -829,7 +851,7 @@ em{font-family:var(--serif);font-style:italic;font-weight:400}
   <section class="phase-band" aria-labelledby="resultado">
     <div class="phase-head"><span class="num">06</span><h2 id="resultado">Um produto pensado <em>do zero</em></h2></div>
     <div class="sub">
-      <p class="lead-wide">O IslandHub saiu do escopo para um produto completo e no ar, que em 3 meses recebeu cerca de 6.900 visitantes, 560 cadastros e 436 anúncios de 84 vendedores. Ele está organizado em quatro grandes áreas (acesso e marketplace, perfil, anúncio e promoção, lojas e serviços), com especificações por funcionalidade, protótipos navegáveis e um design system documentado.</p>
+      <p class="lead-wide">O IslandHub saiu do escopo para um produto completo e no ar, que em 3 meses recebeu cerca de 6.900 visitantes, 560 cadastros e 436 anúncios de 84 vendedores, uma tração inicial relevante num mercado de cerca de 89 mil habitantes, para uma plataforma construída do zero. Ele está organizado em quatro grandes áreas (acesso e marketplace, perfil, anúncio e promoção, lojas e serviços), com especificações por funcionalidade, protótipos navegáveis e um design system documentado.</p>
       <div class="stats"><div class="stat"><b>~1.600</b><span>Telas desenhadas</span></div><div class="stat"><b>13</b><span>Fluxos de agendamento documentados</span></div><div class="stat"><b>357</b><span>Ilustrações na biblioteca</span></div></div>
       <ol class="lessons">
         <li><b>A persona define o MVP</b><span>Começar pela Jessa colocou o fluxo de venda rápida na frente de todo o resto.</span></li>
