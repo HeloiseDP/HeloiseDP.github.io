@@ -344,12 +344,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
     <div class="companies">
       <article class="company">
-        <div class="when"><span>abr/2025 a hoje</span><b id="ih-dur">1 ano e 6 meses</b></div>
+        <div class="when"><span>mar/2025 a hoje</span><b id="ih-dur">1 ano e 8 meses</b></div>
         <div class="company-body">
           <h3>IslandHub</h3>
           <ol class="timeline">
             <li class="step-role">
-              <div class="role-top"><h4>Product Designer</h4><span>abr/2025 a hoje</span></div>
+              <div class="role-top"><h4>Product Designer</h4><span>mar/2025 a hoje</span></div>
               <p class="desc">Atuo na concepção e evolução de um marketplace, conduzindo o design de produto de ponta a ponta: entendimento de problemas, definição de jornadas, arquitetura de informação, fluxos, prototipação e evolução da interface, em parceria com produto e desenvolvimento.</p>
               <p class="desc"><strong style="font-weight:500;color:var(--fg)">Nos 3 primeiros meses no ar:</strong> cerca de 6.900 visitantes, 560 contas criadas e 436 anúncios publicados por 84 vendedores.</p>
               <ul class="tags"><li>Product Design</li><li>UX/UI Design</li><li>Figma</li><li>Marketplace</li><li>Design System</li><li>Jornadas B2B e B2C</li><li>Produtos transacionais</li></ul>
@@ -365,12 +365,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       </article>
 
       <article class="company">
-        <div class="when"><span>set/2020 a set/2026</span><b>6 anos</b></div>
+        <div class="when"><span>set/2020 a out/2026</span><b>6 anos</b></div>
         <div class="company-body">
           <h3>Franq</h3>
           <ol class="timeline">
             <li class="step-role">
-              <div class="role-top"><h4>UX Designer</h4><span>jun/2023 a set/2026</span></div>
+              <div class="role-top"><h4>UX Designer</h4><span>jun/2023 a out/2026</span></div>
               <p class="desc">Conduzi projetos do discovery à entrega: pesquisa, benchmarking, fluxos e protótipos de alta fidelidade, acompanhando a implementação lado a lado com PMs e desenvolvedores.</p>
               <ul class="tags"><li>UX Research</li><li>UI Design</li><li>Figma</li><li>Design System</li><li>Produto regulado</li><li>IA aplicada</li></ul>
               <div class="highlights">
@@ -493,11 +493,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   update();
 })();
 
-// Tempo na IslandHub contado de abr/2025 até o mês atual
+// Tempo na IslandHub contado de mar/2025 até o mês atual
 (() => {
   const el = document.getElementById("ih-dur");
   const now = new Date();
-  const m = (now.getFullYear() - 2025) * 12 + now.getMonth() - 3;
+  const m = (now.getFullYear() - 2025) * 12 + now.getMonth() - 2;
   const y = Math.floor(m / 12), r = m % 12;
   const parts = [];
   if (y) parts.push(y + (y > 1 ? " anos" : " ano"));
